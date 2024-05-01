@@ -1,0 +1,13 @@
+127.0.0.1 - - [30/Apr/2024:18:21:46 -0300] "GET / HTTP/1.1" 404 764
+127.0.0.1 - - [30/Apr/2024:18:22:11 -0300] "GET /PrimeiroProjetoWeb/ola HTTP/1.1" 200 11
+127.0.0.1 - - [30/Apr/2024:18:22:28 -0300] "GET /PrimeiroProjetoWeb/ola HTTP/1.1" 200 10
+127.0.0.1 - - [30/Apr/2024:18:36:39 -0300] "GET /PrimeiroProjetoWeb/ola HTTP/1.1" 200 10
+127.0.0.1 - - [30/Apr/2024:18:36:42 -0300] "GET /PrimeiroProjetoWeb HTTP/1.1" 302 -
+127.0.0.1 - - [30/Apr/2024:18:36:43 -0300] "GET /PrimeiroProjetoWeb/ HTTP/1.1" 200 134
+127.0.0.1 - - [30/Apr/2024:18:38:27 -0300] "GET /PrimeiroProjetoWeb/ HTTP/1.1" 200 168
+127.0.0.1 - - [30/Apr/2024:18:43:09 -0300] "GET /PrimeiroProjetoWeb/ HTTP/1.1" 200 173
+127.0.0.1 - - [30/Apr/2024:18:43:10 -0300] "GET /PrimeiroProjetoWeb/form.html HTTP/1.1" 200 367
+127.0.0.1 - - [30/Apr/2024:18:43:20 -0300] "GET /PrimeiroProjetoWeb/form.html HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2024:18:58:42 -0300] "GET /PrimeiroProjetoWeb/form.html HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2024:18:58:52 -0300] "GET /favicon.ico HTTP/1.1" 404 775
+127.0.0.1 - - [30/Apr/2024:18:59:12 -0300] "GET /PrimeiroProjetoWeb/form.html HTTP/1.1" 200 367
