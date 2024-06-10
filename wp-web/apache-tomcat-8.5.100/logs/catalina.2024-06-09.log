@@ -1830,3 +1830,14 @@
 09-Jun-2024 20:35:36.447 ADVERTÊNCIA [http-nio-8080-exec-18] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/AloMundo] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/AloMundo.xml] has been ignored
 09-Jun-2024 20:35:36.493 INFORMAÇÕES [http-nio-8080-exec-18] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/AloMundo.xml] has finished in [54] ms
 09-Jun-2024 20:35:36.503 INFORMAÇÕES [http-nio-8080-exec-22] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/AloMundo]] after start() had already been called. The second call will be ignored.
+09-Jun-2024 21:25:32.276 INFORMAÇÕES [http-nio-8080-exec-31] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/AloMundo] has started
+09-Jun-2024 21:25:32.370 INFORMAÇÕES [http-nio-8080-exec-31] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/AloMundo] is completed
+09-Jun-2024 21:25:47.115 INFORMAÇÕES [http-nio-8080-exec-38] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/AloMundo] has started
+09-Jun-2024 21:25:47.177 INFORMAÇÕES [http-nio-8080-exec-38] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/AloMundo] is completed
+09-Jun-2024 21:26:34.559 INFORMAÇÕES [http-nio-8080-exec-37] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/AloMundo] has started
+09-Jun-2024 21:26:34.591 INFORMAÇÕES [http-nio-8080-exec-37] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/AloMundo] is completed
+09-Jun-2024 22:29:26.565 INFORMAÇÕES [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+09-Jun-2024 22:29:26.567 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Jun-2024 22:29:26.583 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Jun-2024 22:29:26.612 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Jun-2024 22:29:26.623 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
