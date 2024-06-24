@@ -49,7 +49,7 @@ public class CategoriaDAO implements Dao<Categoria> {
 
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO dbjava.categorias (descricao) VALUES (?)");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO dbjava.categorias  (descricao) VALUES (?)");
             sql.setString(1, t.getDescricao());
             sql.executeUpdate();
 
@@ -64,7 +64,7 @@ public class CategoriaDAO implements Dao<Categoria> {
     public void update(Categoria t) {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE dbjava.categorias SET descricao = ?  WHERE ID = ? ");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE dbjava.categorias  SET descricao = ?  WHERE ID = ? ");
             sql.setString(1, t.getDescricao());
             sql.setInt(2, t.getId());
             sql.executeUpdate();
@@ -80,7 +80,7 @@ public class CategoriaDAO implements Dao<Categoria> {
     public void delete(int id) {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("DELETE FROM dbjava.categorias WHERE ID = ? ");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("DELETE FROM dbjava.categorias  WHERE ID = ? ");
             sql.setInt(1, id);
             sql.executeUpdate();
 
@@ -97,7 +97,7 @@ public class CategoriaDAO implements Dao<Categoria> {
         ArrayList<Categoria> meusCategorias = new ArrayList();
         Conexao conexao = new Conexao();
         try {
-            String selectSQL = "SELECT * FROM dbjava.categorias";
+            String selectSQL = "SELECT * FROM dbjava.categorias ";
             PreparedStatement preparedStatement;
             preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
             ResultSet resultado = preparedStatement.executeQuery();

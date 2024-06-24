@@ -24,7 +24,7 @@ public class UsuarioDAO {
     public void Inserir(Usuario usuario) throws Exception {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO usuarios (nome, cpf, endereco, senha)"
+            PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO dbjava.usuarios (nome, cpf, endereco, senha)"
                     + " VALUES (?,?,?,?)");
             sql.setString(1, usuario.getNome());
             sql.setString(2, usuario.getCpf());
@@ -43,7 +43,7 @@ public class UsuarioDAO {
         Conexao conexao = new Conexao();
         try {
             Usuario usuario = new Usuario();
-            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT * FROM usuarios WHERE ID = ? ");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT * FROM dbjava.usuarios WHERE ID = ? ");
             sql.setInt(1, id);
             ResultSet resultado = sql.executeQuery();
             if (resultado != null) {
@@ -67,7 +67,7 @@ public class UsuarioDAO {
     public void Alterar(Usuario Usuario) throws Exception {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE usuarios SET nome = ?, cpf = ?, endereco = ?, senha = ?  WHERE ID = ? ");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE dbjava.usuarios SET nome = ?, cpf = ?, endereco = ?, senha = ?  WHERE ID = ? ");
             sql.setString(1, Usuario.getNome());
             sql.setString(2, Usuario.getCpf());
             sql.setString(3, Usuario.getEndereco());
@@ -85,7 +85,7 @@ public class UsuarioDAO {
     public void Excluir(Usuario Usuario) throws Exception {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("DELETE FROM usuarios WHERE ID = ? ");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("DELETE FROM dbjava.usuarios WHERE ID = ? ");
             sql.setInt(1, Usuario.getId());
             sql.executeUpdate();
 
@@ -100,7 +100,7 @@ public class UsuarioDAO {
         ArrayList<Usuario> meusUsuarios = new ArrayList();
         Conexao conexao = new Conexao();
         try {
-            String selectSQL = "SELECT * FROM usuarios order by nome";
+            String selectSQL = "SELECT * FROM dbjava.usuarios order by nome";
             PreparedStatement preparedStatement;
             preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
             ResultSet resultado = preparedStatement.executeQuery();
@@ -125,7 +125,7 @@ public class UsuarioDAO {
     public Usuario Logar(Usuario usuario) throws Exception {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT * FROM usuarios WHERE cpf=? and senha =? LIMIT 1");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT * FROM dbjava.usuarios WHERE cpf=? and senha =? LIMIT 1");
             sql.setString(1, usuario.getCpf());
             sql.setString(2, usuario.getSenha());
             ResultSet resultado = sql.executeQuery();

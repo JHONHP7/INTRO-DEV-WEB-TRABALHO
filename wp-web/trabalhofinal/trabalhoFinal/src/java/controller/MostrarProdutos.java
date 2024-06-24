@@ -4,6 +4,7 @@ import model.ProdutoDAO;
 import entidade.Produtos;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +21,16 @@ public class MostrarProdutos extends HttpServlet {
         ProdutoDAO produtoDAO = new ProdutoDAO();
         try {
             ArrayList<Produtos> allProdutos = produtoDAO.getAll();
-            request.setAttribute("allProdutos", allProdutos);
+            
+            // Filtra produtos disponíveis e liberados para venda
+            List<Produtos> produtosFiltrados = new ArrayList<>();
+            for (Produtos produto : allProdutos) {
+                if (produto.getQuantidadeDisponivel() != 0 && produto.getLiberadoVenda() == 'S') {
+                    produtosFiltrados.add(produto);
+                }
+            }
+            
+            request.setAttribute("allProdutos", produtosFiltrados);
             RequestDispatcher rd = request.getRequestDispatcher("/views/public/listaProdutos.jsp");
             rd.forward(request, response);
 

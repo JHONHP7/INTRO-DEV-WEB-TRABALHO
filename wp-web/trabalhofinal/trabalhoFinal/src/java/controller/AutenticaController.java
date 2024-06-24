@@ -64,7 +64,7 @@ public class AutenticaController extends HttpServlet {
 
             if (funcionarioObtido.getId() != 0) {
                 HttpSession session = request.getSession();
-                session.setAttribute("usuario", funcionarioObtido);
+                session.setAttribute("funcionario", funcionarioObtido);
 
                 rd = request.getRequestDispatcher("/admin/dashboard");
                 rd.forward(request, response);

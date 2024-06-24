@@ -16,7 +16,7 @@ public class FuncionarioDAO implements Dao<Funcionarios> {
         Conexao conexao = new Conexao();
         try {
             Funcionarios funcionario = new Funcionarios();
-            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT * FROM trabalhofinal.funcionarios WHERE id = ?");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT * FROM funcionarios WHERE id = ?");
             sql.setInt(1, id);
             ResultSet resultado = sql.executeQuery();
             if (resultado.next()) {
@@ -64,7 +64,7 @@ public class FuncionarioDAO implements Dao<Funcionarios> {
     public void insert(Funcionarios funcionario) {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO trabalhofinal.funcionarios (nome, cpf, senha, papel)"
+            PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO funcionarios (nome, cpf, senha, papel)"
                     + " VALUES (?, ?, ?, ?)");
             sql.setString(1, funcionario.getNome());
             sql.setString(2, funcionario.getCpf());
@@ -83,7 +83,7 @@ public class FuncionarioDAO implements Dao<Funcionarios> {
     public void update(Funcionarios funcionario) {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE trabalhofinal.funcionarios SET nome = ?, cpf = ?, senha = ?, papel = ? WHERE id = ?");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE funcionarios SET nome = ?, cpf = ?, senha = ?, papel = ? WHERE id = ?");
             sql.setString(1, funcionario.getNome());
             sql.setString(2, funcionario.getCpf());
             sql.setString(3, funcionario.getSenha());
@@ -102,7 +102,7 @@ public class FuncionarioDAO implements Dao<Funcionarios> {
     public void delete(int id) {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("DELETE FROM trabalhofinal.funcionarios WHERE id = ?");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("DELETE FROM funcionarios WHERE id = ?");
             sql.setInt(1, id);
             sql.executeUpdate();
 
@@ -118,7 +118,7 @@ public class FuncionarioDAO implements Dao<Funcionarios> {
         System.out.print(funcionario.getSenha());
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT * FROM trabalhofinal.funcionarios WHERE cpf = ? AND senha = ? LIMIT 1");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT * FROM funcionarios WHERE cpf = ? AND senha = ? LIMIT 1");
             sql.setString(1, funcionario.getCpf());
             sql.setString(2, funcionario.getSenha());
             ResultSet resultado = sql.executeQuery();
