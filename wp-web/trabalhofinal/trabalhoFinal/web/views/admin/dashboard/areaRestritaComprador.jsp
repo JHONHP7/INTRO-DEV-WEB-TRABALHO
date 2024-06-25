@@ -18,7 +18,7 @@
                 <h1>Área Restrita</h1>
                 <%
                     Funcionarios funcionario = (Funcionarios) session.getAttribute("funcionario");
-                    out.println("<h3>Usuário logado com sucesso</h3>");
+                    out.println("<h3>Bem-vindo comprador</h3>");
                     out.println("<h2>Nome: " + funcionario.getNome() + "</h2>");
                 %>
 

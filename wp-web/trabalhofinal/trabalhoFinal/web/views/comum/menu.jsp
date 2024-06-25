@@ -11,20 +11,37 @@
                     // testar se está logado
                     HttpSession sessao = request.getSession(false);
                     if (sessao != null) {
-                        Funcionarios funcionarioLogado = (Funcionarios) session.getAttribute("funcionario");
+                        Funcionarios funcionarioLogado = (Funcionarios) sessao.getAttribute("funcionario");
                         if (funcionarioLogado != null) { %>
                             <a class="nav-link" href="/trabalhoFinal/admin/dashboard">Dashboard</a>
                             <a class="nav-link" href="/trabalhoFinal/admin/CategoriaController?acao=Listar">Categorias</a>
                             <a class="nav-link" href="/trabalhoFinal/admin/logOut">Logout</a>
-                <%  } else { %>
-                
+                <%
+                    String papel = funcionarioLogado.getPapel();
+                    if ("1".equals(papel)) { %>
+                            <a class="nav-link" href="/trabalhoFinal/admin/vendedor/listaClientes">Cadastro de Clientes</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/vendedor/listaVendas">Cadastro de Vendas</a>
+                            
+                    <% } else if ("0".equals(papel)) { %>
+                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarVendedores">Cadastro de Vendedóores</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarCompradores">Cadastro de Compradores</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarAdministradores">Cadastro de Administradores</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/relatorio">Relatório</a>
+                            
+                    <% } else if ("2".equals(papel)) { %>
+                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/fornecedores">Cadastro de Fornecedores</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/compras">Cadastro de Compras</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/produtosParaVenda">Colocar produtos para venda</a>
+                            
+                    <% } %>
+                    <% } else { %>
                             <a class="nav-link" href="/trabalhoFinal/MostrarProdutos">Produtos</a>
                             <a class="nav-link" href="/trabalhoFinal/AutenticaController?acao=Login">Login</a>
-                <%    }
-                    }%>
-
-
-
+                    <% }
+                } else { %>
+                <a class="nav-link" href="/trabalhoFinal/MostrarProdutos">Produtos</a>
+                <a class="nav-link" href="/trabalhoFinal/AutenticaController?acao=Login">Login</a>
+                <% }%>
             </div>
         </div>
     </div>
