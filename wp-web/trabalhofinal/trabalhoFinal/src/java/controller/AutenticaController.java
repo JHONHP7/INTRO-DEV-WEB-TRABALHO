@@ -50,6 +50,7 @@ public class AutenticaController extends HttpServlet {
             Funcionarios funcionarioObtido;
             Funcionarios funcionario = new Funcionarios(cpf_func, senha_func);
             FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+            
             try {
                 funcionarioObtido = funcionarioDAO.Logar(funcionario);
                 System.out.println("O cpf de funcionario obtido e: " + funcionarioObtido.getCpf());
@@ -61,14 +62,27 @@ public class AutenticaController extends HttpServlet {
                 System.out.println(ex.getMessage());
                 throw new RuntimeException("Falha na query para Logar");
             }
-
+            String papelFuncionario = funcionarioObtido.getPapel();
             if (funcionarioObtido.getId() != 0) {
-                HttpSession session = request.getSession();
-                session.setAttribute("funcionario", funcionarioObtido);
+                if (papelFuncionario.equals("0")){
+                    HttpSession session = request.getSession();
+                    session.setAttribute("funcionario", funcionarioObtido);
 
-                rd = request.getRequestDispatcher("/admin/dashboard");
-                rd.forward(request, response);
+                    rd = request.getRequestDispatcher("/admin/administrador");
+                    rd.forward(request, response);
+                } else if (papelFuncionario.equals("1")){
+                    HttpSession session = request.getSession();
+                    session.setAttribute("funcionario", funcionarioObtido);
 
+                    rd = request.getRequestDispatcher("/admin/vendedor");
+                    rd.forward(request, response);
+                } else if (papelFuncionario.equals("2")){
+                    HttpSession session = request.getSession();
+                    session.setAttribute("funcionario", funcionarioObtido);
+
+                    rd = request.getRequestDispatcher("/admin/comprador");
+                    rd.forward(request, response);
+                }
             } else {
                 request.setAttribute("msgError", "Cpf e/ou senha incorreto");
                 rd = request.getRequestDispatcher("/views/autenticacao/formLogin.jsp");
