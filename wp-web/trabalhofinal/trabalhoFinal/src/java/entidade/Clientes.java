@@ -21,8 +21,34 @@ public class Clientes {
     private String telefone;
     private String email;
 
-    // Getters e Setters
+    public Clientes() {
+    }
 
+    public Clientes(int id, String nome, String cpf, String endereco, String bairro, String cidade, String uf, String cep, String telefone, String email) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.endereco = endereco;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.uf = uf;
+        this.cep = cep;
+        this.telefone = telefone;
+        this.email = email;
+    }
+
+    public Clientes(int id, String nome, String cpf) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
+    public Clientes(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
+    // Getters e Setters
     /**
      * @return the id
      */
@@ -162,5 +188,5 @@ public class Clientes {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
 }
