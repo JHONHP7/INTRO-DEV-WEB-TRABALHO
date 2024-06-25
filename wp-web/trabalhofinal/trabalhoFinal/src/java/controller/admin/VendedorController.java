@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author jhonatan
  */
-@WebServlet(name = "DashboardController", urlPatterns = {"/admin/dashboard"})
-public class DashboardController extends HttpServlet {
+@WebServlet(name = "DashboardController", urlPatterns = {"/admin/vendedor"})
+public class VendedorController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
