@@ -37,7 +37,7 @@ public class FornecedoresController extends HttpServlet {
             case "Listar":
                 ArrayList<Fornecedores> listaFornecedores = fornecedorDAO.getAll();
                 request.setAttribute("listaFornecedores", listaFornecedores);
-                rd = request.getRequestDispatcher("/views/admin/fornecedores/listaFornecedores.jsp");
+                rd = request.getRequestDispatcher("/views/admin/fornecedores/listarFornecedores.jsp");
                 rd.forward(request, response);
                 break;
 

@@ -52,7 +52,7 @@
                         <input type="hidden" name="id" value="<%=fornecedor != null ? fornecedor.getId() : ""%>" class="form-control">
                         
                         <div class="mb-3">
-                            <label for="nome" class="form-label">Razão Social</label>
+                            <label for="razaoSocial" class="form-label">Razão Social</label>
                             <input type="text" name="Razão Social" <%= acao.equals("Excluir") ? "readonly" : "" %> value="<%=fornecedor != null ? fornecedor.getRazaoSocial() : ""%>" class="form-control">
                         </div>
                         

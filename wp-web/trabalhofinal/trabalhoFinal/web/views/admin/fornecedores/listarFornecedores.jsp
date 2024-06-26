@@ -30,7 +30,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Razão Social</th>
-                                <th>CPF</th>
+                                <th>CNPJ</th>
                                 <th>Endereço</th>
                                 <th>Bairro</th>
                                 <th>Cidade</th>
