@@ -22,7 +22,6 @@ public class MostrarProdutos extends HttpServlet {
         try {
             ArrayList<Produtos> allProdutos = produtoDAO.getAll();
             
-            // Filtra produtos disponíveis e liberados para venda
             List<Produtos> produtosFiltrados = new ArrayList<>();
             for (Produtos produto : allProdutos) {
                 if (produto.getQuantidadeDisponivel() != 0 && produto.getLiberadoVenda() == 'S') {

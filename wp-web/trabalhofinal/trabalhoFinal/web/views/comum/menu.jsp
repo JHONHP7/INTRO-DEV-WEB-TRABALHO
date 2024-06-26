@@ -20,7 +20,7 @@
                     String papel = funcionarioLogado.getPapel();
                     if ("1".equals(papel)) { %>
                             <a class="nav-link" href="/trabalhoFinal/admin/vendedor/listaClientes?acao=Listar">Cadastro de Clientes</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/vendedor/listaVendas">Cadastro de Vendas</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/vendedor/vendedorCadastroVendas?acao=Listar">Cadastro de Vendas</a>
                             
                     <% } else if ("0".equals(papel)) { %>
                             <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Listar">Cadastro de Vendedores</a>

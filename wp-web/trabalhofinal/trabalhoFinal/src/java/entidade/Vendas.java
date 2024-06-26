@@ -20,6 +20,19 @@ public class Vendas {
     private int idProduto;
     private int idFuncionario;
 
+    public Vendas() {
+    }
+
+    public Vendas(int id, int quantidadeVenda, Date dataVenda, float valorVenda, int idCliente, int idProduto, int idFuncionario) {
+        this.id = id;
+        this.quantidadeVenda = quantidadeVenda;
+        this.dataVenda = dataVenda;
+        this.valorVenda = valorVenda;
+        this.idCliente = idCliente;
+        this.idProduto = idProduto;
+        this.idFuncionario = idFuncionario;
+    }
+
     /**
      * @return the id
      */
@@ -117,6 +130,5 @@ public class Vendas {
     public void setIdFuncionario(int idFuncionario) {
         this.idFuncionario = idFuncionario;
     }
-    
-    
+
 }
