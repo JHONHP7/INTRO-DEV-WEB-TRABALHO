@@ -37,16 +37,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <%
-                                ArrayList<Clientes> listaClientes = (ArrayList<Clientes>) request.getAttribute("listaClientes");
+                            <% ArrayList<Clientes> listaClientes = (ArrayList<Clientes>) request.getAttribute("listaClientes");
                                 if (listaClientes != null) {
-                                    for (Clientes cliente : listaClientes) {
-                            %>
+                                    for (Clientes cliente : listaClientes) { %>
                             <tr>
                                 <td><%= cliente.getId() %></td>
-                                <td><%= cliente.getNome() %></td>
-                                <td><%= cliente.getCpf() %></td>
-                                <td><%= cliente.getEndereco() %></td>
+                                <td class="text-nowrap"><%= cliente.getNome() %></td>
+                                <td class="text-nowrap"><%= cliente.getCpf() %></td>
+                                <td class="text-nowrap"><%= cliente.getEndereco() %></td>
                                 <td><%= cliente.getBairro() %></td>
                                 <td><%= cliente.getCidade() %></td>
                                 <td><%= cliente.getUf() %></td>
@@ -54,12 +52,13 @@
                                 <td><%= cliente.getTelefone() %></td>
                                 <td><%= cliente.getEmail() %></td>
                                 <td>
-                                    <a href="/trabalhoFinal/admin/vendedor/listaClientes?acao=Alterar&id=<%= cliente.getId() %>" class="btn btn-warning">Alterar</a>
-                                    <a href="/trabalhoFinal/admin/vendedor/listaClientes?acao=Excluir&id=<%= cliente.getId() %>" class="btn btn-danger">Excluir</a>
+                                    <div class="btn-group" role="group">
+                                        <a href="/trabalhoFinal/admin/vendedor/listaClientes?acao=Alterar&id=<%= cliente.getId() %>" class="btn btn-warning me-1">Alterar</a>
+                                        <a href="/trabalhoFinal/admin/vendedor/listaClientes?acao=Excluir&id=<%= cliente.getId() %>" class="btn btn-danger">Excluir</a>
+                                    </div>
                                 </td>
                             </tr>
-                            <%
-                                    }
+                            <%      }
                                 }
                             %>
                         </tbody>

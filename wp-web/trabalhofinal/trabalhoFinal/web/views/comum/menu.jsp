@@ -23,7 +23,7 @@
                             <a class="nav-link" href="/trabalhoFinal/admin/vendedor/listaVendas">Cadastro de Vendas</a>
                             
                     <% } else if ("0".equals(papel)) { %>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarVendedores">Cadastro de Vendedóores</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarVendedores">Cadastro de Vendedores</a>
                             <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarCompradores">Cadastro de Compradores</a>
                             <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarAdministradores">Cadastro de Administradores</a>
                             <a class="nav-link" href="/trabalhoFinal/admin/administrador/relatorio">Relatório</a>
