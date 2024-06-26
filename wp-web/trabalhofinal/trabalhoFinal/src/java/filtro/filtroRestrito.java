@@ -50,7 +50,8 @@ public class filtroRestrito implements Filter {
                 httpRequest.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
             }
         } else {
-            httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.jsp");
+//            httpResponse.sendRedirect(httpRequest.getContextPath() + "/home.jsp");
+            ((HttpServletResponse) response).sendRedirect("http://localhost:8080/trabalhoFinal/home");
         }
     }
 

@@ -23,10 +23,10 @@
                             <a class="nav-link" href="/trabalhoFinal/admin/vendedor/listaVendas">Cadastro de Vendas</a>
                             
                     <% } else if ("0".equals(papel)) { %>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarVendedores">Cadastro de Vendedores</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Listar">Cadastro de Vendedores</a>
                             <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarCompradores">Cadastro de Compradores</a>
                             <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarAdministradores">Cadastro de Administradores</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/relatorio">Relatório</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/relatorios">Relatório</a>
                             
                     <% } else if ("2".equals(papel)) { %>
                             <a class="nav-link" href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar">Cadastro de Fornecedores</a>

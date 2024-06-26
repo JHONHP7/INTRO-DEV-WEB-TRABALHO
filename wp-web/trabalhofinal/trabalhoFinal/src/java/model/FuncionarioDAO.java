@@ -60,6 +60,30 @@ public class FuncionarioDAO implements Dao<Funcionarios> {
         return listaFuncionarios;
     }
 
+    public ArrayList<Funcionarios> getAllVendedores() {
+        ArrayList<Funcionarios> listaFuncionarios = new ArrayList<>();
+        Conexao conexao = new Conexao();
+        try {
+            String selectSQL = "SELECT * FROM trabalhofinal.funcionarios where papel like '1' ORDER BY nome";
+            PreparedStatement preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
+            ResultSet resultado = preparedStatement.executeQuery();
+            while (resultado.next()) {
+                Funcionarios funcionario = new Funcionarios();
+                funcionario.setId(resultado.getInt("id"));
+                funcionario.setNome(resultado.getString("nome"));
+                funcionario.setCpf(resultado.getString("cpf"));
+                funcionario.setSenha(resultado.getString("senha"));
+                funcionario.setPapel(resultado.getString("papel"));
+                listaFuncionarios.add(funcionario);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao listar funcionários: " + e.getMessage());
+        } finally {
+            conexao.closeConexao();
+        }
+        return listaFuncionarios;
+    }
+
     @Override
     public void insert(Funcionarios funcionario) {
         Conexao conexao = new Conexao();
@@ -114,8 +138,6 @@ public class FuncionarioDAO implements Dao<Funcionarios> {
     }
 
     public Funcionarios Logar(Funcionarios funcionario) {
-        System.out.print(funcionario.getCpf());
-        System.out.print(funcionario.getSenha());
         Conexao conexao = new Conexao();
         try {
             PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT * FROM funcionarios WHERE cpf = ? AND senha = ? LIMIT 1");
