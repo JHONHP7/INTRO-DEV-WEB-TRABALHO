@@ -19,8 +19,8 @@ import entidade.Funcionarios;
  *
  * @author jhonatan
  */
-@WebServlet(name = "AdmCadastroVendedores", urlPatterns = {"/admin/administrador/cadastroVendedores"})
-public class AdmCadastroVendedores extends HttpServlet {
+@WebServlet(name = "AdmCadastroAdms", urlPatterns = {"/admin/administrador/cadastroAdms"})
+public class AdmCadastroAdms extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -33,9 +33,9 @@ public class AdmCadastroVendedores extends HttpServlet {
         RequestDispatcher rd;
         switch (acao) {
             case "Listar":
-                ArrayList<Funcionarios> listaVendedores = funcionarioDAO.getAllVendedores();
-                request.setAttribute("listaVendedores", listaVendedores);
-                rd = request.getRequestDispatcher("/views/admin/vendedores/listaVendedores.jsp");
+                ArrayList<Funcionarios> listaAdms = funcionarioDAO.getAllAdms();
+                request.setAttribute("listaAdms", listaAdms);
+                rd = request.getRequestDispatcher("/views/admin/adms/listarAdms.jsp");
                 rd.forward(request, response);
                 break;
 
@@ -46,7 +46,7 @@ public class AdmCadastroVendedores extends HttpServlet {
                 request.setAttribute("funcionario", funcionario);
                 request.setAttribute("msgError", "");
                 request.setAttribute("acao", acao);
-                rd = request.getRequestDispatcher("/views/admin/vendedores/formVendedores.jsp");
+                rd = request.getRequestDispatcher("/views/admin/adms/formAdms.jsp");
                 rd.forward(request, response);
                 break;
 
@@ -54,7 +54,7 @@ public class AdmCadastroVendedores extends HttpServlet {
                 request.setAttribute("funcionario", funcionario);
                 request.setAttribute("msgError", "");
                 request.setAttribute("acao", acao);
-                rd = request.getRequestDispatcher("/views/admin/vendedores/formVendedores.jsp");
+                rd = request.getRequestDispatcher("/views/admin/adms/formAdms.jsp");
                 rd.forward(request, response);
                 break;
         }
@@ -69,7 +69,7 @@ public class AdmCadastroVendedores extends HttpServlet {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
-        String papel = "1"; // Considerando que o papel do vendedor seja sempre "1"
+        String papel = "0"; 
         String btEnviar = request.getParameter("btEnviar");
         RequestDispatcher rd;
 
@@ -90,7 +90,7 @@ public class AdmCadastroVendedores extends HttpServlet {
             request.setAttribute("funcionario", funcionario);
             request.setAttribute("acao", btEnviar);
             request.setAttribute("msgError", "É necessário preencher todos os campos");
-            rd = request.getRequestDispatcher("/views/admin/vendedores/listaVendedores.jsp");
+            rd = request.getRequestDispatcher("/views/admin/adms/listarAdms.jsp");
             rd.forward(request, response);
         } else {
             Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, papel);
@@ -110,7 +110,7 @@ public class AdmCadastroVendedores extends HttpServlet {
                         request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
                         break;
                 }
-                request.setAttribute("link", "/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Listar");
+                request.setAttribute("link", "/trabalhoFinal/admin/administrador/cadastroAdms?acao=Listar");
                 rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
                 rd.forward(request, response);
             } catch (IOException | ServletException ex) {

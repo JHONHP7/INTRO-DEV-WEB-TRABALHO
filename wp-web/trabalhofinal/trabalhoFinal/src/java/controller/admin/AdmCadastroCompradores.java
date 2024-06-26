@@ -4,23 +4,23 @@
  */
 package controller.admin;
 
+import entidade.Funcionarios;
+import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.ArrayList;
 import model.FuncionarioDAO;
-import entidade.Funcionarios;
 
 /**
  *
  * @author jhonatan
  */
-@WebServlet(name = "AdmCadastroVendedores", urlPatterns = {"/admin/administrador/cadastroVendedores"})
-public class AdmCadastroVendedores extends HttpServlet {
+@WebServlet(name = "AdmCadastroCompradores", urlPatterns = {"/admin/administrador/cadastroCompradores"})
+public class AdmCadastroCompradores extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -28,14 +28,15 @@ public class AdmCadastroVendedores extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String acao = (String) request.getParameter("acao");
+        System.out.println("A acao de comrpadores e: "+ acao);
         Funcionarios funcionario = new Funcionarios();
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         RequestDispatcher rd;
         switch (acao) {
             case "Listar":
-                ArrayList<Funcionarios> listaVendedores = funcionarioDAO.getAllVendedores();
-                request.setAttribute("listaVendedores", listaVendedores);
-                rd = request.getRequestDispatcher("/views/admin/vendedores/listaVendedores.jsp");
+                ArrayList<Funcionarios> listarCompradores = funcionarioDAO.getAllCompradores();
+                request.setAttribute("listarCompradores", listarCompradores);
+                rd = request.getRequestDispatcher("/views/admin/compradores/listarCompradores.jsp");
                 rd.forward(request, response);
                 break;
 
@@ -46,7 +47,7 @@ public class AdmCadastroVendedores extends HttpServlet {
                 request.setAttribute("funcionario", funcionario);
                 request.setAttribute("msgError", "");
                 request.setAttribute("acao", acao);
-                rd = request.getRequestDispatcher("/views/admin/vendedores/formVendedores.jsp");
+                rd = request.getRequestDispatcher("/views/admin/compradores/formCompradores.jsp");
                 rd.forward(request, response);
                 break;
 
@@ -54,7 +55,7 @@ public class AdmCadastroVendedores extends HttpServlet {
                 request.setAttribute("funcionario", funcionario);
                 request.setAttribute("msgError", "");
                 request.setAttribute("acao", acao);
-                rd = request.getRequestDispatcher("/views/admin/vendedores/formVendedores.jsp");
+                rd = request.getRequestDispatcher("/views/admin/compradores/formCompradores.jsp");
                 rd.forward(request, response);
                 break;
         }
@@ -69,7 +70,7 @@ public class AdmCadastroVendedores extends HttpServlet {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
-        String papel = "1"; // Considerando que o papel do vendedor seja sempre "1"
+        String papel = "2"; 
         String btEnviar = request.getParameter("btEnviar");
         RequestDispatcher rd;
 
@@ -82,7 +83,6 @@ public class AdmCadastroVendedores extends HttpServlet {
                         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
                         funcionario = funcionarioDAO.get(id);
                     } catch (Exception ex) {
-                        System.out.println(ex.getMessage());
                         throw new RuntimeException("Falha ao buscar funcionário");
                     }
                     break;
@@ -90,7 +90,7 @@ public class AdmCadastroVendedores extends HttpServlet {
             request.setAttribute("funcionario", funcionario);
             request.setAttribute("acao", btEnviar);
             request.setAttribute("msgError", "É necessário preencher todos os campos");
-            rd = request.getRequestDispatcher("/views/admin/vendedores/listaVendedores.jsp");
+            rd = request.getRequestDispatcher("/views/admin/compradores/listarCompradores.jsp");
             rd.forward(request, response);
         } else {
             Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, papel);
@@ -110,7 +110,7 @@ public class AdmCadastroVendedores extends HttpServlet {
                         request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
                         break;
                 }
-                request.setAttribute("link", "/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Listar");
+                request.setAttribute("link", "/trabalhoFinal/admin/administrador/cadastroCompradores?acao=Listar");
                 rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
                 rd.forward(request, response);
             } catch (IOException | ServletException ex) {

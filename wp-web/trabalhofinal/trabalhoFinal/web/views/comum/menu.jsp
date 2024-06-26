@@ -13,8 +13,8 @@
                     if (sessao != null) {
                         Funcionarios funcionarioLogado = (Funcionarios) sessao.getAttribute("funcionario");
                         if (funcionarioLogado != null) { %>
-                            <a class="nav-link" href="/trabalhoFinal/admin/dashboard">Dashboard</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/CategoriaController?acao=Listar">Categorias</a>
+<!--                        <a class="nav-link" href="/trabalhoFinal/admin/dashboard">Dashboard</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/CategoriaController?acao=Listar">Categorias</a>-->
                             <a class="nav-link" href="/trabalhoFinal/admin/logOut">Logout</a>
                 <%
                     String papel = funcionarioLogado.getPapel();
@@ -24,9 +24,9 @@
                             
                     <% } else if ("0".equals(papel)) { %>
                             <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Listar">Cadastro de Vendedores</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarCompradores">Cadastro de Compradores</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastrarAdministradores">Cadastro de Administradores</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/relatorios">Relatório</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroCompradores?acao=Listar">Cadastro de Compradores</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroAdms?acao=Listar">Cadastro de Administradores</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/relatorios?acao=Listar">Relatório</a>
                             
                     <% } else if ("2".equals(papel)) { %>
                             <a class="nav-link" href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar">Cadastro de Fornecedores</a>

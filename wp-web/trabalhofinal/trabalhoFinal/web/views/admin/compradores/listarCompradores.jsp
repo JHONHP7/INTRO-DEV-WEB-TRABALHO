@@ -1,6 +1,6 @@
 <%-- 
-    Document   : formListaVendedores
-    Created on : 25 de jun. de 2024, 22:42:00
+    Document   : listarCompradores
+    Created on : 26 de jun. de 2024, 04:23:56
     Author     : jhonatan
 --%>
 
@@ -16,15 +16,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
     <title>Listar Vendedores</title>
-    <link href="http://localhost:8080/aplicacaoMVC/views/bootstrap/bootstrap.min.css"  rel="stylesheet">
+    <link href="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.min.css"  rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <jsp:include page="../../comum/menu.jsp" />
         <div class="row mt-5 justify-content-center">
             <div class="col-lg-10 col-md-10 col-sm-10 col-12 mx-auto">
-                <h1 class="text-center">Lista de Vendedores</h1>
-                <a href="/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Incluir" class="mb-2 btn btn-primary">Incluir</a>
+                <h1 class="text-center">Lista de Compradores</h1>
+                <a href="/trabalhoFinal/admin/administrador/cadastroCompradores?acao=Incluir" class="mb-2 btn btn-primary">Incluir</a>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -38,9 +38,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <% ArrayList<Funcionarios> listaVendedores = (ArrayList<Funcionarios>) request.getAttribute("listaVendedores");
-                                if (listaVendedores != null) {
-                                    for (Funcionarios funcionario : listaVendedores) { %>
+                            <% ArrayList<Funcionarios> listarCompradores = (ArrayList<Funcionarios>) request.getAttribute("listarCompradores");
+                                if (listarCompradores != null) {
+                                    for (Funcionarios funcionario : listarCompradores) { %>
                             <tr>
                                 <td><%= funcionario.getId() %></td>
                                 <td class="text-nowrap"><%= funcionario.getNome() %></td>
@@ -49,8 +49,8 @@
                                 <td class="text-nowrap"><%= funcionario.getPapel() %></td>
                                 <td>
                                     <div class="btn-group" role="group">
-                                        <a href="/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Alterar&id=<%= funcionario.getId() %>" class="btn btn-warning me-1">Alterar</a>
-                                        <a href="/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Excluir&id=<%= funcionario.getId() %>" class="btn btn-danger">Excluir</a>
+                                        <a href="/trabalhoFinal/admin/administrador/cadastroCompradores?acao=Alterar&id=<%= funcionario.getId() %>" class="btn btn-warning me-1">Alterar</a>
+                                        <a href="/trabalhoFinal/admin/administrador/cadastroCompradores?acao=Excluir&id=<%= funcionario.getId() %>" class="btn btn-danger">Excluir</a>
                                     </div>
                                 </td>
                             </tr>
@@ -63,6 +63,6 @@
             </div>
         </div>
     </div>
-    <script src="http://localhost:8080/aplicacaoMVC/views/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>

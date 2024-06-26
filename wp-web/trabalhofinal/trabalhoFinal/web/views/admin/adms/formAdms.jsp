@@ -1,8 +1,10 @@
 <%-- 
-    Document   : formVendedores
-    Created on : 25 de jun. de 2024, 22:40:53
+    Document   : formAdms
+    Created on : 26 de jun. de 2024, 04:59:14
     Author     : jhonatan
 --%>
+
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entidade.Funcionarios"%>
@@ -14,7 +16,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Formulário Funcionários</title>
-        <link href="http://localhost:8080/aplicacaoMVC/views/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <link href="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
@@ -25,11 +27,11 @@
                         String acao = (String) request.getAttribute("acao");
                         Funcionarios funcionario = (Funcionarios) request.getAttribute("funcionario");
                         if ("Incluir".equals(acao)) {
-                            out.println("<h1>Incluir Vendedor</h1>");
+                            out.println("<h1>Incluir Administrador</h1>");
                         } else if ("Alterar".equals(acao)) {
-                            out.println("<h1>Alterar Vendedor</h1>");
+                            out.println("<h1>Alterar Administrador</h1>");
                         } else if ("Excluir".equals(acao)) {
-                            out.println("<h1>Excluir Vendedor</h1>");
+                            out.println("<h1>Excluir Administrador</h1>");
                         }
                         String msgError = (String) request.getAttribute("msgError");
                         if (msgError != null && !msgError.isEmpty()) {
@@ -39,7 +41,7 @@
                     </div>
                     <% }%>
 
-                    <form action="/trabalhoFinal/admin/administrador/cadastroVendedores" method="POST" accept-charset="UTF-8">
+                    <form action="/trabalhoFinal/admin/administrador/cadastroAdms" method="POST" accept-charset="UTF-8">
                         <input type="hidden" name="id" value="<%= funcionario != null ? funcionario.getId() : ""%>" class="form-control">
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
@@ -55,12 +57,13 @@
                         </div>
                         <div>
                             <input type="submit" name="btEnviar" value="<%= acao%>" class="btn btn-primary">
-                            <a href="/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Listar" class="btn btn-danger">Retornar</a>
+                            <a href="/trabalhoFinal/admin/administrador/cadastroAdms?acao=Listar" class="btn btn-danger">Retornar</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <script src="http://localhost:8080/aplicacaoMVC/views/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>
+
