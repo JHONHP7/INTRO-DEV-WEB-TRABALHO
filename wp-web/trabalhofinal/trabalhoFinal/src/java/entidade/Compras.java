@@ -20,6 +20,19 @@ public class Compras {
     private int idProduto;
     private int idFuncionario;
 
+    public Compras() {
+    }
+    
+    public Compras(int id, int quantidadeCompra, Date dataCompra, Float valorCompra, int idFornecedor, int idProduto, int idFuncionario) {
+        this.id = id;
+        this.quantidadeCompra = quantidadeCompra;
+        this.dataCompra = dataCompra;
+        this.valorCompra = valorCompra;
+        this.idFornecedor = idFornecedor;
+        this.idProduto = idProduto;
+        this.idFuncionario = idFuncionario;
+    }
+    
     /**
      * @return the id
      */

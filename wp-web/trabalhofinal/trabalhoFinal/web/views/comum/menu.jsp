@@ -30,7 +30,7 @@
                             
                     <% } else if ("2".equals(papel)) { %>
                             <a class="nav-link" href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar">Cadastro de Fornecedores</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/compras">Cadastro de Compras</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/listaCompras?acao=Listar">Cadastro de Compras</a>
                             <a class="nav-link" href="/trabalhoFinal/admin/comprador/produtosParaVenda">Colocar produtos para venda</a>
                             
                     <% } %>
