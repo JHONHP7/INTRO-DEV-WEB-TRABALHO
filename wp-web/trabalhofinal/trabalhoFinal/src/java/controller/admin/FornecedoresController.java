@@ -63,69 +63,69 @@ public class FornecedoresController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+    request.setCharacterEncoding("UTF-8");
 
+    int id = Integer.parseInt(request.getParameter("id"));
+    String razaoSocial = request.getParameter("razao_social");  // Agora corresponde ao nome do campo no formulário HTML
+    String cnpj = request.getParameter("cnpj");
+    String endereco = request.getParameter("endereco");
+    String bairro = request.getParameter("bairro");
+    String cidade = request.getParameter("cidade");
+    String uf = request.getParameter("uf");
+    String cep = request.getParameter("cep");
+    String telefone = request.getParameter("telefone");
+    String email = request.getParameter("email");
+    String btEnviar = request.getParameter("btEnviar");
+    RequestDispatcher rd;
 
-        int id = Integer.parseInt(request.getParameter("id"));
-        String razaoSocial = request.getParameter("razao_social");
-        String cnpj = request.getParameter("cnpj");
-        String endereco = request.getParameter("endereco");
-        String bairro = request.getParameter("bairro");
-        String cidade = request.getParameter("cidade");
-        String uf = request.getParameter("uf");
-        String cep = request.getParameter("cep");
-        String telefone = request.getParameter("telefone");
-        String email = request.getParameter("email");
-        String btEnviar = request.getParameter("btEnviar");
-        RequestDispatcher rd;
-
-        if (razaoSocial.isEmpty() || cnpj.isEmpty() || endereco.isEmpty() || bairro.isEmpty() || cidade.isEmpty() || uf.isEmpty() || cep.isEmpty() || telefone.isEmpty() || email.isEmpty()) {
-            Fornecedores fornecedor = new Fornecedores();
+    if (razaoSocial.isEmpty() || cnpj.isEmpty() || endereco.isEmpty() || bairro.isEmpty() || cidade.isEmpty() || uf.isEmpty() || cep.isEmpty() || telefone.isEmpty() || email.isEmpty()) {
+        Fornecedores fornecedor = new Fornecedores();
+        switch (btEnviar) {
+            case "Alterar":
+            case "Excluir":
+                try {
+                    FornecedorDAO fornecedorDAO = new FornecedorDAO();
+                    fornecedor = fornecedorDAO.get(id);
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                    throw new RuntimeException("Falha em uma query para cadastro de fornecedor");
+                }
+                break;
+        }
+        request.setAttribute("fornecedor", fornecedor);
+        request.setAttribute("acao", btEnviar);
+        request.setAttribute("msgError", "É necessário preencher todos os campos");
+        rd = request.getRequestDispatcher("/views/admin/Fornecedores/formFornecedores.jsp");
+        rd.forward(request, response);
+    } else {
+        Fornecedores fornecedor = new Fornecedores(id, razaoSocial, cnpj, endereco, bairro, cidade, uf, cep, telefone, email);
+        FornecedorDAO fornecedorDAO = new FornecedorDAO();
+        try {
             switch (btEnviar) {
+                case "Incluir":
+                    fornecedorDAO.insert(fornecedor);
+                    request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
+                    break;
                 case "Alterar":
+                    fornecedorDAO.update(fornecedor);
+                    request.setAttribute("msgOperacaoRealizada", "Alteração realizada com sucesso");
+                    break;
                 case "Excluir":
-                    try {
-                        FornecedorDAO fornecedorDAO = new FornecedorDAO();
-                        fornecedor = fornecedorDAO.get(id);
-                    } catch (Exception ex) {
-                        System.out.println(ex.getMessage());
-                        throw new RuntimeException("Falha em uma query para cadastro de fornecedor");
-                    }
+                    fornecedorDAO.delete(id);
+                    request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
                     break;
             }
-            request.setAttribute("fornecedor", fornecedor);
-            request.setAttribute("acao", btEnviar);
-            request.setAttribute("msgError", "É necessário preencher todos os campos");
-            rd = request.getRequestDispatcher("/views/admin/Fornecedores/formFornecedores.jsp");
+            request.setAttribute("link", "/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar");
+            rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
             rd.forward(request, response);
-        } else {
-            Fornecedores fornecedor = new Fornecedores(id, razaoSocial, cnpj, endereco, bairro, cidade, uf, cep, telefone, email);
-            FornecedorDAO fornecedorDAO = new FornecedorDAO();
-            try {
-                switch (btEnviar) {
-                    case "Incluir":
-                        fornecedorDAO.insert(fornecedor);
-                        request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
-                        break;
-                    case "Alterar":
-                        fornecedorDAO.update(fornecedor);
-                        request.setAttribute("msgOperacaoRealizada", "Alteração realizada com sucesso");
-                        break;
-                    case "Excluir":
-                        fornecedorDAO.delete(id);
-                        request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
-                        break;
-                }
-                request.setAttribute("link", "/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar");
-                rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
-                rd.forward(request, response);
-            } catch (IOException | ServletException ex) {
-                System.out.println(ex.getMessage());
-                throw new RuntimeException("Falha em uma query para cadastro de usuario");
-            }
+        } catch (IOException | ServletException ex) {
+            System.out.println(ex.getMessage());
+            throw new RuntimeException("Falha em uma query para cadastro de usuario");
         }
     }
+}
+
 
 }
