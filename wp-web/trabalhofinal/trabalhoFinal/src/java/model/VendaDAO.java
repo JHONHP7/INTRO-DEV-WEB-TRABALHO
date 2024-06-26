@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.sql.Date;
 import entidade.Vendas;
+import entidade.aux.TotalVendasDiarias;
+import entidade.aux.TotalVendasProduto;
 
 public class VendaDAO implements Dao<Vendas> {
 
@@ -117,5 +119,58 @@ public class VendaDAO implements Dao<Vendas> {
         } finally {
             conexao.closeConexao();
         }
+    }
+
+    /**
+     * Metodos novos
+     */
+    public ArrayList<TotalVendasProduto> getTotalVendasPorProduto() {
+    ArrayList<TotalVendasProduto> listaTotalVendasProduto = new ArrayList<>();
+    Conexao conexao = new Conexao();
+    try {
+        String selectSQL = "SELECT p.id, p.nome_produto, SUM(v.quantidade_venda) AS total_quantidade_vendida, " +
+                            "SUM(v.valor_venda) AS total_valor_vendido " +
+                            "FROM vendas v " +
+                            "JOIN produtos p ON v.id_produto = p.id " +
+                            "GROUP BY p.id, p.nome_produto";
+        PreparedStatement preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
+        ResultSet resultado = preparedStatement.executeQuery();
+        while (resultado.next()) {
+            TotalVendasProduto totalVendasProduto = new TotalVendasProduto();
+            totalVendasProduto.setIdProduto(resultado.getInt("id"));
+            totalVendasProduto.setNomeProduto(resultado.getString("nome_produto"));
+            totalVendasProduto.setTotalQuantidadeVendida(resultado.getInt("total_quantidade_vendida"));
+            totalVendasProduto.setTotalValorVendido(resultado.getFloat("total_valor_vendido"));
+            listaTotalVendasProduto.add(totalVendasProduto);
+        }
+    } catch (SQLException e) {
+        throw new RuntimeException("Erro ao listar total de vendas por produto: " + e.getMessage());
+    } finally {
+        conexao.closeConexao();
+    }
+    return listaTotalVendasProduto;
+}
+
+
+    public ArrayList<TotalVendasDiarias> getTotalVendasDiarias() {
+        ArrayList<TotalVendasDiarias> listaTotalVendasDiarias = new ArrayList<>();
+        Conexao conexao = new Conexao();
+        try {
+            String selectSQL = "SELECT data_venda, SUM(quantidade_venda) AS total_quantidade_vendida, ROUND(SUM(valor_venda), 2) AS total_valor_vendido FROM trabalhofinal.vendas GROUP BY data_venda";
+            PreparedStatement preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
+            ResultSet resultado = preparedStatement.executeQuery();
+            while (resultado.next()) {
+                TotalVendasDiarias totalVendasDiarias = new TotalVendasDiarias();
+                totalVendasDiarias.setDataVenda(resultado.getDate("data_venda"));
+                totalVendasDiarias.setTotalQuantidadeVendida(resultado.getInt("total_quantidade_vendida"));
+                totalVendasDiarias.setTotalValorVendido(resultado.getDouble("total_valor_vendido"));
+                listaTotalVendasDiarias.add(totalVendasDiarias);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao calcular total de vendas diárias: " + e.getMessage());
+        } finally {
+            conexao.closeConexao();
+        }
+        return listaTotalVendasDiarias;
     }
 }

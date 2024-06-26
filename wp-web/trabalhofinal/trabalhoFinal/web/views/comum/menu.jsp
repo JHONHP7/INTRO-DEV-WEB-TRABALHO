@@ -26,7 +26,7 @@
                             <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Listar">Cadastro de Vendedores</a>
                             <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroCompradores?acao=Listar">Cadastro de Compradores</a>
                             <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroAdms?acao=Listar">Cadastro de Administradores</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/relatorios?acao=Listar">Relatório</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/relatorios?acao=ListarReceita">Relatório</a>
                             
                     <% } else if ("2".equals(papel)) { %>
                             <a class="nav-link" href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar">Cadastro de Fornecedores</a>
