@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/home/jhonatan-silva/faculdade/wp-web/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3446608697.index
+1385921214.index
+2570907081.index
+4015912735.index
+1528407110.index
+1471649882.index
+3405608211.index

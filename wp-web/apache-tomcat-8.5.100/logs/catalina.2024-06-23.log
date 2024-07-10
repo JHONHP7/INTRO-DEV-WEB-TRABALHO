@@ -1,0 +1,834 @@
+23-Jun-2024 18:26:00.906 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.100
+23-Jun-2024 18:26:00.912 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 13:54:42 UTC
+23-Jun-2024 18:26:00.912 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.100.0
+23-Jun-2024 18:26:00.912 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+23-Jun-2024 18:26:00.913 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-35-generic
+23-Jun-2024 18:26:00.913 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+23-Jun-2024 18:26:00.913 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+23-Jun-2024 18:26:00.913 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.11+9-Ubuntu-1
+23-Jun-2024 18:26:00.913 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+23-Jun-2024 18:26:00.914 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+23-Jun-2024 18:26:00.914 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+23-Jun-2024 18:26:00.916 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+23-Jun-2024 18:26:00.917 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+23-Jun-2024 18:26:00.917 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+23-Jun-2024 18:26:00.917 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+23-Jun-2024 18:26:00.917 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+23-Jun-2024 18:26:00.917 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/logging.properties
+23-Jun-2024 18:26:00.917 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+23-Jun-2024 18:26:00.918 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|note-ubuntu
+23-Jun-2024 18:26:00.918 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+23-Jun-2024 18:26:00.918 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+23-Jun-2024 18:26:00.918 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+23-Jun-2024 18:26:00.918 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+23-Jun-2024 18:26:00.918 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+23-Jun-2024 18:26:00.918 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+23-Jun-2024 18:26:00.919 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/temp
+23-Jun-2024 18:26:00.919 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+23-Jun-2024 18:26:00.981 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+23-Jun-2024 18:26:01.027 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1091 ms
+23-Jun-2024 18:26:01.128 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+23-Jun-2024 18:26:01.128 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/8.5.100]
+23-Jun-2024 18:26:01.140 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml]
+23-Jun-2024 18:26:01.179 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/encaminharIMCAtributo] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml] has been ignored
+23-Jun-2024 18:26:01.234 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@70363c55]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharIMCAtributo/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 18:26:01.235 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@70363c55]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharIMCAtributo/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 18:26:01.237 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml] has finished in [97] ms
+23-Jun-2024 18:26:01.238 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametro.xml]
+23-Jun-2024 18:26:01.241 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ExemploGetParametro] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametro.xml] has been ignored
+23-Jun-2024 18:26:01.821 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametro.xml] has finished in [582] ms
+23-Jun-2024 18:26:01.821 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/AloMundo.xml]
+23-Jun-2024 18:26:01.822 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/AloMundo] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/AloMundo.xml] has been ignored
+23-Jun-2024 18:26:01.866 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/AloMundo.xml] has finished in [45] ms
+23-Jun-2024 18:26:01.866 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml]
+23-Jun-2024 18:26:01.868 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ExemploGetePost] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml] has been ignored
+23-Jun-2024 18:26:01.872 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@6f8f9216]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetePOst/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 18:26:01.873 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@6f8f9216]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetePOst/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 18:26:01.874 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml] has finished in [7] ms
+23-Jun-2024 18:26:01.874 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml]
+23-Jun-2024 18:26:01.876 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/emcaminharAtributoObjeto] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml] has been ignored
+23-Jun-2024 18:26:01.880 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@610a06c9]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/emcaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 18:26:01.881 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@610a06c9]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/emcaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 18:26:01.882 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml] has finished in [7] ms
+23-Jun-2024 18:26:01.883 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml]
+23-Jun-2024 18:26:01.885 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ExemploGetParametros] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml] has been ignored
+23-Jun-2024 18:26:01.889 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@31b770b4]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetParametros/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 18:26:01.890 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@31b770b4]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetParametros/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 18:26:01.891 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml] has finished in [8] ms
+23-Jun-2024 18:26:01.891 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetPost.xml]
+23-Jun-2024 18:26:01.893 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ExemploGetPost] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetPost.xml] has been ignored
+23-Jun-2024 18:26:01.973 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetPost.xml] has finished in [82] ms
+23-Jun-2024 18:26:01.974 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGet.xml]
+23-Jun-2024 18:26:01.975 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ExemploGet] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGet.xml] has been ignored
+23-Jun-2024 18:26:02.061 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGet.xml] has finished in [87] ms
+23-Jun-2024 18:26:02.064 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMC.xml]
+23-Jun-2024 18:26:02.068 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/encaminharIMC] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMC.xml] has been ignored
+23-Jun-2024 18:26:02.145 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMC.xml] has finished in [80] ms
+23-Jun-2024 18:26:02.146 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploDuplaFuncao.xml]
+23-Jun-2024 18:26:02.149 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ExemploDuplaFuncao] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploDuplaFuncao.xml] has been ignored
+23-Jun-2024 18:26:02.212 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploDuplaFuncao.xml] has finished in [66] ms
+23-Jun-2024 18:26:02.213 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml]
+23-Jun-2024 18:26:02.215 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/encaminharAtributoObjeto] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml] has been ignored
+23-Jun-2024 18:26:02.229 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@4d380ade]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 18:26:02.229 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@4d380ade]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 18:26:02.230 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml] has finished in [18] ms
+23-Jun-2024 18:26:02.230 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploPost.xml]
+23-Jun-2024 18:26:02.237 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ExemploPost] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploPost.xml] has been ignored
+23-Jun-2024 18:26:02.319 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploPost.xml] has finished in [89] ms
+23-Jun-2024 18:26:02.321 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/host-manager]
+23-Jun-2024 18:26:02.429 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/host-manager] has finished in [108] ms
+23-Jun-2024 18:26:02.429 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/manager]
+23-Jun-2024 18:26:02.490 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/manager] has finished in [61] ms
+23-Jun-2024 18:26:02.490 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/examples]
+23-Jun-2024 18:26:02.916 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/examples] has finished in [425] ms
+23-Jun-2024 18:26:02.916 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/ROOT]
+23-Jun-2024 18:26:02.944 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/ROOT] has finished in [28] ms
+23-Jun-2024 18:26:02.945 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/docs]
+23-Jun-2024 18:26:03.000 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/docs] has finished in [55] ms
+23-Jun-2024 18:26:03.010 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+23-Jun-2024 18:26:03.033 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in 2005 ms
+23-Jun-2024 18:26:04.568 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/aplicacaoMVC.xml]
+23-Jun-2024 18:26:04.570 ADVERTÊNCIA [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/aplicacaoMVC] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/aplicacaoMVC.xml] has been ignored
+23-Jun-2024 18:26:05.109 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 18:26:05.113 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/aplicacaoMVC.xml] has finished in [546] ms
+23-Jun-2024 18:26:05.124 INFORMAÇÕES [http-nio-8080-exec-9] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/aplicacaoMVC]] after start() had already been called. The second call will be ignored.
+23-Jun-2024 18:27:48.447 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/aplicacaoMVC] has started
+23-Jun-2024 18:27:48.468 ADVERTÊNCIA [http-nio-8080-exec-8] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [aplicacaoMVC] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+23-Jun-2024 18:27:48.469 ADVERTÊNCIA [http-nio-8080-exec-8] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [aplicacaoMVC] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 18:27:48.512 INFORMAÇÕES [33] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 18:27:48.819 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 18:27:48.829 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/aplicacaoMVC] is completed
+23-Jun-2024 18:27:50.243 INFORMAÇÕES [http-nio-8080-exec-3] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/aplicacaoMVC] has started
+23-Jun-2024 18:27:50.570 INFORMAÇÕES [http-nio-8080-exec-3] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 18:27:50.573 INFORMAÇÕES [http-nio-8080-exec-3] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/aplicacaoMVC] is completed
+23-Jun-2024 19:20:55.532 INFORMAÇÕES [http-nio-8080-exec-13] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/ExemploPost]
+23-Jun-2024 19:20:58.405 INFORMAÇÕES [http-nio-8080-exec-22] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/ExemploGetPost]
+23-Jun-2024 19:21:02.746 INFORMAÇÕES [http-nio-8080-exec-22] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/ExemploGetParametro]
+23-Jun-2024 19:21:06.244 INFORMAÇÕES [http-nio-8080-exec-22] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/ExemploGet]
+23-Jun-2024 19:21:09.077 INFORMAÇÕES [http-nio-8080-exec-22] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/ExemploDuplaFuncao]
+23-Jun-2024 19:21:12.135 INFORMAÇÕES [http-nio-8080-exec-18] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/encaminharIMC]
+23-Jun-2024 19:21:37.233 INFORMAÇÕES [http-nio-8080-exec-29] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/AloMundo]
+23-Jun-2024 22:54:30.409 INFORMAÇÕES [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+23-Jun-2024 22:54:30.452 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+23-Jun-2024 22:54:30.505 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+23-Jun-2024 22:54:30.811 ADVERTÊNCIA [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [aplicacaoMVC] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+23-Jun-2024 22:54:30.822 ADVERTÊNCIA [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [aplicacaoMVC] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 22:54:30.877 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+23-Jun-2024 22:54:31.122 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+23-Jun-2024 23:05:51.631 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.100
+23-Jun-2024 23:05:51.640 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 13:54:42 UTC
+23-Jun-2024 23:05:51.640 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.100.0
+23-Jun-2024 23:05:51.640 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+23-Jun-2024 23:05:51.641 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-35-generic
+23-Jun-2024 23:05:51.641 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+23-Jun-2024 23:05:51.641 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+23-Jun-2024 23:05:51.641 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.11+9-Ubuntu-1
+23-Jun-2024 23:05:51.641 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+23-Jun-2024 23:05:51.641 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+23-Jun-2024 23:05:51.642 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+23-Jun-2024 23:05:51.645 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+23-Jun-2024 23:05:51.645 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+23-Jun-2024 23:05:51.645 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+23-Jun-2024 23:05:51.645 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+23-Jun-2024 23:05:51.645 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+23-Jun-2024 23:05:51.646 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/logging.properties
+23-Jun-2024 23:05:51.646 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+23-Jun-2024 23:05:51.646 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|note-ubuntu
+23-Jun-2024 23:05:51.646 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+23-Jun-2024 23:05:51.646 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+23-Jun-2024 23:05:51.647 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+23-Jun-2024 23:05:51.647 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+23-Jun-2024 23:05:51.647 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+23-Jun-2024 23:05:51.647 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+23-Jun-2024 23:05:51.648 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/temp
+23-Jun-2024 23:05:51.648 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+23-Jun-2024 23:05:51.744 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+23-Jun-2024 23:05:51.799 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1661 ms
+23-Jun-2024 23:05:51.911 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+23-Jun-2024 23:05:51.911 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/8.5.100]
+23-Jun-2024 23:05:51.931 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml]
+23-Jun-2024 23:05:51.968 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/encaminharIMCAtributo] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml] has been ignored
+23-Jun-2024 23:05:52.030 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@70363c55]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharIMCAtributo/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 23:05:52.031 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@70363c55]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharIMCAtributo/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 23:05:52.033 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml] has finished in [101] ms
+23-Jun-2024 23:05:52.034 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml]
+23-Jun-2024 23:05:52.037 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ExemploGetePost] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml] has been ignored
+23-Jun-2024 23:05:52.044 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@6f893c1b]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetePOst/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 23:05:52.044 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@6f893c1b]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetePOst/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 23:05:52.046 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml] has finished in [11] ms
+23-Jun-2024 23:05:52.046 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml]
+23-Jun-2024 23:05:52.055 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/emcaminharAtributoObjeto] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml] has been ignored
+23-Jun-2024 23:05:52.065 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@52865157]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/emcaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 23:05:52.072 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@52865157]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/emcaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 23:05:52.090 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml] has finished in [44] ms
+23-Jun-2024 23:05:52.090 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml]
+23-Jun-2024 23:05:52.092 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ExemploGetParametros] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml] has been ignored
+23-Jun-2024 23:05:52.101 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@6a600aa7]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetParametros/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 23:05:52.102 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@6a600aa7]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetParametros/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 23:05:52.106 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml] has finished in [16] ms
+23-Jun-2024 23:05:52.110 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/aplicacaoMVC.xml]
+23-Jun-2024 23:05:52.112 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/aplicacaoMVC] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/aplicacaoMVC.xml] has been ignored
+23-Jun-2024 23:05:53.191 INFORMAÇÕES [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:05:53.303 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/aplicacaoMVC.xml] has finished in [1,193] ms
+23-Jun-2024 23:05:53.304 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml]
+23-Jun-2024 23:05:53.305 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/encaminharAtributoObjeto] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml] has been ignored
+23-Jun-2024 23:05:53.312 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@74237071]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 23:05:53.313 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@74237071]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+23-Jun-2024 23:05:53.317 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml] has finished in [9] ms
+23-Jun-2024 23:05:53.321 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/host-manager]
+23-Jun-2024 23:05:53.462 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/host-manager] has finished in [140] ms
+23-Jun-2024 23:05:53.462 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/manager]
+23-Jun-2024 23:05:53.528 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/manager] has finished in [66] ms
+23-Jun-2024 23:05:53.530 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/examples]
+23-Jun-2024 23:05:53.974 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/examples] has finished in [444] ms
+23-Jun-2024 23:05:53.974 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/ROOT]
+23-Jun-2024 23:05:54.001 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/ROOT] has finished in [27] ms
+23-Jun-2024 23:05:54.001 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/docs]
+23-Jun-2024 23:05:54.030 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/docs] has finished in [28] ms
+23-Jun-2024 23:05:54.033 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+23-Jun-2024 23:05:54.049 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in 2249 ms
+23-Jun-2024 23:05:55.712 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/trabalhoFinal.xml]
+23-Jun-2024 23:05:55.713 ADVERTÊNCIA [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/trabalhoFinal] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/trabalhoFinal.xml] has been ignored
+23-Jun-2024 23:05:55.768 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/trabalhoFinal.xml] has finished in [56] ms
+23-Jun-2024 23:05:55.785 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/trabalhoFinal]] after start() had already been called. The second call will be ignored.
+23-Jun-2024 23:22:24.547 INFORMAÇÕES [http-nio-8080-exec-7] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+23-Jun-2024 23:22:26.388 INFORMAÇÕES [http-nio-8080-exec-7] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:22:26.403 INFORMAÇÕES [http-nio-8080-exec-7] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+23-Jun-2024 23:22:26.763 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+23-Jun-2024 23:22:27.059 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:22:27.061 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+23-Jun-2024 23:23:15.855 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+23-Jun-2024 23:23:16.135 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:23:16.138 INFORMAÇÕES [http-nio-8080-exec-10] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+23-Jun-2024 23:27:43.534 INFORMAÇÕES [http-nio-8080-exec-24] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+23-Jun-2024 23:27:43.588 ADVERTÊNCIA [http-nio-8080-exec-24] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:27:44.070 INFORMAÇÕES [http-nio-8080-exec-24] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:27:44.082 INFORMAÇÕES [http-nio-8080-exec-24] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+23-Jun-2024 23:27:44.286 INFORMAÇÕES [http-nio-8080-exec-21] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+23-Jun-2024 23:27:44.308 ADVERTÊNCIA [http-nio-8080-exec-21] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:27:44.536 INFORMAÇÕES [http-nio-8080-exec-21] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:27:44.540 INFORMAÇÕES [http-nio-8080-exec-21] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+23-Jun-2024 23:27:48.587 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:27:49.307 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:28:06.857 INFORMAÇÕES [http-nio-8080-exec-18] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+23-Jun-2024 23:28:06.872 ADVERTÊNCIA [http-nio-8080-exec-18] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:28:07.287 INFORMAÇÕES [http-nio-8080-exec-18] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:28:07.292 INFORMAÇÕES [http-nio-8080-exec-18] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+23-Jun-2024 23:28:07.740 INFORMAÇÕES [http-nio-8080-exec-29] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+23-Jun-2024 23:28:07.753 ADVERTÊNCIA [http-nio-8080-exec-29] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:28:08.082 INFORMAÇÕES [http-nio-8080-exec-29] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:28:08.086 INFORMAÇÕES [http-nio-8080-exec-29] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+23-Jun-2024 23:28:11.872 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:28:12.753 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:28:19.735 INFORMAÇÕES [http-nio-8080-exec-19] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+23-Jun-2024 23:28:19.743 ADVERTÊNCIA [http-nio-8080-exec-19] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.io.UnixFileSystem.getBooleanAttributes0(Native Method)
+ java.base@17.0.11/java.io.UnixFileSystem.hasBooleanAttributes(UnixFileSystem.java:274)
+ java.base@17.0.11/java.io.File.isDirectory(File.java:865)
+ org.apache.catalina.webresources.DirResourceSet.getResource(DirResourceSet.java:101)
+ org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:271)
+ org.apache.catalina.webresources.CachedResource.validateResource(CachedResource.java:105)
+ org.apache.catalina.webresources.Cache.getResource(Cache.java:86)
+ org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:210)
+ org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:219)
+ org.apache.catalina.loader.WebappClassLoaderBase.findResource(WebappClassLoaderBase.java:892)
+ org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1011)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:28:20.006 INFORMAÇÕES [http-nio-8080-exec-19] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:28:20.008 INFORMAÇÕES [http-nio-8080-exec-19] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+23-Jun-2024 23:28:24.743 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:28:26.128 INFORMAÇÕES [http-nio-8080-exec-17] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+23-Jun-2024 23:28:26.139 ADVERTÊNCIA [http-nio-8080-exec-17] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:28:26.424 INFORMAÇÕES [http-nio-8080-exec-17] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:28:26.427 INFORMAÇÕES [http-nio-8080-exec-17] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+23-Jun-2024 23:28:31.139 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:49:04.577 INFORMAÇÕES [http-nio-8080-exec-40] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+23-Jun-2024 23:49:05.011 ADVERTÊNCIA [http-nio-8080-exec-40] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:49:05.971 INFORMAÇÕES [http-nio-8080-exec-40] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:49:06.022 INFORMAÇÕES [http-nio-8080-exec-40] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+23-Jun-2024 23:49:06.369 INFORMAÇÕES [http-nio-8080-exec-37] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+23-Jun-2024 23:49:06.380 ADVERTÊNCIA [http-nio-8080-exec-37] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:49:06.679 INFORMAÇÕES [http-nio-8080-exec-37] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Jun-2024 23:49:06.683 INFORMAÇÕES [http-nio-8080-exec-37] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+23-Jun-2024 23:49:10.004 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+23-Jun-2024 23:49:11.380 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)

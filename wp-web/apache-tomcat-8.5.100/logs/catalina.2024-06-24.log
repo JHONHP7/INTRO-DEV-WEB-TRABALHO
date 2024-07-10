@@ -1,0 +1,890 @@
+24-Jun-2024 00:04:39.245 INFORMAÇÕES [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+24-Jun-2024 00:04:39.274 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+24-Jun-2024 00:04:39.319 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+24-Jun-2024 00:04:39.730 ADVERTÊNCIA [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 00:04:39.786 ADVERTÊNCIA [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [aplicacaoMVC] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 00:04:39.787 ADVERTÊNCIA [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [aplicacaoMVC] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 00:04:39.813 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+24-Jun-2024 00:04:39.944 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+24-Jun-2024 00:51:37.647 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.100
+24-Jun-2024 00:51:37.654 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 13:54:42 UTC
+24-Jun-2024 00:51:37.654 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.100.0
+24-Jun-2024 00:51:37.654 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+24-Jun-2024 00:51:37.655 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-35-generic
+24-Jun-2024 00:51:37.655 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+24-Jun-2024 00:51:37.655 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+24-Jun-2024 00:51:37.655 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.11+9-Ubuntu-1
+24-Jun-2024 00:51:37.655 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+24-Jun-2024 00:51:37.656 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+24-Jun-2024 00:51:37.656 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+24-Jun-2024 00:51:37.657 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jun-2024 00:51:37.657 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jun-2024 00:51:37.658 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jun-2024 00:51:37.658 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jun-2024 00:51:37.658 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jun-2024 00:51:37.658 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/logging.properties
+24-Jun-2024 00:51:37.658 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jun-2024 00:51:37.659 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|note-ubuntu
+24-Jun-2024 00:51:37.659 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+24-Jun-2024 00:51:37.659 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Jun-2024 00:51:37.659 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+24-Jun-2024 00:51:37.659 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+24-Jun-2024 00:51:37.659 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+24-Jun-2024 00:51:37.660 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100
+24-Jun-2024 00:51:37.660 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/temp
+24-Jun-2024 00:51:37.660 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+24-Jun-2024 00:51:37.733 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+24-Jun-2024 00:51:37.816 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1138 ms
+24-Jun-2024 00:51:37.907 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+24-Jun-2024 00:51:37.908 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/8.5.100]
+24-Jun-2024 00:51:37.924 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml]
+24-Jun-2024 00:51:37.959 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/encaminharIMCAtributo] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml] has been ignored
+24-Jun-2024 00:51:38.024 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@70363c55]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharIMCAtributo/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+24-Jun-2024 00:51:38.027 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@70363c55]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharIMCAtributo/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+24-Jun-2024 00:51:38.030 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMCAtributo.xml] has finished in [106] ms
+24-Jun-2024 00:51:38.031 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml]
+24-Jun-2024 00:51:38.032 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ExemploGetePost] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml] has been ignored
+24-Jun-2024 00:51:38.038 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@6f893c1b]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetePOst/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+24-Jun-2024 00:51:38.039 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@6f893c1b]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetePOst/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+24-Jun-2024 00:51:38.040 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetePost.xml] has finished in [8] ms
+24-Jun-2024 00:51:38.040 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml]
+24-Jun-2024 00:51:38.041 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/emcaminharAtributoObjeto] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml] has been ignored
+24-Jun-2024 00:51:38.046 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@52865157]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/emcaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+24-Jun-2024 00:51:38.047 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@52865157]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/emcaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+24-Jun-2024 00:51:38.048 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/emcaminharAtributoObjeto.xml] has finished in [8] ms
+24-Jun-2024 00:51:38.048 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/trabalhoFinal.xml]
+24-Jun-2024 00:51:38.050 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/trabalhoFinal] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/trabalhoFinal.xml] has been ignored
+24-Jun-2024 00:51:38.908 INFORMAÇÕES [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 00:51:39.016 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/trabalhoFinal.xml] has finished in [968] ms
+24-Jun-2024 00:51:39.017 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml]
+24-Jun-2024 00:51:39.018 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ExemploGetParametros] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml] has been ignored
+24-Jun-2024 00:51:39.021 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@83d80cf]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetParametros/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+24-Jun-2024 00:51:39.022 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@83d80cf]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/ExemploGetParametros/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+24-Jun-2024 00:51:39.023 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/ExemploGetParametros.xml] has finished in [7] ms
+24-Jun-2024 00:51:39.023 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/aplicacaoMVC.xml]
+24-Jun-2024 00:51:39.024 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/aplicacaoMVC] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/aplicacaoMVC.xml] has been ignored
+24-Jun-2024 00:51:39.417 INFORMAÇÕES [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 00:51:39.488 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/aplicacaoMVC.xml] has finished in [465] ms
+24-Jun-2024 00:51:39.489 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml]
+24-Jun-2024 00:51:39.491 ADVERTÊNCIA [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/encaminharAtributoObjeto] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml] has been ignored
+24-Jun-2024 00:51:39.495 GRAVE [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+	org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@615c0d2b]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+24-Jun-2024 00:51:39.496 GRAVE [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:714)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:687)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:660)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:681)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1845)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@615c0d2b]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4554)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4692)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:710)
+		... 9 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/encaminharAtributoObjeto/build/web] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:720)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:678)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 13 more
+24-Jun-2024 00:51:39.498 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharAtributoObjeto.xml] has finished in [8] ms
+24-Jun-2024 00:51:39.499 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/host-manager]
+24-Jun-2024 00:51:39.577 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/host-manager] has finished in [78] ms
+24-Jun-2024 00:51:39.578 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/manager]
+24-Jun-2024 00:51:39.649 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/manager] has finished in [71] ms
+24-Jun-2024 00:51:39.650 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/examples]
+24-Jun-2024 00:51:39.955 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/examples] has finished in [305] ms
+24-Jun-2024 00:51:39.955 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/ROOT]
+24-Jun-2024 00:51:39.995 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/ROOT] has finished in [40] ms
+24-Jun-2024 00:51:39.996 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/docs]
+24-Jun-2024 00:51:40.026 INFORMAÇÕES [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/webapps/docs] has finished in [30] ms
+24-Jun-2024 00:51:40.038 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+24-Jun-2024 00:51:40.062 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in 2246 ms
+24-Jun-2024 00:51:41.959 INFORMAÇÕES [http-nio-8080-exec-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 00:51:42.350 INFORMAÇÕES [http-nio-8080-exec-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 00:51:42.355 INFORMAÇÕES [http-nio-8080-exec-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 00:57:44.966 INFORMAÇÕES [http-nio-8080-exec-19] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 00:57:45.232 INFORMAÇÕES [http-nio-8080-exec-19] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 00:57:45.236 INFORMAÇÕES [http-nio-8080-exec-19] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 00:57:49.767 INFORMAÇÕES [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 00:57:50.140 INFORMAÇÕES [http-nio-8080-exec-12] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 00:57:50.144 INFORMAÇÕES [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:12:45.460 INFORMAÇÕES [http-nio-8080-exec-25] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:12:45.480 ADVERTÊNCIA [http-nio-8080-exec-25] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 01:12:45.481 ADVERTÊNCIA [http-nio-8080-exec-25] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:12:45.666 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:12:45.778 INFORMAÇÕES [http-nio-8080-exec-25] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:12:45.783 INFORMAÇÕES [http-nio-8080-exec-25] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:12:46.832 INFORMAÇÕES [http-nio-8080-exec-30] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:12:47.133 INFORMAÇÕES [http-nio-8080-exec-30] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:12:47.137 INFORMAÇÕES [http-nio-8080-exec-30] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:14:02.332 INFORMAÇÕES [http-nio-8080-exec-38] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:14:02.336 ADVERTÊNCIA [http-nio-8080-exec-38] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 01:14:02.339 ADVERTÊNCIA [http-nio-8080-exec-38] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:14:02.402 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:14:02.546 INFORMAÇÕES [http-nio-8080-exec-38] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:14:02.548 INFORMAÇÕES [http-nio-8080-exec-38] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:14:06.626 INFORMAÇÕES [http-nio-8080-exec-40] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:14:06.894 INFORMAÇÕES [http-nio-8080-exec-40] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:14:06.897 INFORMAÇÕES [http-nio-8080-exec-40] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:20:37.925 INFORMAÇÕES [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:20:37.929 ADVERTÊNCIA [http-nio-8080-exec-49] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 01:20:37.930 ADVERTÊNCIA [http-nio-8080-exec-49] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:20:38.004 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:20:38.005 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:20:38.238 INFORMAÇÕES [http-nio-8080-exec-49] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:20:38.241 INFORMAÇÕES [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:20:54.896 INFORMAÇÕES [http-nio-8080-exec-46] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:20:54.900 ADVERTÊNCIA [http-nio-8080-exec-46] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 01:20:54.900 ADVERTÊNCIA [http-nio-8080-exec-46] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:20:55.083 INFORMAÇÕES [78] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:20:55.189 INFORMAÇÕES [http-nio-8080-exec-46] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:20:55.195 INFORMAÇÕES [http-nio-8080-exec-46] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:24:21.070 INFORMAÇÕES [http-nio-8080-exec-59] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:24:21.072 ADVERTÊNCIA [http-nio-8080-exec-59] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 01:24:21.073 ADVERTÊNCIA [http-nio-8080-exec-59] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:24:21.100 INFORMAÇÕES [81] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:24:21.292 INFORMAÇÕES [http-nio-8080-exec-59] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:24:21.303 INFORMAÇÕES [http-nio-8080-exec-59] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:24:23.470 INFORMAÇÕES [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:24:23.697 INFORMAÇÕES [http-nio-8080-exec-48] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:24:23.700 INFORMAÇÕES [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:28:36.425 INFORMAÇÕES [http-nio-8080-exec-64] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:28:36.429 ADVERTÊNCIA [http-nio-8080-exec-64] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 01:28:36.429 ADVERTÊNCIA [http-nio-8080-exec-64] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:28:36.457 INFORMAÇÕES [89] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:28:36.628 INFORMAÇÕES [http-nio-8080-exec-64] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:28:36.631 INFORMAÇÕES [http-nio-8080-exec-64] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:28:37.725 INFORMAÇÕES [http-nio-8080-exec-66] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:28:37.942 INFORMAÇÕES [http-nio-8080-exec-66] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:28:37.945 INFORMAÇÕES [http-nio-8080-exec-66] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:29:00.664 INFORMAÇÕES [http-nio-8080-exec-71] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:29:00.667 ADVERTÊNCIA [http-nio-8080-exec-71] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 01:29:00.667 ADVERTÊNCIA [http-nio-8080-exec-71] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:29:00.699 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:29:00.942 INFORMAÇÕES [http-nio-8080-exec-71] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:29:00.944 INFORMAÇÕES [http-nio-8080-exec-71] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:43:40.381 INFORMAÇÕES [http-nio-8080-exec-77] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:43:40.559 INFORMAÇÕES [http-nio-8080-exec-77] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:43:40.561 INFORMAÇÕES [http-nio-8080-exec-77] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:44:09.264 INFORMAÇÕES [http-nio-8080-exec-85] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:44:09.457 INFORMAÇÕES [http-nio-8080-exec-85] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:44:09.459 INFORMAÇÕES [http-nio-8080-exec-85] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:52:26.860 INFORMAÇÕES [http-nio-8080-exec-90] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:52:26.864 ADVERTÊNCIA [http-nio-8080-exec-90] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 01:52:26.865 ADVERTÊNCIA [http-nio-8080-exec-90] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:52:26.881 INFORMAÇÕES [118] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:52:26.881 INFORMAÇÕES [118] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:52:26.882 INFORMAÇÕES [118] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 01:52:27.062 INFORMAÇÕES [http-nio-8080-exec-90] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:52:27.065 INFORMAÇÕES [http-nio-8080-exec-90] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 01:53:17.564 INFORMAÇÕES [http-nio-8080-exec-98] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 01:53:17.759 INFORMAÇÕES [http-nio-8080-exec-98] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 01:53:17.761 INFORMAÇÕES [http-nio-8080-exec-98] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 02:33:15.833 INFORMAÇÕES [http-nio-8080-exec-106] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 02:33:15.880 ADVERTÊNCIA [http-nio-8080-exec-106] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 02:33:15.885 ADVERTÊNCIA [http-nio-8080-exec-106] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 02:33:16.283 INFORMAÇÕES [http-nio-8080-exec-106] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 02:33:16.296 INFORMAÇÕES [http-nio-8080-exec-106] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 02:33:18.586 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 02:41:10.317 INFORMAÇÕES [http-nio-8080-exec-113] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 02:41:10.631 INFORMAÇÕES [http-nio-8080-exec-113] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 02:41:10.634 INFORMAÇÕES [http-nio-8080-exec-113] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 02:41:10.970 INFORMAÇÕES [http-nio-8080-exec-111] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 02:41:11.203 INFORMAÇÕES [http-nio-8080-exec-111] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 02:41:11.206 INFORMAÇÕES [http-nio-8080-exec-111] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 02:42:09.874 INFORMAÇÕES [http-nio-8080-exec-118] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 02:42:10.116 INFORMAÇÕES [http-nio-8080-exec-118] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 02:42:10.119 INFORMAÇÕES [http-nio-8080-exec-118] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 02:42:10.479 INFORMAÇÕES [http-nio-8080-exec-112] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 02:42:10.757 INFORMAÇÕES [http-nio-8080-exec-112] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 02:42:10.762 INFORMAÇÕES [http-nio-8080-exec-112] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 02:42:11.589 INFORMAÇÕES [http-nio-8080-exec-113] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 02:42:11.824 INFORMAÇÕES [http-nio-8080-exec-113] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 02:42:11.827 INFORMAÇÕES [http-nio-8080-exec-113] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:00:57.751 INFORMAÇÕES [http-nio-8080-exec-125] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:00:59.274 INFORMAÇÕES [http-nio-8080-exec-125] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:00:59.329 INFORMAÇÕES [http-nio-8080-exec-125] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:00:59.664 INFORMAÇÕES [http-nio-8080-exec-122] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:00:59.925 INFORMAÇÕES [http-nio-8080-exec-122] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:00:59.927 INFORMAÇÕES [http-nio-8080-exec-122] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:01:18.588 INFORMAÇÕES [http-nio-8080-exec-124] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:01:18.838 INFORMAÇÕES [http-nio-8080-exec-124] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:01:18.840 INFORMAÇÕES [http-nio-8080-exec-124] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:01:19.210 INFORMAÇÕES [http-nio-8080-exec-133] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:01:19.455 INFORMAÇÕES [http-nio-8080-exec-133] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:01:19.457 INFORMAÇÕES [http-nio-8080-exec-133] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:02:36.538 INFORMAÇÕES [http-nio-8080-exec-129] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:02:36.808 INFORMAÇÕES [http-nio-8080-exec-129] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:02:36.811 INFORMAÇÕES [http-nio-8080-exec-129] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:02:41.274 INFORMAÇÕES [http-nio-8080-exec-136] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:02:41.504 INFORMAÇÕES [http-nio-8080-exec-136] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:02:41.506 INFORMAÇÕES [http-nio-8080-exec-136] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:03:23.139 INFORMAÇÕES [http-nio-8080-exec-134] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:03:23.349 INFORMAÇÕES [http-nio-8080-exec-134] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:03:23.351 INFORMAÇÕES [http-nio-8080-exec-134] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:06:55.595 INFORMAÇÕES [http-nio-8080-exec-142] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:06:55.846 INFORMAÇÕES [http-nio-8080-exec-142] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:06:55.848 INFORMAÇÕES [http-nio-8080-exec-142] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:15:38.167 INFORMAÇÕES [http-nio-8080-exec-148] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:15:38.310 ADVERTÊNCIA [http-nio-8080-exec-148] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:15:38.315 ADVERTÊNCIA [http-nio-8080-exec-148] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:15:38.922 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:15:38.924 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:15:38.924 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:15:38.924 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:15:38.925 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:15:38.926 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:15:38.926 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:15:39.319 INFORMAÇÕES [http-nio-8080-exec-148] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:15:39.338 INFORMAÇÕES [http-nio-8080-exec-148] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:16:19.339 INFORMAÇÕES [http-nio-8080-exec-149] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:16:19.345 ADVERTÊNCIA [http-nio-8080-exec-149] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:16:19.346 ADVERTÊNCIA [http-nio-8080-exec-149] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:16:19.550 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:16:19.570 INFORMAÇÕES [http-nio-8080-exec-149] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:16:19.572 INFORMAÇÕES [http-nio-8080-exec-149] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:22:39.306 INFORMAÇÕES [http-nio-8080-exec-163] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:22:39.447 ADVERTÊNCIA [http-nio-8080-exec-163] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:22:39.455 ADVERTÊNCIA [http-nio-8080-exec-163] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:22:39.910 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:22:39.914 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:22:39.914 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:22:40.165 INFORMAÇÕES [http-nio-8080-exec-163] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:22:40.199 INFORMAÇÕES [http-nio-8080-exec-163] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:26:10.776 INFORMAÇÕES [http-nio-8080-exec-172] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:26:10.780 ADVERTÊNCIA [http-nio-8080-exec-172] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:26:10.781 ADVERTÊNCIA [http-nio-8080-exec-172] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:26:10.959 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:26:11.081 INFORMAÇÕES [http-nio-8080-exec-172] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:26:11.084 INFORMAÇÕES [http-nio-8080-exec-172] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:28:26.005 INFORMAÇÕES [http-nio-8080-exec-178] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:28:26.008 ADVERTÊNCIA [http-nio-8080-exec-178] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:28:26.008 ADVERTÊNCIA [http-nio-8080-exec-178] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:28:26.012 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:28:26.305 INFORMAÇÕES [http-nio-8080-exec-178] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:28:26.309 INFORMAÇÕES [http-nio-8080-exec-178] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:29:39.314 INFORMAÇÕES [http-nio-8080-exec-167] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:29:39.317 ADVERTÊNCIA [http-nio-8080-exec-167] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:29:39.321 ADVERTÊNCIA [http-nio-8080-exec-167] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:29:39.530 INFORMAÇÕES [http-nio-8080-exec-167] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:29:39.533 INFORMAÇÕES [http-nio-8080-exec-167] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:29:42.188 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:30:23.517 INFORMAÇÕES [http-nio-8080-exec-170] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:30:23.522 ADVERTÊNCIA [http-nio-8080-exec-170] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:30:23.526 ADVERTÊNCIA [http-nio-8080-exec-170] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:30:23.609 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:30:23.718 INFORMAÇÕES [http-nio-8080-exec-170] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:30:23.720 INFORMAÇÕES [http-nio-8080-exec-170] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:31:20.742 INFORMAÇÕES [http-nio-8080-exec-170] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:31:20.746 ADVERTÊNCIA [http-nio-8080-exec-170] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:31:20.747 ADVERTÊNCIA [http-nio-8080-exec-170] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:31:20.768 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:31:20.954 INFORMAÇÕES [http-nio-8080-exec-170] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:31:20.957 INFORMAÇÕES [http-nio-8080-exec-170] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:32:24.256 INFORMAÇÕES [http-nio-8080-exec-167] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:32:24.258 ADVERTÊNCIA [http-nio-8080-exec-167] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:32:24.260 ADVERTÊNCIA [http-nio-8080-exec-167] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:32:24.380 INFORMAÇÕES [233] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:32:24.510 INFORMAÇÕES [http-nio-8080-exec-167] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:32:24.513 INFORMAÇÕES [http-nio-8080-exec-167] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:32:59.591 INFORMAÇÕES [http-nio-8080-exec-189] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] has started
+24-Jun-2024 03:32:59.594 ADVERTÊNCIA [http-nio-8080-exec-189] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:32:59.595 ADVERTÊNCIA [http-nio-8080-exec-189] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:32:59.635 INFORMAÇÕES [239] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1358)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:990)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:32:59.808 INFORMAÇÕES [http-nio-8080-exec-189] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 03:32:59.810 INFORMAÇÕES [http-nio-8080-exec-189] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/trabalhoFinal] is completed
+24-Jun-2024 03:35:23.562 INFORMAÇÕES [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+24-Jun-2024 03:35:23.580 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+24-Jun-2024 03:35:23.598 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+24-Jun-2024 03:35:23.640 ADVERTÊNCIA [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [trabalhoFinal] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:35:23.642 ADVERTÊNCIA [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [trabalhoFinal] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:35:23.693 ADVERTÊNCIA [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [aplicacaoMVC] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+24-Jun-2024 03:35:23.693 ADVERTÊNCIA [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [aplicacaoMVC] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.11/java.lang.Object.wait(Native Method)
+ java.base@17.0.11/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.11/java.lang.Thread.run(Thread.java:840)
+24-Jun-2024 03:35:23.715 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+24-Jun-2024 03:35:23.886 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

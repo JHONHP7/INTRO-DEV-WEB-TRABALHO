@@ -1,0 +1,19 @@
+11-Jun-2024 00:02:12.855 INFORMAÇÕES [http-nio-8080-exec-66] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/ExemploDuplaFuncao] has started
+11-Jun-2024 00:02:12.907 INFORMAÇÕES [http-nio-8080-exec-66] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/ExemploDuplaFuncao] is completed
+11-Jun-2024 00:02:13.069 INFORMAÇÕES [http-nio-8080-exec-71] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/ExemploDuplaFuncao] has started
+11-Jun-2024 00:02:13.116 INFORMAÇÕES [http-nio-8080-exec-71] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/ExemploDuplaFuncao] is completed
+11-Jun-2024 00:04:59.044 INFORMAÇÕES [http-nio-8080-exec-70] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/encaminharIMC] has started
+11-Jun-2024 00:04:59.076 INFORMAÇÕES [http-nio-8080-exec-70] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/encaminharIMC] is completed
+11-Jun-2024 00:05:33.774 INFORMAÇÕES [http-nio-8080-exec-75] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/ExemploDuplaFuncao] has started
+11-Jun-2024 00:05:33.803 INFORMAÇÕES [http-nio-8080-exec-75] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/ExemploDuplaFuncao] is completed
+11-Jun-2024 00:05:34.009 INFORMAÇÕES [http-nio-8080-exec-64] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/ExemploDuplaFuncao] has started
+11-Jun-2024 00:05:34.039 INFORMAÇÕES [http-nio-8080-exec-64] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/ExemploDuplaFuncao] is completed
+11-Jun-2024 00:05:47.733 INFORMAÇÕES [http-nio-8080-exec-78] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/encaminharIMC] has started
+11-Jun-2024 00:05:47.756 INFORMAÇÕES [http-nio-8080-exec-78] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/encaminharIMC] is completed
+11-Jun-2024 00:06:50.786 INFORMAÇÕES [http-nio-8080-exec-70] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/encaminharIMC] has started
+11-Jun-2024 00:06:50.821 INFORMAÇÕES [http-nio-8080-exec-70] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/encaminharIMC] is completed
+11-Jun-2024 00:07:27.681 INFORMAÇÕES [http-nio-8080-exec-76] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/encaminharIMC]
+11-Jun-2024 00:07:27.692 INFORMAÇÕES [http-nio-8080-exec-77] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMC.xml]
+11-Jun-2024 00:07:27.694 ADVERTÊNCIA [http-nio-8080-exec-77] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/encaminharIMC] in deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMC.xml] has been ignored
+11-Jun-2024 00:07:27.711 INFORMAÇÕES [http-nio-8080-exec-77] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/jhonatan-silva/faculdade/INTRO-DEV-WEB-TRABALHO/wp-web/apache-tomcat-8.5.100/conf/Catalina/localhost/encaminharIMC.xml] has finished in [19] ms
+11-Jun-2024 00:07:27.718 INFORMAÇÕES [http-nio-8080-exec-83] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/encaminharIMC]] after start() had already been called. The second call will be ignored.
