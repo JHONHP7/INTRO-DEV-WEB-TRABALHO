@@ -27,6 +27,7 @@ public class VendaDAO implements Dao<Vendas> {
                 venda.setIdCliente(resultado.getInt("id_cliente"));
                 venda.setIdProduto(resultado.getInt("id_produto"));
                 venda.setIdFuncionario(resultado.getInt("id_funcionario"));
+                System.out.println("A data e: " + resultado.getDate("data_venda"));
             }
             return venda;
 
@@ -71,7 +72,7 @@ public class VendaDAO implements Dao<Vendas> {
             PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO trabalhofinal.vendas (quantidade_venda, data_venda, valor_venda, id_cliente, id_produto, id_funcionario)"
                     + " VALUES (?, ?, ?, ?, ?, ?)");
             sql.setInt(1, venda.getQuantidadeVenda());
-            sql.setDate(2, new Date(venda.getDataVenda().getTime()));
+            sql.setDate(2, (Date) venda.getDataVenda()); // Uso direto de java.sql.Date
             sql.setDouble(3, venda.getValorVenda());
             sql.setInt(4, venda.getIdCliente());
             sql.setInt(5, venda.getIdProduto());
@@ -91,7 +92,7 @@ public class VendaDAO implements Dao<Vendas> {
         try {
             PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE trabalhofinal.vendas SET quantidade_venda = ?, data_venda = ?, valor_venda = ?, id_cliente = ?, id_produto = ?, id_funcionario = ? WHERE id = ?");
             sql.setInt(1, venda.getQuantidadeVenda());
-            sql.setDate(2, new Date(venda.getDataVenda().getTime()));
+            sql.setDate(2, (Date) venda.getDataVenda()); // Uso direto de java.sql.Date
             sql.setDouble(3, venda.getValorVenda());
             sql.setInt(4, venda.getIdCliente());
             sql.setInt(5, venda.getIdProduto());
@@ -125,32 +126,31 @@ public class VendaDAO implements Dao<Vendas> {
      * Metodos novos
      */
     public ArrayList<TotalVendasProduto> getTotalVendasPorProduto() {
-    ArrayList<TotalVendasProduto> listaTotalVendasProduto = new ArrayList<>();
-    Conexao conexao = new Conexao();
-    try {
-        String selectSQL = "SELECT p.id, p.nome_produto, SUM(v.quantidade_venda) AS total_quantidade_vendida, " +
-                            "SUM(v.valor_venda) AS total_valor_vendido " +
-                            "FROM vendas v " +
-                            "JOIN produtos p ON v.id_produto = p.id " +
-                            "GROUP BY p.id, p.nome_produto";
-        PreparedStatement preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
-        ResultSet resultado = preparedStatement.executeQuery();
-        while (resultado.next()) {
-            TotalVendasProduto totalVendasProduto = new TotalVendasProduto();
-            totalVendasProduto.setIdProduto(resultado.getInt("id"));
-            totalVendasProduto.setNomeProduto(resultado.getString("nome_produto"));
-            totalVendasProduto.setTotalQuantidadeVendida(resultado.getInt("total_quantidade_vendida"));
-            totalVendasProduto.setTotalValorVendido(resultado.getFloat("total_valor_vendido"));
-            listaTotalVendasProduto.add(totalVendasProduto);
+        ArrayList<TotalVendasProduto> listaTotalVendasProduto = new ArrayList<>();
+        Conexao conexao = new Conexao();
+        try {
+            String selectSQL = "SELECT p.id, p.nome_produto, SUM(v.quantidade_venda) AS total_quantidade_vendida, "
+                    + "SUM(v.valor_venda) AS total_valor_vendido "
+                    + "FROM vendas v "
+                    + "JOIN produtos p ON v.id_produto = p.id "
+                    + "GROUP BY p.id, p.nome_produto";
+            PreparedStatement preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
+            ResultSet resultado = preparedStatement.executeQuery();
+            while (resultado.next()) {
+                TotalVendasProduto totalVendasProduto = new TotalVendasProduto();
+                totalVendasProduto.setIdProduto(resultado.getInt("id"));
+                totalVendasProduto.setNomeProduto(resultado.getString("nome_produto"));
+                totalVendasProduto.setTotalQuantidadeVendida(resultado.getInt("total_quantidade_vendida"));
+                totalVendasProduto.setTotalValorVendido(resultado.getFloat("total_valor_vendido"));
+                listaTotalVendasProduto.add(totalVendasProduto);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao listar total de vendas por produto: " + e.getMessage());
+        } finally {
+            conexao.closeConexao();
         }
-    } catch (SQLException e) {
-        throw new RuntimeException("Erro ao listar total de vendas por produto: " + e.getMessage());
-    } finally {
-        conexao.closeConexao();
+        return listaTotalVendasProduto;
     }
-    return listaTotalVendasProduto;
-}
-
 
     public ArrayList<TotalVendasDiarias> getTotalVendasDiarias() {
         ArrayList<TotalVendasDiarias> listaTotalVendasDiarias = new ArrayList<>();
@@ -173,7 +173,7 @@ public class VendaDAO implements Dao<Vendas> {
         }
         return listaTotalVendasDiarias;
     }
-    
+
     public ArrayList<Vendas> getByFuncionario(int idFuncionario) {
         ArrayList<Vendas> listaVendas = new ArrayList<>();
         Conexao conexao = new Conexao();

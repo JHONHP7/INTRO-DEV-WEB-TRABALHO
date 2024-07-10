@@ -4,6 +4,8 @@ import entidade.Produtos;
 import entidade.Vendas;
 import java.io.IOException;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -117,8 +119,8 @@ public class VendedorCadastroVendas extends HttpServlet {
                     break;
 
                 case "Excluir":
-                    int id = Integer.parseInt(request.getParameter("id"));
-                    vendaDAO.delete(id);
+                    int idExcluir = Integer.parseInt(request.getParameter("id"));
+                    vendaDAO.delete(idExcluir);
                     request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
                     break;
 
@@ -137,7 +139,10 @@ public class VendedorCadastroVendas extends HttpServlet {
     private Vendas criarVendaAPartirRequest(HttpServletRequest request, int idFuncionario) {
         int id = parseIntOrDefault(request.getParameter("id"));
         int quantidadeVenda = parseIntOrDefault(request.getParameter("quantidadeVenda"));
-        Date dataVenda = Date.valueOf(request.getParameter("dataVenda"));
+
+        String dataVendaStr = request.getParameter("dataVenda");
+        Date dataVenda = parseDate(dataVendaStr); // Converte a data para o formato SQL
+
         int idProduto = parseIntOrDefault(request.getParameter("idProduto"));
         int idCliente = parseIntOrDefault(request.getParameter("idCliente"));
 
@@ -147,6 +152,16 @@ public class VendedorCadastroVendas extends HttpServlet {
         float valorVenda = (float) (produto.getPrecoVenda() * quantidadeVenda);
 
         return new Vendas(id, quantidadeVenda, dataVenda, valorVenda, idCliente, idProduto, idFuncionario);
+    }
+
+    private Date parseDate(String dateString) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date utilDate = sdf.parse(dateString);
+            return new Date(utilDate.getTime());
+        } catch (ParseException e) {
+            throw new RuntimeException("Data inválida: " + dateString, e);
+        }
     }
 
     private int parseIntOrDefault(String value) {

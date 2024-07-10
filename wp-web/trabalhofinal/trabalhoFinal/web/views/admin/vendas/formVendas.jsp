@@ -1,7 +1,10 @@
-<%@page import="java.time.ZoneId"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalDate"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="utilitarios.DateUtils"%>
 <%@page import="entidade.Vendas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.time.LocalDate"%>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -20,7 +23,7 @@
                     <%
                         String acao = (String) request.getAttribute("acao");
                         if (acao == null) {
-                            acao = "Incluir"; // Valor padrão se "acao" for null
+                            acao = "Incluir";
                         }
 
                         String titulo = "";
@@ -40,7 +43,11 @@
                         }
 
                         Vendas venda = (Vendas) request.getAttribute("venda");
-                        LocalDate dataVenda = (LocalDate) request.getAttribute("dataVenda");
+                        String formattedDate = "";
+                        if (venda != null && venda.getDataVenda() != null) {
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                            formattedDate = sdf.format(venda.getDataVenda());
+                        }
                         String msgError = (String) request.getAttribute("msgError");
                     %>
                     <h1 class="text-center"><%= titulo%></h1>
@@ -60,7 +67,7 @@
 
                         <div class="mb-3">
                             <label for="dataVenda" class="form-label">Data da Venda</label>
-                            <input type="date" name="dataVenda" value="<%= dataVenda != null ? dataVenda : ""%>" class="form-control" required>
+                            <input type="date" name="dataVenda" value="<%= formattedDate%>" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
