@@ -93,7 +93,8 @@ public class ProdutoDAO implements Dao<Produtos> {
     public void update(Produtos produto) {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE trabalhofinal.produtos SET nome_produto = ?, descricao = ?, preco_compra = ?, preco_venda = ?, quantidade_disponivel = ?, liberado_venda = ?, id_categoria = ? WHERE id = ?");
+            PreparedStatement sql = conexao.getConexao().prepareStatement(
+                    "UPDATE trabalhofinal.produtos SET nome_produto = ?, descricao = ?, preco_compra = ?, preco_venda = ?, quantidade_disponível = ?, liberado_venda = ?, id_categoria = ? WHERE id = ?");
             sql.setString(1, produto.getNomeProduto());
             sql.setString(2, produto.getDescricao());
             sql.setDouble(3, produto.getPrecoCompra());
@@ -103,7 +104,6 @@ public class ProdutoDAO implements Dao<Produtos> {
             sql.setInt(7, produto.getIdCategoria());
             sql.setInt(8, produto.getId());
             sql.executeUpdate();
-
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao alterar produto: " + e.getMessage());
         } finally {

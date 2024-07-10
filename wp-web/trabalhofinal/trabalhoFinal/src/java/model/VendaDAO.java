@@ -156,7 +156,7 @@ public class VendaDAO implements Dao<Vendas> {
         ArrayList<TotalVendasDiarias> listaTotalVendasDiarias = new ArrayList<>();
         Conexao conexao = new Conexao();
         try {
-            String selectSQL = "SELECT data_venda, SUM(quantidade_venda) AS total_quantidade_vendida, ROUND(SUM(valor_venda), 2) AS total_valor_vendido FROM trabalhofinal.vendas GROUP BY data_venda";
+            String selectSQL = "SELECT data_venda, SUM(quantidade_venda) AS total_quantidade_vendida, ROUND(SUM(valor_venda), 2) AS total_valor_vendido FROM trabalhofinal.vendas GROUP BY data_venda ORDER BY data_venda DESC";
             PreparedStatement preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
             ResultSet resultado = preparedStatement.executeQuery();
             while (resultado.next()) {
@@ -172,5 +172,32 @@ public class VendaDAO implements Dao<Vendas> {
             conexao.closeConexao();
         }
         return listaTotalVendasDiarias;
+    }
+    
+    public ArrayList<Vendas> getByFuncionario(int idFuncionario) {
+        ArrayList<Vendas> listaVendas = new ArrayList<>();
+        Conexao conexao = new Conexao();
+        try {
+            String selectSQL = "SELECT * FROM trabalhofinal.vendas WHERE id_funcionario = ? ORDER BY data_venda";
+            PreparedStatement preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
+            preparedStatement.setInt(1, idFuncionario);
+            ResultSet resultado = preparedStatement.executeQuery();
+            while (resultado.next()) {
+                Vendas venda = new Vendas();
+                venda.setId(resultado.getInt("id"));
+                venda.setQuantidadeVenda(resultado.getInt("quantidade_venda"));
+                venda.setDataVenda(resultado.getDate("data_venda"));
+                venda.setValorVenda(resultado.getFloat("valor_venda"));
+                venda.setIdCliente(resultado.getInt("id_cliente"));
+                venda.setIdProduto(resultado.getInt("id_produto"));
+                venda.setIdFuncionario(resultado.getInt("id_funcionario"));
+                listaVendas.add(venda);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao listar vendas por funcionário: " + e.getMessage());
+        } finally {
+            conexao.closeConexao();
+        }
+        return listaVendas;
     }
 }
