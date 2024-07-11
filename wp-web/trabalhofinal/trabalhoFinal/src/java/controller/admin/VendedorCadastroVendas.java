@@ -120,6 +120,12 @@ public class VendedorCadastroVendas extends HttpServlet {
 
                 case "Excluir":
                     int idExcluir = Integer.parseInt(request.getParameter("id"));
+                    Vendas vendaExcluir = vendaDAO.get(idExcluir);
+                    Produtos produtoExcluir = produtoDAO.get(vendaExcluir.getIdProduto());
+
+                    produtoExcluir.setQuantidadeDisponivel(produtoExcluir.getQuantidadeDisponivel() + vendaExcluir.getQuantidadeVenda());
+                    produtoDAO.update(produtoExcluir);
+
                     vendaDAO.delete(idExcluir);
                     request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
                     break;
@@ -171,5 +177,4 @@ public class VendedorCadastroVendas extends HttpServlet {
             return 0;
         }
     }
-
 }
