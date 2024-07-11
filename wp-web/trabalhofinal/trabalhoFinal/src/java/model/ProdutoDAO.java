@@ -4,11 +4,11 @@
  */
 package model;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import entidade.Produtos;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class ProdutoDAO implements Dao<Produtos> {
 
@@ -44,7 +44,7 @@ public class ProdutoDAO implements Dao<Produtos> {
         ArrayList<Produtos> listaProdutos = new ArrayList<>();
         Conexao conexao = new Conexao();
         try {
-            String selectSQL = "SELECT * FROM trabalhofinal.produtos ORDER BY nome_produto";
+            String selectSQL = "SELECT * FROM trabalhofinal.produtos ORDER BY id ";
             PreparedStatement preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
             ResultSet resultado = preparedStatement.executeQuery();
             while (resultado.next()) {
@@ -125,4 +125,21 @@ public class ProdutoDAO implements Dao<Produtos> {
             conexao.closeConexao();
         }
     }
+
+    //Metodos novos
+    public void updateLiberadoVenda(int id, char liberadoVenda) {
+        Conexao conexao = new Conexao();
+        try {
+            PreparedStatement sql = conexao.getConexao().prepareStatement(
+                    "UPDATE trabalhofinal.produtos SET liberado_venda = ? WHERE id = ?");
+            sql.setString(1, String.valueOf(liberadoVenda));
+            sql.setInt(2, id);
+            sql.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao atualizar status de venda do produto: " + e.getMessage());
+        } finally {
+            conexao.closeConexao();
+        }
+    }
+
 }
