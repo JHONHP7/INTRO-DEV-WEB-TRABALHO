@@ -1,6 +1,8 @@
 package controller.admin;
 
+import entidade.Categorias;
 import entidade.Produtos;
+import model.CategoriaDAO;
 import model.ProdutoDAO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,10 +37,14 @@ public class ProdutosController extends HttpServlet {
             case "Excluir":
                 int id = Integer.parseInt(request.getParameter("id"));
                 Produtos produto = produtoDAO.get(id);
-                request.setAttribute("produto", produto);
-                request.setAttribute("acao", acao);
-                rd = request.getRequestDispatcher("/views/admin/produtos/formProdutos.jsp");
-                rd.forward(request, response);
+                if (produto != null) {
+                    request.setAttribute("produto", produto);
+                    request.setAttribute("acao", acao);
+                    rd = request.getRequestDispatcher("/views/admin/produtos/formProdutos.jsp");
+                    rd.forward(request, response);
+                } else {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, "Produto não encontrado");
+                }
                 break;
 
             case "Incluir":
@@ -98,41 +104,70 @@ public class ProdutosController extends HttpServlet {
                 idCategoria = Integer.parseInt(idCategoriaParam);
             }
 
+            if ("Incluir".equals(btEnviar)) {
+                CategoriaDAO categoriaDAO = new CategoriaDAO();
+                Categorias categoria = categoriaDAO.get(idCategoria);
+                if (categoria == null || categoria.getId() == 0) {
+                    request.setAttribute("errorMessage", "Categoria de produtos não existe");
+                    request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Incluir");
+                    RequestDispatcher rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
+                    rd.forward(request, response);
+                    return;
+                }
+            }
+
             ProdutoDAO produtoDAO = new ProdutoDAO();
-            Produtos produto = new Produtos();
-            produto.setId(id);
-            produto.setNomeProduto(nomeProduto);
-            produto.setDescricao(descricao);
-            produto.setPrecoCompra(precoCompra);
-            produto.setPrecoVenda(precoVenda);
-            produto.setQuantidadeDisponivel(quantidadeDisponivel);
-            produto.setLiberadoVenda(liberadoVenda);
-            produto.setIdCategoria(idCategoria);
+            Produtos produto = criarProduto(id, nomeProduto, descricao, precoCompra, precoVenda, quantidadeDisponivel, liberadoVenda, idCategoria);
 
             if ("Incluir".equals(btEnviar)) {
                 produtoDAO.insert(produto);
+                request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Listar");
                 request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
             } else if ("Alterar".equals(btEnviar)) {
                 produtoDAO.update(produto);
+                request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Listar");
                 request.setAttribute("msgOperacaoRealizada", "Alteração realizada com sucesso");
             } else if ("Excluir".equals(btEnviar)) {
                 produtoDAO.delete(id);
+                request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Listar");
                 request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
             } else if ("Colocar para Venda".equals(btEnviar)) {
                 produtoDAO.updateLiberadoVenda(id, 'S');
+                request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Listar");
                 request.setAttribute("msgOperacaoRealizada", "Produto colocado para venda com sucesso");
             } else if ("Retirar da Venda".equals(btEnviar)) {
                 produtoDAO.updateLiberadoVenda(id, 'N');
+                request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Listar");
                 request.setAttribute("msgOperacaoRealizada", "Produto retirado da venda com sucesso");
             } else {
                 throw new IllegalArgumentException("Ação não reconhecida");
             }
-        } catch (NumberFormatException e) {
-            request.setAttribute("msgError", "Formato numérico inválido: " + e.getMessage());
-        } catch (Exception e) {
-            request.setAttribute("msgError", "Ocorreu um erro ao processar a operação: " + e.getMessage());
-        }
 
-        response.sendRedirect("/trabalhoFinal/admin/comprador/produtosController?acao=Listar");
+            request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
+
+        } catch (NumberFormatException e) {
+            request.setAttribute("errorMessage", "Formato numérico inválido: " + e.getMessage());
+            request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Incluir");
+            RequestDispatcher rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
+            rd.forward(request, response);
+        } catch (Exception e) {
+            request.setAttribute("errorMessage", "Ocorreu um erro ao processar a operação: " + e.getMessage());
+            request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Incluir");
+            RequestDispatcher rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
+            rd.forward(request, response);
+        }
+    }
+
+    private Produtos criarProduto(int id, String nomeProduto, String descricao, double precoCompra, double precoVenda, int quantidadeDisponivel, char liberadoVenda, int idCategoria) {
+        Produtos produto = new Produtos();
+        produto.setId(id);
+        produto.setNomeProduto(nomeProduto);
+        produto.setDescricao(descricao);
+        produto.setPrecoCompra(precoCompra);
+        produto.setPrecoVenda(precoVenda);
+        produto.setQuantidadeDisponivel(quantidadeDisponivel);
+        produto.setLiberadoVenda(liberadoVenda);
+        produto.setIdCategoria(idCategoria);
+        return produto;
     }
 }

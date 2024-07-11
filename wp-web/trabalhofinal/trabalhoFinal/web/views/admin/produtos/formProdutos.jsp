@@ -95,7 +95,7 @@
 
                         <div class="text-center">
                             <button type="submit" name="btEnviar" value="<%= acao%>" class="btn btn-primary"><%= acao%></button>
-                            <a href="/trabalhoFinal/admin/comprador/produtosController?acao=Listar" class="btn btn-secondary">Cancelar</a>
+                            <a href="/trabalhoFinal/admin/comprador/produtosController?acao=Listar" class="btn btn-danger">Retornar</a>
                         </div>
                     </form>
                 </div>
