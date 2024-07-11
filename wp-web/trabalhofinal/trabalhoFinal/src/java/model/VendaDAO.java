@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.sql.Date;
 import entidade.Vendas;
-import entidade.aux.TotalVendasDiarias;
-import entidade.aux.TotalVendasProduto;
+import entidade.auxiliar.TotalVendasDiarias;
+import entidade.auxiliar.TotalVendasProduto;
 
 public class VendaDAO implements Dao<Vendas> {
 
