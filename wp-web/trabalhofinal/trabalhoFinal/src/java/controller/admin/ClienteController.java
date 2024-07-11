@@ -20,7 +20,6 @@ public class ClienteController extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-
         String acao = (String) request.getParameter("acao");
         Clientes cliente = new Clientes();
         ClienteDAO clienteDAO = new ClienteDAO();
@@ -60,7 +59,6 @@ public class ClienteController extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-
         int id = Integer.parseInt(request.getParameter("id"));
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
@@ -83,7 +81,6 @@ public class ClienteController extends HttpServlet {
                         ClienteDAO clienteDAO = new ClienteDAO();
                         cliente = clienteDAO.get(id);
                     } catch (Exception ex) {
-                        System.out.println(ex.getMessage());
                         throw new RuntimeException("Falha em uma query para cadastro de cliente");
                     }
                     break;
@@ -115,7 +112,6 @@ public class ClienteController extends HttpServlet {
                 rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
                 rd.forward(request, response);
             } catch (IOException | ServletException ex) {
-                System.out.println(ex.getMessage());
                 throw new RuntimeException("Falha em uma query para cadastro de usuario");
             }
         }
