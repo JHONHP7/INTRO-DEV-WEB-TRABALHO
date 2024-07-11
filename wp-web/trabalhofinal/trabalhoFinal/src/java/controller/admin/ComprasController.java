@@ -1,6 +1,7 @@
 package controller.admin;
 
 import entidade.Compras;
+import entidade.Fornecedores;
 import entidade.Funcionarios;
 import entidade.Produtos;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.CompraDAO;
 import model.ProdutoDAO;
+import model.FornecedorDAO;
 
 @WebServlet(name = "ComprasController", urlPatterns = {"/admin/comprador/comprasController"})
 public class ComprasController extends HttpServlet {
@@ -40,33 +42,39 @@ public class ComprasController extends HttpServlet {
 
         int idFuncionario = funcionarioLogado.getId();
 
-        switch (acao) {
-            case "Listar":
-                ArrayList<Compras> listaCompras = compraDAO.getAllByFuncionario(idFuncionario);
-                request.setAttribute("listaCompras", listaCompras);
-                rd = request.getRequestDispatcher("/views/admin/compras/listarCompras.jsp");
-                rd.forward(request, response);
-                break;
+        try {
+            switch (acao) {
+                case "Listar":
+                    ArrayList<Compras> listaCompras = compraDAO.getAllByFuncionario(idFuncionario);
+                    request.setAttribute("listaCompras", listaCompras);
+                    rd = request.getRequestDispatcher("/views/admin/compras/listarCompras.jsp");
+                    rd.forward(request, response);
+                    break;
 
-            case "Alterar":
-            case "Excluir":
-                int id = Integer.parseInt(request.getParameter("id"));
-                Compras compra = compraDAO.get(id);
-                request.setAttribute("compra", compra);
-                request.setAttribute("acao", acao);
-                rd = request.getRequestDispatcher("/views/admin/compras/formCompras.jsp");
-                rd.forward(request, response);
-                break;
+                case "Alterar":
+                case "Excluir":
+                    int id = Integer.parseInt(request.getParameter("id"));
+                    Compras compra = compraDAO.get(id);
+                    request.setAttribute("compra", compra);
+                    request.setAttribute("acao", acao);
+                    rd = request.getRequestDispatcher("/views/admin/compras/formCompras.jsp");
+                    rd.forward(request, response);
+                    break;
 
-            case "Incluir":
-                rd = request.getRequestDispatcher("/views/admin/compras/formCompras.jsp");
-                rd.forward(request, response);
-                break;
+                case "Incluir":
+                    rd = request.getRequestDispatcher("/views/admin/compras/formCompras.jsp");
+                    rd.forward(request, response);
+                    break;
 
-            default:
-                rd = request.getRequestDispatcher("/views/admin/compras/listarCompras.jsp");
-                rd.forward(request, response);
-                break;
+                default:
+                    rd = request.getRequestDispatcher("/views/admin/compras/listarCompras.jsp");
+                    rd.forward(request, response);
+                    break;
+            }
+        } catch (Exception ex) {
+            request.setAttribute("errorMessage", "Erro ao processar a requisição: " + ex.getMessage());
+            rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
+            rd.forward(request, response);
         }
     }
 
@@ -97,10 +105,12 @@ public class ComprasController extends HttpServlet {
                     Compras compraIncluir = criarCompraAPartirRequest(request);
                     Produtos produtoIncluir = produtoDAO.get(compraIncluir.getIdProduto());
 
-                    if (produtoIncluir == null) {
-                        request.setAttribute("errorMessage", "Produto não encontrado. Não é possível realizar a compra.");
+                    if (!verificarProdutoExiste(compraIncluir.getIdProduto())) {
+                        request.setAttribute("errorMessage", "Esse produto não existe. Não é possível realizar a compra.");
                     } else if (compraIncluir.getQuantidadeCompra() < 1) {
                         request.setAttribute("errorMessage", "A quantidade da compra deve ser maior que zero.");
+                    } else if (!verificarFornecedorExiste(compraIncluir.getIdFornecedor())) {
+                        request.setAttribute("errorMessage", "Esse fornecedor não existe. Não é possível realizar a compra.");
                     } else {
                         produtoIncluir.setQuantidadeDisponivel(produtoIncluir.getQuantidadeDisponivel() + compraIncluir.getQuantidadeCompra());
                         produtoDAO.update(produtoIncluir);
@@ -120,10 +130,12 @@ public class ComprasController extends HttpServlet {
                         Produtos produtoOriginal = produtoDAO.get(compraOriginal.getIdProduto());
                         Produtos produtoNovo = produtoDAO.get(compraAlterar.getIdProduto());
 
-                        if (produtoNovo == null) {
-                            request.setAttribute("errorMessage", "Produto não encontrado para atualização.");
+                        if (!verificarProdutoExiste(compraAlterar.getIdProduto())) {
+                            request.setAttribute("errorMessage", "Esse produto não existe para atualização.");
                         } else if (compraAlterar.getQuantidadeCompra() <= 0) {
                             request.setAttribute("errorMessage", "A quantidade da compra deve ser maior que zero.");
+                        } else if (!verificarFornecedorExiste(compraAlterar.getIdFornecedor())) {
+                            request.setAttribute("errorMessage", "Esse fornecedor não existe. Não é possível realizar a compra.");
                         } else {
                             int quantidadeOriginal = compraOriginal.getQuantidadeCompra();
                             int quantidadeNova = compraAlterar.getQuantidadeCompra();
@@ -144,7 +156,7 @@ public class ComprasController extends HttpServlet {
                     request.setAttribute("link", "/trabalhoFinal/admin/comprador/comprasController?acao=Listar");
                     rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
                     rd.forward(request, response);
-                    break;
+                    return;
 
                 case "Excluir":
                     int idExcluir = Integer.parseInt(request.getParameter("id"));
@@ -155,8 +167,8 @@ public class ComprasController extends HttpServlet {
                     } else {
                         Produtos produtoExcluir = produtoDAO.get(compraExcluir.getIdProduto());
 
-                        if (produtoExcluir == null) {
-                            request.setAttribute("errorMessage", "Produto não encontrado para atualização.");
+                        if (!verificarProdutoExiste(compraExcluir.getIdProduto())) {
+                            request.setAttribute("errorMessage", "Esse produto não existe para atualização.");
                         } else {
                             produtoExcluir.setQuantidadeDisponivel(produtoExcluir.getQuantidadeDisponivel() - compraExcluir.getQuantidadeCompra());
                             produtoDAO.update(produtoExcluir);
@@ -168,7 +180,7 @@ public class ComprasController extends HttpServlet {
                     request.setAttribute("link", "/trabalhoFinal/admin/comprador/comprasController?acao=Listar");
                     rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
                     rd.forward(request, response);
-                    break;
+                    return;
 
                 default:
                     request.setAttribute("errorMessage", "Ação inválida.");
@@ -178,7 +190,10 @@ public class ComprasController extends HttpServlet {
             rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
             rd.forward(request, response);
         } catch (Exception ex) {
-            throw new ServletException("Falha ao processar operação de compra", ex);
+            request.setAttribute("link", "/trabalhoFinal/admin/comprador/comprasController?acao=Listar");
+            request.setAttribute("errorMessage", "Erro ao processar operação de compra: " + ex.getMessage());
+            rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
+            rd.forward(request, response);
         }
     }
 
@@ -192,7 +207,7 @@ public class ComprasController extends HttpServlet {
         int quantidadeCompra = parseIntOrDefault(request.getParameter("quantidadeCompra"));
 
         String dataCompraStr = request.getParameter("dataCompra");
-        java.util.Date dataCompraUtil = parseDate(dataCompraStr);
+        java.util.Date dataCompraUtil = (dataCompraStr == null || dataCompraStr.isEmpty()) ? new java.util.Date() : parseDate(dataCompraStr);
 
         java.sql.Date dataCompraSql = new java.sql.Date(dataCompraUtil.getTime());
 
@@ -223,4 +238,17 @@ public class ComprasController extends HttpServlet {
             return 0;
         }
     }
+
+    private boolean verificarProdutoExiste(int idProduto) {
+        ProdutoDAO produtoDAO = new ProdutoDAO();
+        Produtos produto = produtoDAO.get(idProduto);
+        return produto.getId() != 0;
+    }
+
+    private boolean verificarFornecedorExiste(int idFornecedor) {
+        FornecedorDAO fornecedorDAO = new FornecedorDAO();
+        Fornecedores fornecedor = fornecedorDAO.get(idFornecedor);
+        return fornecedor.getId() != 0;
+    }
+
 }
