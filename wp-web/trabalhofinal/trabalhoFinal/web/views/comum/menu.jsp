@@ -30,8 +30,9 @@
                             
                     <% } else if ("2".equals(papel)) { %>
                             <a class="nav-link" href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar">Cadastro de Fornecedores</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/listaCompras?acao=Listar">Cadastro de Compras</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/produtosParaVenda">Colocar produtos para venda</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/comprasController?acao=Listar">Cadastro de Compras</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/categoriaController?acao=Listar">Cadastro de categorias</a>
+                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/produtosParaVenda?acao=Listar">Colocar produtos para venda</a>
                             
                     <% } %>
                     <% } else { %>

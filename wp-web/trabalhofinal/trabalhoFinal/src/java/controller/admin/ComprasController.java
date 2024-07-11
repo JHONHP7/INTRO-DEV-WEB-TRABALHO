@@ -1,42 +1,48 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package controller.admin;
 
 import entidade.Compras;
+import entidade.Funcionarios;
+import entidade.Produtos;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.CompraDAO;
+import model.ProdutoDAO;
 
-/**
- *
- * @author Pedro
- */
-@WebServlet(name = "comprador/listaCompras", urlPatterns = {"/admin/comprador/listaCompras"})
+@WebServlet(name = "ComprasController", urlPatterns = {"/admin/comprador/comprasController"})
 public class ComprasController extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-        String acao = (String) request.getParameter("acao");
-        Compras compra = new Compras();
+        String acao = request.getParameter("acao");
         CompraDAO compraDAO = new CompraDAO();
         RequestDispatcher rd;
 
+        HttpSession session = request.getSession();
+        Funcionarios funcionarioLogado = (Funcionarios) session.getAttribute("funcionario");
+        if (funcionarioLogado == null) {
+            rd = request.getRequestDispatcher("/views/autenticacao/formLogin.jsp");
+            request.setAttribute("errorMessage", "Por favor, faça login para continuar.");
+            rd.forward(request, response);
+            return;
+        }
+
+        int idFuncionario = funcionarioLogado.getId();
+
         switch (acao) {
             case "Listar":
-                ArrayList<Compras> listaCompras = compraDAO.getAll();
+                ArrayList<Compras> listaCompras = compraDAO.getAllByFuncionario(idFuncionario);
                 request.setAttribute("listaCompras", listaCompras);
                 rd = request.getRequestDispatcher("/views/admin/compras/listarCompras.jsp");
                 rd.forward(request, response);
@@ -45,19 +51,20 @@ public class ComprasController extends HttpServlet {
             case "Alterar":
             case "Excluir":
                 int id = Integer.parseInt(request.getParameter("id"));
-                compra = compraDAO.get(id);
+                Compras compra = compraDAO.get(id);
                 request.setAttribute("compra", compra);
-                request.setAttribute("msgError", "");
                 request.setAttribute("acao", acao);
                 rd = request.getRequestDispatcher("/views/admin/compras/formCompras.jsp");
                 rd.forward(request, response);
                 break;
 
             case "Incluir":
-                request.setAttribute("compra", compra);
-                request.setAttribute("msgError", "");
-                request.setAttribute("acao", acao);
                 rd = request.getRequestDispatcher("/views/admin/compras/formCompras.jsp");
+                rd.forward(request, response);
+                break;
+
+            default:
+                rd = request.getRequestDispatcher("/views/admin/compras/listarCompras.jsp");
                 rd.forward(request, response);
                 break;
         }
@@ -68,75 +75,152 @@ public class ComprasController extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-        String idStr = request.getParameter("id");
-        String quantidadeCompraStr = request.getParameter("quantidadeCompra");
-        String dataCompraStr = request.getParameter("dataCompra");
-        String valorCompraStr = request.getParameter("valorCompra");
-        String idFornecedorStr = request.getParameter("idFornecedor");
-        String idProdutoStr = request.getParameter("idProduto");
-        String idFuncionarioStr = request.getParameter("uf");
         String btEnviar = request.getParameter("btEnviar");
+        CompraDAO compraDAO = new CompraDAO();
+        ProdutoDAO produtoDAO = new ProdutoDAO();
         RequestDispatcher rd;
 
-        if (idStr.isEmpty() || quantidadeCompraStr.isEmpty() || dataCompraStr.isEmpty() || valorCompraStr.isEmpty() || idFornecedorStr.isEmpty() || idProdutoStr.isEmpty() || idFuncionarioStr.isEmpty()) {
-            Compras compra = new Compras();
+        HttpSession session = request.getSession();
+        Funcionarios funcionarioLogado = (Funcionarios) session.getAttribute("funcionario");
+        if (funcionarioLogado == null) {
+            rd = request.getRequestDispatcher("/views/autenticacao/formLogin.jsp");
+            request.setAttribute("errorMessage", "Por favor, faça login para continuar.");
+            rd.forward(request, response);
+            return;
+        }
+
+        int idFuncionario = funcionarioLogado.getId();
+
+        try {
             switch (btEnviar) {
-                case "Alterar":
-                case "Excluir":
-                    try {
-                        int id = Integer.parseInt(idStr);
-                        CompraDAO compraDAO = new CompraDAO();
-                        compra = compraDAO.get(id);
-                    } catch (Exception ex) {
-                        System.out.println(ex.getMessage());
-                        throw new RuntimeException("Falha em uma query para cadastro de compra");
+                case "Incluir":
+                    Compras compraIncluir = criarCompraAPartirRequest(request);
+                    Produtos produtoIncluir = produtoDAO.get(compraIncluir.getIdProduto());
+
+                    if (produtoIncluir == null) {
+                        request.setAttribute("errorMessage", "Produto não encontrado. Não é possível realizar a compra.");
+                    } else if (compraIncluir.getQuantidadeCompra() < 1) {
+                        request.setAttribute("errorMessage", "A quantidade da compra deve ser maior que zero.");
+                    } else {
+                        produtoIncluir.setQuantidadeDisponivel(produtoIncluir.getQuantidadeDisponivel() + compraIncluir.getQuantidadeCompra());
+                        produtoDAO.update(produtoIncluir);
+
+                        compraDAO.insert(compraIncluir);
+                        request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
                     }
                     break;
-            }
-            request.setAttribute("compra", compra);
-            request.setAttribute("acao", btEnviar);
-            request.setAttribute("msgError", "É necessário preencher todos os campos");
-            rd = request.getRequestDispatcher("/views/admin/Compras/formCompras.jsp");
-            rd.forward(request, response);
-        } else {
-            try {
-                int id = Integer.parseInt(idStr);
-                int quantidadeCompra = Integer.parseInt(quantidadeCompraStr);
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                Date dataCompra = sdf.parse(dataCompraStr);
-                float valorCompra = Integer.parseInt(valorCompraStr);
-                int idFornecedor = Integer.parseInt(idFornecedorStr);
-                int idProduto = Integer.parseInt(idProdutoStr);
-                int idFuncionario = Integer.parseInt(idFuncionarioStr);
 
-                Compras compra = new Compras(id, quantidadeCompra, dataCompra, valorCompra, idFornecedor, idProduto, idFuncionario);
-                CompraDAO compraDAO = new CompraDAO();
-                try {
-                    switch (btEnviar) {
-                        case "Incluir":
-                            compraDAO.insert(compra);
-                            request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
-                            break;
-                        case "Alterar":
-                            compraDAO.update(compra);
+                case "Alterar":
+                    Compras compraAlterar = criarCompraAPartirRequest(request);
+                    Compras compraOriginal = compraDAO.get(compraAlterar.getId());
+
+                    if (compraOriginal == null) {
+                        request.setAttribute("errorMessage", "Compra original não encontrada.");
+                    } else {
+                        Produtos produtoOriginal = produtoDAO.get(compraOriginal.getIdProduto());
+                        Produtos produtoNovo = produtoDAO.get(compraAlterar.getIdProduto());
+
+                        if (produtoNovo == null) {
+                            request.setAttribute("errorMessage", "Produto não encontrado para atualização.");
+                        } else if (compraAlterar.getQuantidadeCompra() <= 0) {
+                            request.setAttribute("errorMessage", "A quantidade da compra deve ser maior que zero.");
+                        } else {
+                            int quantidadeOriginal = compraOriginal.getQuantidadeCompra();
+                            int quantidadeNova = compraAlterar.getQuantidadeCompra();
+                            int diferenca = quantidadeNova - quantidadeOriginal;
+
+                            if (produtoOriginal != null) {
+                                produtoOriginal.setQuantidadeDisponivel(produtoOriginal.getQuantidadeDisponivel() - diferenca);
+                                produtoDAO.update(produtoOriginal);
+                            }
+
+                            produtoNovo.setQuantidadeDisponivel(produtoNovo.getQuantidadeDisponivel() + diferenca);
+                            produtoDAO.update(produtoNovo);
+
+                            compraDAO.update(compraAlterar);
                             request.setAttribute("msgOperacaoRealizada", "Alteração realizada com sucesso");
-                            break;
-                        case "Excluir":
-                            compraDAO.delete(id);
-                            request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
-                            break;
+                        }
                     }
-                    request.setAttribute("link", "/trabalhoFinal/admin/comprador/listaCompras?acao=Listar");
+                    request.setAttribute("link", "/trabalhoFinal/admin/comprador/comprasController?acao=Listar");
                     rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
                     rd.forward(request, response);
-                } catch (IOException | ServletException ex) {
-                    System.out.println(ex.getMessage());
-                    throw new RuntimeException("Falha em uma query para cadastro de usuario");
-                }
-            } catch (NumberFormatException | ParseException ex) {
-                System.out.println(ex.getMessage());
-                throw new RuntimeException("Erro na conversão de dados");
+                    break;
+
+                case "Excluir":
+                    int idExcluir = Integer.parseInt(request.getParameter("id"));
+                    Compras compraExcluir = compraDAO.get(idExcluir);
+
+                    if (compraExcluir == null) {
+                        request.setAttribute("errorMessage", "Compra não encontrada.");
+                    } else {
+                        Produtos produtoExcluir = produtoDAO.get(compraExcluir.getIdProduto());
+
+                        if (produtoExcluir == null) {
+                            request.setAttribute("errorMessage", "Produto não encontrado para atualização.");
+                        } else {
+                            produtoExcluir.setQuantidadeDisponivel(produtoExcluir.getQuantidadeDisponivel() - compraExcluir.getQuantidadeCompra());
+                            produtoDAO.update(produtoExcluir);
+
+                            compraDAO.delete(idExcluir);
+                            request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
+                        }
+                    }
+                    request.setAttribute("link", "/trabalhoFinal/admin/comprador/comprasController?acao=Listar");
+                    rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
+                    rd.forward(request, response);
+                    break;
+
+                default:
+                    request.setAttribute("errorMessage", "Ação inválida.");
+                    break;
             }
+            request.setAttribute("link", "/trabalhoFinal/admin/comprador/comprasController?acao=Listar");
+            rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
+            rd.forward(request, response);
+        } catch (Exception ex) {
+            throw new ServletException("Falha ao processar operação de compra", ex);
+        }
+    }
+
+    private Compras criarCompraAPartirRequest(HttpServletRequest request) {
+
+        HttpSession session = request.getSession();
+        Funcionarios funcionarioLogado = (Funcionarios) session.getAttribute("funcionario");
+        int idFuncionario = (funcionarioLogado != null) ? funcionarioLogado.getId() : 0;
+
+        int id = parseIntOrDefault(request.getParameter("id"));
+        int quantidadeCompra = parseIntOrDefault(request.getParameter("quantidadeCompra"));
+
+        String dataCompraStr = request.getParameter("dataCompra");
+        java.util.Date dataCompraUtil = parseDate(dataCompraStr);
+
+        java.sql.Date dataCompraSql = new java.sql.Date(dataCompraUtil.getTime());
+
+        int idProduto = parseIntOrDefault(request.getParameter("idProduto"));
+        int idFornecedor = parseIntOrDefault(request.getParameter("idFornecedor"));
+
+        ProdutoDAO produtoDAO = new ProdutoDAO();
+        Produtos produto = produtoDAO.get(idProduto);
+
+        float valorCompra = (produto != null ? (float) (produto.getPrecoCompra() * quantidadeCompra) : 0);
+
+        return new Compras(id, quantidadeCompra, dataCompraUtil, valorCompra, idFornecedor, idProduto, idFuncionario);
+    }
+
+    private java.util.Date parseDate(String dateString) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            return sdf.parse(dateString);
+        } catch (ParseException e) {
+            throw new RuntimeException("Data inválida: " + dateString, e);
+        }
+    }
+
+    private int parseIntOrDefault(String value) {
+        try {
+            return Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+            return 0;
         }
     }
 }

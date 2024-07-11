@@ -24,7 +24,7 @@
             <div class="row mt-5">
                 <div class="col-sm-12">
                     <h1>Lista de Compras</h1>
-                    <a href="/trabalhoFinal/admin/comprador/listaCompras?acao=Incluir" class="mb-2 btn btn-primary">Incluir</a>
+                    <a href="/trabalhoFinal/admin/comprador/comprasController?acao=Incluir" class="mb-2 btn btn-primary">Incluir</a>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -54,8 +54,8 @@
                                 <td><%= compra.getIdFuncionario() %></td>
              
                                 <td>
-                                    <a href="/trabalhoFinal/admin/comprador/listaCompras?acao=Alterar&id=<%= compra.getId() %>" class="btn btn-warning">Alterar</a>
-                                    <a href="/trabalhoFinal/admin/comprador/listaCompras?acao=Excluir&id=<%= compra.getId() %>" class="btn btn-danger">Excluir</a>
+                                    <a href="/trabalhoFinal/admin/comprador/comprasController?acao=Alterar&id=<%= compra.getId() %>" class="btn btn-warning">Alterar</a>
+                                    <a href="/trabalhoFinal/admin/comprador/comprasController?acao=Excluir&id=<%= compra.getId() %>" class="btn btn-danger">Excluir</a>
                                 </td>
                             </tr>
                             <%
