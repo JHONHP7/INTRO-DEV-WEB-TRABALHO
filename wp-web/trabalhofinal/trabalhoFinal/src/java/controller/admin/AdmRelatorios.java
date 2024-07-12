@@ -1,6 +1,6 @@
 
-import entidade.auxiliar.TotalVendasDiarias;
 import entidade.auxiliar.TotalVendasProduto;
+import entidade.auxiliar.TotalVendasDiarias;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;

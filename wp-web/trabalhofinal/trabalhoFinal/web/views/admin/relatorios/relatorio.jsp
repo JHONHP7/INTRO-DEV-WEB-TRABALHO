@@ -5,8 +5,8 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="entidade.aux.TotalVendasProduto"%>
-<%@page import="entidade.aux.TotalVendasDiarias"%>
+<%@page import="entidade.auxiliar.TotalVendasProduto"%>
+<%@page import="entidade.auxiliar.TotalVendasDiarias"%>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -38,8 +38,8 @@
                             </thead>
                             <tbody>
                                 <% ArrayList<TotalVendasProduto> listaTotalVendasProduto = (ArrayList<TotalVendasProduto>) request.getAttribute("listaTotalVendasProduto");
-                                if (listaTotalVendasProduto != null) {
-                                    for (TotalVendasProduto vendaProduto : listaTotalVendasProduto) {%>
+                                    if (listaTotalVendasProduto != null) {
+                                        for (TotalVendasProduto vendaProduto : listaTotalVendasProduto) {%>
                                 <tr>
                                     <td><%= vendaProduto.getIdProduto()%></td>
                                     <td class="text-nowrap"><%= vendaProduto.getNomeProduto()%></td>
@@ -47,7 +47,7 @@
                                     <td class="text-nowrap"><%= String.format("%.2f", vendaProduto.getTotalValorVendido())%></td>
                                 </tr>
                                 <%     }
-                            } else { %>
+                                } else { %>
                                 <tr>
                                     <td colspan="4" class="text-center">Nenhum dado disponível</td>
                                 </tr>
@@ -69,15 +69,15 @@
                             </thead>
                             <tbody>
                                 <% ArrayList<TotalVendasDiarias> listaTotalVendasDiarias = (ArrayList<TotalVendasDiarias>) request.getAttribute("listaTotalVendasDiarias");
-                                if (listaTotalVendasDiarias != null) {
-                                    for (TotalVendasDiarias vendaDiaria : listaTotalVendasDiarias) {%>
+                                    if (listaTotalVendasDiarias != null) {
+                                        for (TotalVendasDiarias vendaDiaria : listaTotalVendasDiarias) {%>
                                 <tr>
                                     <td><%= vendaDiaria.getDataVenda()%></td>
                                     <td class="text-nowrap"><%= vendaDiaria.getTotalQuantidadeVendida()%></td>
                                     <td class="text-nowrap"><%= String.format("%.2f", vendaDiaria.getTotalValorVendido())%></td>
                                 </tr>
                                 <%     }
-                            } else { %>
+                                } else { %>
                                 <tr>
                                     <td colspan="3" class="text-center">Nenhum dado disponível</td>
                                 </tr>
