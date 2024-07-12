@@ -53,7 +53,7 @@
 
                 <div class="mb-3">
                     <label for="cpf" class="form-label">CPF</label>
-                    <input type="text" name="cpf" minlength="11" maxlength="14" placeholder="Apenas números" <%= acao.equals("Excluir") ? "readonly" : "" %> value="<%= cliente != null ? cliente.getCpf() : "" %>" class="form-control">
+                    <input type="text" name="cpf" minlength="11" maxlength="14" placeholder="123.456.789-00"  <%= acao.equals("Excluir") ? "readonly" : "" %> value="<%= cliente != null ? cliente.getCpf() : "" %>" class="form-control">
                 </div>
 
                 <div class="mb-3">

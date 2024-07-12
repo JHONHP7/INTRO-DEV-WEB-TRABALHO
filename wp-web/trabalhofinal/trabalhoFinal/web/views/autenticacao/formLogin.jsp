@@ -26,7 +26,7 @@
                 <form action="/trabalhoFinal/AutenticaController?acao=login" method="POST">
                     <div class="mb-3">
                         <label for="cpf" class="form-label">CPF</label>
-                        <input type="text" name="cpf" minlength="14" maxlength="14" placeholder="Apenas números" value="249.252.810-38" class="form-control">
+                        <input type="text" name="cpf" minlength="14" maxlength="14" placeholder="123.456.789-00"  value="249.252.810-38" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="senha" class="form-label">Senha</label>

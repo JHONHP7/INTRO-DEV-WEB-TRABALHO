@@ -49,7 +49,7 @@
                     
                     <div class="mb-3">
                         <label for="cnpj" class="form-label">CNPJ</label>
-                        <input type="text" name="cnpj" minlength="14" maxlength="18" placeholder="Apenas números"  <%= acao.equals("Excluir") ? "readonly" : "" %> value="<%=fornecedor != null ? fornecedor.getCnpj() : ""%>" class="form-control">
+                        <input type="text" name="cnpj" minlength="18" maxlength="18" placeholder="XX.XXX.XXX/0001-XX"  <%= acao.equals("Excluir") ? "readonly" : "" %> value="<%=fornecedor != null ? fornecedor.getCnpj() : ""%>" class="form-control">
                     </div>
 
                     <div class="mb-3">
