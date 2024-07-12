@@ -97,7 +97,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         request.setAttribute("fornecedor", fornecedor);
         request.setAttribute("acao", btEnviar);
         request.setAttribute("msgError", "É necessário preencher todos os campos");
-        rd = request.getRequestDispatcher("/views/admin/Fornecedores/formFornecedores.jsp");
+        rd = request.getRequestDispatcher("/views/admin/fornecedores/formFornecedores.jsp");
         rd.forward(request, response);
     } else {
         Fornecedores fornecedor = new Fornecedores(id, razaoSocial, cnpj, endereco, bairro, cidade, uf, cep, telefone, email);
