@@ -142,7 +142,7 @@ public class UsuarioDAO {
             return usuarioObtido;
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+
             throw new RuntimeException("Query de select (get) incorreta");
         } finally {
             conexao.closeConexao();

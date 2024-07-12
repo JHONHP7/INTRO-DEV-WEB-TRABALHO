@@ -27,7 +27,7 @@ public class MostrarComentarios extends HttpServlet {
                 
                 
             } catch (IOException | ServletException ex) {
-                System.out.println(ex.getMessage());
+               
                 throw new RuntimeException("Falha na query listar usuarios (mostrarComentarios) ");
             }
     }

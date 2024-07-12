@@ -49,7 +49,7 @@ public class AutenticaController extends HttpServlet {
             try {
                 usuarioObtido = usuarioDAO.Logar(usuario);
             } catch (Exception ex) {
-                System.out.println(ex.getMessage());
+                
                 throw new RuntimeException("Falha na query para Logar");
             }
 

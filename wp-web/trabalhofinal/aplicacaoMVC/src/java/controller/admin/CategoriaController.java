@@ -78,7 +78,7 @@ public class CategoriaController extends HttpServlet {
                     categoria = categoriaDAO.get(id);
 
                 } catch (Exception ex) {
-                    System.out.println(ex.getMessage());
+                    
                     throw new RuntimeException("Falha em uma query para cadastro de usuario");
                 }
                 break;
@@ -118,7 +118,7 @@ public class CategoriaController extends HttpServlet {
                 rd.forward(request, response);
 
             } catch (IOException | ServletException ex) {
-                System.out.println(ex.getMessage());
+                
                 throw new RuntimeException("Falha em uma query para cadastro de usuario");
             }
         }
