@@ -25,7 +25,7 @@ public class Compras {
         this.idFuncionario = idFuncionario;
     }
 
-    // Getters and Setters
+
     public int getId() {
         return id;
     }

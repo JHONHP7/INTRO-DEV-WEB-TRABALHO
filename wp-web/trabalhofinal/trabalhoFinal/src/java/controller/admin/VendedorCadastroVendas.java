@@ -152,7 +152,7 @@ public class VendedorCadastroVendas extends HttpServlet {
                         } else if (vendaAlterar.getQuantidadeVenda() < 1) {
                             request.setAttribute("errorMessage", "A quantidade da venda deve ser maior que zero.");
                         } else {
-                            // Ajuste de estoque para produto original e novo produto
+                           
                             int quantidadeOriginal = vendaOriginal.getQuantidadeVenda();
                             int quantidadeNova = vendaAlterar.getQuantidadeVenda();
                             int diferenca = quantidadeNova - quantidadeOriginal;

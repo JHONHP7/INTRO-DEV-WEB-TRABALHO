@@ -68,7 +68,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     request.setCharacterEncoding("UTF-8");
 
     int id = Integer.parseInt(request.getParameter("id"));
-    String razaoSocial = request.getParameter("razao_social");  // Agora corresponde ao nome do campo no formulário HTML
+    String razaoSocial = request.getParameter("razao_social"); 
     String cnpj = request.getParameter("cnpj");
     String endereco = request.getParameter("endereco");
     String bairro = request.getParameter("bairro");

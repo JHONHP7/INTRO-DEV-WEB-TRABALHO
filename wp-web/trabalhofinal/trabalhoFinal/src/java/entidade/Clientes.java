@@ -48,7 +48,7 @@ public class Clientes {
         this.nome = nome;
     }
 
-    // Getters e Setters
+
     /**
      * @return the id
      */

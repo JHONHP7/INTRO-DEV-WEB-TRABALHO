@@ -45,7 +45,6 @@ public class AutenticaController extends HttpServlet {
         try {
             funcionarioObtido = funcionarioDAO.Logar(funcionario);
         } catch (Exception ex) {
-            // Em caso de erro, definir a mensagem de erro e encaminhar para a página showMessage.jsp
             request.setAttribute("errorMessage", "Ocorreu um erro ao tentar autenticar o usuário. Por favor, tente novamente.");
             request.setAttribute("link", "/trabalhoFinal/AutenticaController");
             rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");

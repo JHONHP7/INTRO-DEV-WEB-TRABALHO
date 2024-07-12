@@ -26,31 +26,27 @@ public class filtroRestrito implements Filter {
         Funcionarios funcionario = (Funcionarios) httpRequest.getSession().getAttribute("funcionario");
 
         if (funcionario != null) {
-            String papelFuncionario = funcionario.getPapel(); // Supondo que 'getPapel' retorna o papel do funcionário como String
+            String papelFuncionario = funcionario.getPapel();
 
-            // Verifica o tipo de página acessada e o papel do funcionário
             String requestURI = httpRequest.getRequestURI();
             if (requestURI.equals(httpRequest.getContextPath() + "/admin/logOut")) {
-                chain.doFilter(request, response); // Permite acesso ao logout
+                chain.doFilter(request, response);
             } else if (requestURI.startsWith(httpRequest.getContextPath() + "/admin/administrador") && papelFuncionario.equals("0")) {
-                chain.doFilter(request, response); // Permite acesso a /admin/administrador para administradores
+                chain.doFilter(request, response);
             } else if (requestURI.startsWith(httpRequest.getContextPath() + "/admin/vendedor") && papelFuncionario.equals("1")) {
-                chain.doFilter(request, response); // Permite acesso a /admin/vendedor para vendedores
+                chain.doFilter(request, response);
             } else if (requestURI.startsWith(httpRequest.getContextPath() + "/admin/comprador") && papelFuncionario.equals("2")) {
-                chain.doFilter(request, response); // Permite acesso a /admin/comprador para compradores
+                chain.doFilter(request, response);
             } else {
-                // Define os atributos para a página showMessage.jsp
                 String mensagem = "Você não possui permissão para acessar esta página.";
-                String link = httpRequest.getContextPath() + "/home"; // Link para redirecionar para a página inicial
+                String link = httpRequest.getContextPath() + "/home";
 
                 httpRequest.setAttribute("msgOperacaoRealizada", mensagem);
                 httpRequest.setAttribute("link", link);
 
-                // Encaminha para a página showMessage.jsp
                 httpRequest.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
             }
         } else {
-//            httpResponse.sendRedirect(httpRequest.getContextPath() + "/home.jsp");
             ((HttpServletResponse) response).sendRedirect("http://localhost:8080/trabalhoFinal/home");
         }
     }

@@ -72,7 +72,7 @@ public class VendaDAO implements Dao<Vendas> {
             PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO trabalhofinal.vendas (quantidade_venda, data_venda, valor_venda, id_cliente, id_produto, id_funcionario)"
                     + " VALUES (?, ?, ?, ?, ?, ?)");
             sql.setInt(1, venda.getQuantidadeVenda());
-            sql.setDate(2, (Date) venda.getDataVenda()); // Uso direto de java.sql.Date
+            sql.setDate(2, (Date) venda.getDataVenda()); 
             sql.setDouble(3, venda.getValorVenda());
             sql.setInt(4, venda.getIdCliente());
             sql.setInt(5, venda.getIdProduto());
@@ -92,7 +92,7 @@ public class VendaDAO implements Dao<Vendas> {
         try {
             PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE trabalhofinal.vendas SET quantidade_venda = ?, data_venda = ?, valor_venda = ?, id_cliente = ?, id_produto = ?, id_funcionario = ? WHERE id = ?");
             sql.setInt(1, venda.getQuantidadeVenda());
-            sql.setDate(2, (Date) venda.getDataVenda()); // Uso direto de java.sql.Date
+            sql.setDate(2, (Date) venda.getDataVenda()); 
             sql.setDouble(3, venda.getValorVenda());
             sql.setInt(4, venda.getIdCliente());
             sql.setInt(5, venda.getIdProduto());
