@@ -141,12 +141,16 @@ public class ComprasController extends HttpServlet {
                             int quantidadeNova = compraAlterar.getQuantidadeCompra();
                             int diferenca = quantidadeNova - quantidadeOriginal;
 
-                            if (produtoOriginal != null) {
-                                produtoOriginal.setQuantidadeDisponivel(produtoOriginal.getQuantidadeDisponivel() - diferenca);
+                            if (produtoOriginal.getId() != produtoNovo.getId()) {
+                                // Se o produto foi alterado
+                                produtoOriginal.setQuantidadeDisponivel(produtoOriginal.getQuantidadeDisponivel() - quantidadeOriginal);
                                 produtoDAO.update(produtoOriginal);
-                            }
 
-                            produtoNovo.setQuantidadeDisponivel(produtoNovo.getQuantidadeDisponivel() + diferenca);
+                                produtoNovo.setQuantidadeDisponivel(produtoNovo.getQuantidadeDisponivel() + quantidadeNova);
+                            } else {
+                                // Se o produto não foi alterado
+                                produtoNovo.setQuantidadeDisponivel(produtoNovo.getQuantidadeDisponivel() + diferenca);
+                            }
                             produtoDAO.update(produtoNovo);
 
                             compraDAO.update(compraAlterar);
