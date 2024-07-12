@@ -33,11 +33,9 @@ public class AutenticaController extends HttpServlet {
             throws ServletException, IOException {
 
         RequestDispatcher rd;
-        // pegando os parâmetros do request
         String cpf_func = request.getParameter("cpf");
         String senha_func = request.getParameter("senha");
 
-        // Log dos valores de CPF e senha
         System.out.println("CPF: " + cpf_func);
         System.out.println("Senha: " + senha_func);
         if (cpf_func.isEmpty() || senha_func.isEmpty()) {
