@@ -37,6 +37,18 @@ public class Clientes {
         this.email = email;
     }
 
+    public Clientes(int id, String nome, String endereco, String bairro, String cidade, String uf, String cep, String telefone, String email) {
+        this.id = id;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.uf = uf;
+        this.cep = cep;
+        this.telefone = telefone;
+        this.email = email;
+    }
+
     public Clientes(int id, String nome, String cpf) {
         this.id = id;
         this.nome = nome;
@@ -47,7 +59,6 @@ public class Clientes {
         this.id = id;
         this.nome = nome;
     }
-
 
     /**
      * @return the id

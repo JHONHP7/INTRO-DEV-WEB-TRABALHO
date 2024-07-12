@@ -4,7 +4,6 @@ import entidade.Clientes;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -71,49 +70,70 @@ public class ClienteController extends HttpServlet {
         String email = request.getParameter("email");
         String btEnviar = request.getParameter("btEnviar");
         RequestDispatcher rd;
+        ClienteDAO clienteDAO = new ClienteDAO();
 
-        if (nome.isEmpty() || cpf.isEmpty() || endereco.isEmpty() || bairro.isEmpty() || cidade.isEmpty() || uf.isEmpty() || cep.isEmpty() || telefone.isEmpty() || email.isEmpty()) {
-            Clientes cliente = new Clientes();
-            switch (btEnviar) {
-                case "Alterar":
-                case "Excluir":
-                    try {
-                        ClienteDAO clienteDAO = new ClienteDAO();
-                        cliente = clienteDAO.get(id);
-                    } catch (Exception ex) {
-                        throw new RuntimeException("Falha em uma query para cadastro de cliente");
-                    }
-                    break;
-            }
+        // Verifica se todos os campos estão preenchidos
+        if (nome.isEmpty() || endereco.isEmpty() || bairro.isEmpty() || cidade.isEmpty() || uf.isEmpty() || cep.isEmpty() || telefone.isEmpty() || email.isEmpty()) {
+            Clientes cliente = new Clientes(id, nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email);
             request.setAttribute("cliente", cliente);
             request.setAttribute("acao", btEnviar);
             request.setAttribute("msgError", "É necessário preencher todos os campos");
             rd = request.getRequestDispatcher("/views/admin/clientes/formClientes.jsp");
             rd.forward(request, response);
         } else {
-            Clientes cliente = new Clientes(id, nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email);
-            ClienteDAO clienteDAO = new ClienteDAO();
-            try {
-                switch (btEnviar) {
-                    case "Incluir":
-                        clienteDAO.insert(cliente);
-                        request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
-                        break;
-                    case "Alterar":
-                        clienteDAO.update(cliente);
-                        request.setAttribute("msgOperacaoRealizada", "Alteração realizada com sucesso");
-                        break;
-                    case "Excluir":
-                        clienteDAO.delete(id);
-                        request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
-                        break;
+            // Verifica se o CPF já existe, exceto para a exclusão
+            if (!"Excluir".equals(btEnviar)) {
+                boolean cpfAlreadyExists = clienteDAO.cpfExists(cpf);
+
+                if (cpfAlreadyExists && !"Alterar".equals(btEnviar)) {
+                    // Se o CPF já está cadastrado e a ação é "Incluir", mostra erro
+                    Clientes cliente = new Clientes(id, nome, endereco, bairro, cidade, uf, cep, telefone, email);
+                    request.setAttribute("cliente", cliente);
+                    request.setAttribute("acao", "Incluir");
+                    request.setAttribute("msgError", "CPF já cadastrado");
+                    rd = request.getRequestDispatcher("/views/admin/clientes/formClientes.jsp");
+                    rd.forward(request, response);
+                } else if (cpfAlreadyExists && "Alterar".equals(btEnviar) && !clienteDAO.get(id).getCpf().equals(cpf)) {
+                    // Se o CPF já está cadastrado e a ação é "Alterar", mas o CPF fornecido é diferente do CPF atual, mostra erro
+                    Clientes cliente = new Clientes(id, nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email);
+                    request.setAttribute("cliente", cliente);
+                    request.setAttribute("acao", "Alterar");
+                    request.setAttribute("msgError", "CPF já cadastrado");
+                    rd = request.getRequestDispatcher("/views/admin/clientes/formClientes.jsp");
+                    rd.forward(request, response);
+                } else {
+                    // Se CPF não existe ou a ação é "Alterar" com CPF atual, prossegue
+                    processarAcao(clienteDAO, btEnviar, id, nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email, request, response);
                 }
-                request.setAttribute("link", "/trabalhoFinal/admin/vendedor/listaClientes?acao=Listar");
-                rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
-                rd.forward(request, response);
-            } catch (IOException | ServletException ex) {
-                throw new RuntimeException("Falha em uma query para cadastro de usuario");
+            } else {
+                // Ação é "Excluir", apenas exclui o cliente
+                processarAcao(clienteDAO, btEnviar, id, nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email, request, response);
             }
+        }
+    }
+
+    private void processarAcao(ClienteDAO clienteDAO, String btEnviar, int id, String nome, String cpf, String endereco, String bairro, String cidade, String uf, String cep, String telefone, String email, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Clientes cliente = new Clientes(id, nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email);
+        try {
+            switch (btEnviar) {
+                case "Incluir":
+                    clienteDAO.insert(cliente);
+                    request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
+                    break;
+                case "Alterar":
+                    clienteDAO.update(cliente);
+                    request.setAttribute("msgOperacaoRealizada", "Alteração realizada com sucesso");
+                    break;
+                case "Excluir":
+                    clienteDAO.delete(id);
+                    request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
+                    break;
+            }
+            request.setAttribute("link", "/trabalhoFinal/admin/vendedor/listaClientes?acao=Listar");
+            RequestDispatcher rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
+            rd.forward(request, response);
+        } catch (IOException | ServletException ex) {
+            throw new RuntimeException("Falha em uma query para cadastro de usuario", ex);
         }
     }
 

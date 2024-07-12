@@ -36,63 +36,63 @@
 
                         String msgError = (String) request.getAttribute("msgError");
                     %>
-                    <h1 class="text-center"><%= titulo %></h1>
-                    <% if (msgError != null && !msgError.isEmpty()) { %>
+                    <h1 class="text-center"><%= titulo%></h1>
+                    <% if (msgError != null && !msgError.isEmpty()) {%>
                     <div class="alert alert-danger" role="alert">
-                        <%= msgError %>
+                        <%= msgError%>
                     </div>
-                    <% } %>
+                    <% }%>
 
                     <form action="/trabalhoFinal/admin/vendedor/listaClientes" method="POST" accept-charset="UTF-8">
-                        <input type="hidden" name="id" value="<%= cliente != null ? cliente.getId() : "" %>" class="form-control">
+                        <input type="hidden" name="id" value="<%= cliente != null ? cliente.getId() : ""%>" class="form-control">
 
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" name="nome" <%= acao.equals("Excluir") ? "readonly" : "required" %> value="<%= cliente != null ? cliente.getNome() : "" %>" class="form-control" placeholder="Nome completo">
+                            <input type="text" name="nome" <%= acao.equals("Excluir") ? "readonly" : "required"%> value="<%= cliente != null ? cliente.getNome() : ""%>" class="form-control" placeholder="Nome completo">
                         </div>
 
                         <div class="mb-3">
                             <label for="cpf" class="form-label">CPF</label>
-                            <input type="text" name="cpf" minlength="11" maxlength="14" placeholder="123.456.789-00" <%= acao.equals("Excluir") ? "readonly" : "required" %> value="<%= cliente != null ? cliente.getCpf() : "" %>" class="form-control" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                            <input type="text" name="cpf" minlength="11" maxlength="14" placeholder="123.456.789-00" <%= acao.equals("Excluir") ? "readonly" : "required"%> value="<%= cliente != null ? cliente.getCpf() : ""%>" class="form-control" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
                         </div>
 
                         <div class="mb-3">
                             <label for="endereco" class="form-label">Endereço</label>
-                            <input type="text" name="endereco" <%= acao.equals("Excluir") ? "readonly" : "required" %> value="<%= cliente != null ? cliente.getEndereco() : "" %>" class="form-control" placeholder="Rua, número, complemento">
+                            <input type="text" name="endereco" <%= acao.equals("Excluir") ? "readonly" : "required"%> value="<%= cliente != null ? cliente.getEndereco() : ""%>" class="form-control" placeholder="Rua, número, complemento">
                         </div>
 
                         <div class="mb-3">
                             <label for="bairro" class="form-label">Bairro</label>
-                            <input type="text" name="bairro" <%= acao.equals("Excluir") ? "readonly" : "required" %> value="<%= cliente != null ? cliente.getBairro() : "" %>" class="form-control" placeholder="Bairro">
+                            <input type="text" name="bairro" <%= acao.equals("Excluir") ? "readonly" : "required"%> value="<%= cliente != null ? cliente.getBairro() : ""%>" class="form-control" placeholder="Bairro">
                         </div>
 
                         <div class="mb-3">
                             <label for="cidade" class="form-label">Cidade</label>
-                            <input type="text" name="cidade" <%= acao.equals("Excluir") ? "readonly" : "required" %> value="<%= cliente != null ? cliente.getCidade() : "" %>" class="form-control" placeholder="Cidade">
+                            <input type="text" name="cidade" <%= acao.equals("Excluir") ? "readonly" : "required"%> value="<%= cliente != null ? cliente.getCidade() : ""%>" class="form-control" placeholder="Cidade">
                         </div>
 
                         <div class="mb-3">
                             <label for="uf" class="form-label">UF</label>
-                            <input type="text" name="uf" minlength="2" maxlength="2" placeholder="UF" <%= acao.equals("Excluir") ? "readonly" : "required" %> value="<%= cliente != null ? cliente.getUf() : "" %>" class="form-control" pattern="[A-Z]{2}">
+                            <input type="text" name="uf" minlength="2" maxlength="2" placeholder="UF" <%= acao.equals("Excluir") ? "readonly" : "required"%> value="<%= cliente != null ? cliente.getUf() : ""%>" class="form-control" pattern="[A-Z]{2}">
                         </div>
 
                         <div class="mb-3">
                             <label for="cep" class="form-label">CEP</label>
-                            <input type="text" name="cep" minlength="8" maxlength="8" placeholder="00000000" <%= acao.equals("Excluir") ? "readonly" : "required" %> value="<%= cliente != null ? cliente.getCep() : "" %>" class="form-control" >
+                            <input type="text" name="cep" minlength="8" maxlength="8" placeholder="00000000" <%= acao.equals("Excluir") ? "readonly" : "required"%> value="<%= cliente != null ? cliente.getCep() : ""%>" class="form-control">
                         </div>
 
                         <div class="mb-3">
                             <label for="telefone" class="form-label">Telefone</label>
-                            <input type="text" name="telefone" minlength="10" maxlength="15" placeholder="(00) 00000-0000" <%= acao.equals("Excluir") ? "readonly" : "required" %> value="<%= cliente != null ? cliente.getTelefone() : "" %>" class="form-control">
+                            <input type="text" name="telefone" minlength="10" maxlength="15" placeholder="(00) 00000-0000" <%= acao.equals("Excluir") ? "readonly" : "required"%> value="<%= cliente != null ? cliente.getTelefone() : ""%>" class="form-control">
                         </div>
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" name="email" <%= acao.equals("Excluir") ? "readonly" : "required" %> value="<%= cliente != null ? cliente.getEmail() : "" %>" class="form-control" placeholder="exemplo@dominio.com">
+                            <input type="email" name="email" <%= acao.equals("Excluir") ? "readonly" : "required"%> value="<%= cliente != null ? cliente.getEmail() : ""%>" class="form-control" placeholder="exemplo@dominio.com">
                         </div>
 
                         <div class="mb-3 text-center">
-                            <input type="submit" name="btEnviar" value="<%= acao %>" class="btn btn-primary">
+                            <input type="submit" name="btEnviar" value="<%= acao%>" class="btn btn-primary">
                             <a href="/trabalhoFinal/admin/vendedor/listaClientes?acao=Listar" class="btn btn-danger">Retornar</a>
                         </div>
                     </form>

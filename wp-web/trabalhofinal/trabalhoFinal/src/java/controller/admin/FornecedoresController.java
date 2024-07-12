@@ -22,11 +22,11 @@ import model.FornecedorDAO;
  */
 @WebServlet(name = "comprador/listaFornecedores", urlPatterns = {"/admin/comprador/listaFornecedores"})
 public class FornecedoresController extends HttpServlet {
-@Override
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-
 
         String acao = (String) request.getParameter("acao");
         Fornecedores fornecedor = new Fornecedores();
@@ -63,69 +63,86 @@ public class FornecedoresController extends HttpServlet {
     }
 
     @Override
-protected void doPost(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
-    request.setCharacterEncoding("UTF-8");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
 
-    int id = Integer.parseInt(request.getParameter("id"));
-    String razaoSocial = request.getParameter("razao_social"); 
-    String cnpj = request.getParameter("cnpj");
-    String endereco = request.getParameter("endereco");
-    String bairro = request.getParameter("bairro");
-    String cidade = request.getParameter("cidade");
-    String uf = request.getParameter("uf");
-    String cep = request.getParameter("cep");
-    String telefone = request.getParameter("telefone");
-    String email = request.getParameter("email");
-    String btEnviar = request.getParameter("btEnviar");
-    RequestDispatcher rd;
-
-    if (razaoSocial.isEmpty() || cnpj.isEmpty() || endereco.isEmpty() || bairro.isEmpty() || cidade.isEmpty() || uf.isEmpty() || cep.isEmpty() || telefone.isEmpty() || email.isEmpty()) {
-        Fornecedores fornecedor = new Fornecedores();
-        switch (btEnviar) {
-            case "Alterar":
-            case "Excluir":
-                try {
-                    FornecedorDAO fornecedorDAO = new FornecedorDAO();
-                    fornecedor = fornecedorDAO.get(id);
-                } catch (Exception ex) {
-                    
-                    throw new RuntimeException("Falha em uma query para cadastro de fornecedor");
-                }
-                break;
-        }
-        request.setAttribute("fornecedor", fornecedor);
-        request.setAttribute("acao", btEnviar);
-        request.setAttribute("msgError", "É necessário preencher todos os campos");
-        rd = request.getRequestDispatcher("/views/admin/fornecedores/formFornecedores.jsp");
-        rd.forward(request, response);
-    } else {
-        Fornecedores fornecedor = new Fornecedores(id, razaoSocial, cnpj, endereco, bairro, cidade, uf, cep, telefone, email);
+        int id = Integer.parseInt(request.getParameter("id"));
+        String razaoSocial = request.getParameter("razao_social");
+        String cnpj = request.getParameter("cnpj");
+        String endereco = request.getParameter("endereco");
+        String bairro = request.getParameter("bairro");
+        String cidade = request.getParameter("cidade");
+        String uf = request.getParameter("uf");
+        String cep = request.getParameter("cep");
+        String telefone = request.getParameter("telefone");
+        String email = request.getParameter("email");
+        String btEnviar = request.getParameter("btEnviar");
+        RequestDispatcher rd;
         FornecedorDAO fornecedorDAO = new FornecedorDAO();
-        try {
+
+        if (razaoSocial.isEmpty() || cnpj.isEmpty() || endereco.isEmpty() || bairro.isEmpty() || cidade.isEmpty() || uf.isEmpty() || cep.isEmpty() || telefone.isEmpty() || email.isEmpty()) {
+            Fornecedores fornecedor = new Fornecedores();
             switch (btEnviar) {
-                case "Incluir":
-                    fornecedorDAO.insert(fornecedor);
-                    request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
-                    break;
                 case "Alterar":
-                    fornecedorDAO.update(fornecedor);
-                    request.setAttribute("msgOperacaoRealizada", "Alteração realizada com sucesso");
-                    break;
                 case "Excluir":
-                    fornecedorDAO.delete(id);
-                    request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
+                    try {
+                        fornecedor = fornecedorDAO.get(id);
+                    } catch (Exception ex) {
+                        throw new RuntimeException("Falha em uma query para cadastro de fornecedor");
+                    }
                     break;
             }
-            request.setAttribute("link", "/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar");
-            rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
+            request.setAttribute("fornecedor", fornecedor);
+            request.setAttribute("acao", btEnviar);
+            request.setAttribute("msgError", "É necessário preencher todos os campos");
+            rd = request.getRequestDispatcher("/views/admin/fornecedores/formFornecedores.jsp");
             rd.forward(request, response);
-        } catch (IOException | ServletException ex) {
-            
-            throw new RuntimeException("Falha em uma query para cadastro de usuario");
+        } else {
+            Fornecedores fornecedor = new Fornecedores(id, razaoSocial, cnpj, endereco, bairro, cidade, uf, cep, telefone, email);
+            try {
+                boolean hasCnpjConflict = fornecedorDAO.existsByCnpj(cnpj);
+                boolean hasRazaoSocialConflict = fornecedorDAO.existsByRazaoSocial(razaoSocial);
+
+                if (hasCnpjConflict && (btEnviar.equals("Incluir") || (btEnviar.equals("Alterar") && fornecedorDAO.get(id).getCnpj() != null && !fornecedorDAO.get(id).getCnpj().equals(cnpj)))) {
+                    request.setAttribute("msgError", "CNPJ já cadastrado.");
+                    request.setAttribute("fornecedor", fornecedor);
+                    request.setAttribute("acao", btEnviar);
+                    rd = request.getRequestDispatcher("/views/admin/fornecedores/formFornecedores.jsp");
+                    rd.forward(request, response);
+                    return;
+                }
+
+                if (hasRazaoSocialConflict && (btEnviar.equals("Incluir") || (btEnviar.equals("Alterar") && fornecedorDAO.get(id).getRazaoSocial() != null && !fornecedorDAO.get(id).getRazaoSocial().equals(razaoSocial)))) {
+                    request.setAttribute("msgError", "Razão Social já cadastrada.");
+                    request.setAttribute("fornecedor", fornecedor);
+                    request.setAttribute("acao", btEnviar);
+                    rd = request.getRequestDispatcher("/views/admin/fornecedores/formFornecedores.jsp");
+                    rd.forward(request, response);
+                    return;
+                }
+
+                switch (btEnviar) {
+                    case "Incluir":
+                        fornecedorDAO.insert(fornecedor);
+                        request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
+                        break;
+                    case "Alterar":
+                        fornecedorDAO.update(fornecedor);
+                        request.setAttribute("msgOperacaoRealizada", "Alteração realizada com sucesso");
+                        break;
+                    case "Excluir":
+                        fornecedorDAO.delete(id);
+                        request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
+                        break;
+                }
+                request.setAttribute("link", "/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar");
+                rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
+                rd.forward(request, response);
+            } catch (IOException | ServletException ex) {
+                throw new RuntimeException("Falha em uma query para cadastro de fornecedor", ex);
+            }
         }
     }
-}
-
 
 }

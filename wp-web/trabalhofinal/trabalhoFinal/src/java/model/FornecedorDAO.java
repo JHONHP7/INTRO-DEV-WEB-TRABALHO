@@ -133,4 +133,39 @@ public class FornecedorDAO implements Dao<Fornecedores> {
             conexao.closeConexao();
         }
     }
+
+    //Metodos novos
+    public boolean existsByCnpj(String cnpj) {
+        Conexao conexao = new Conexao();
+        try {
+            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT COUNT(*) FROM trabalhofinal.fornecedores WHERE cnpj = ?");
+            sql.setString(1, cnpj);
+            ResultSet resultado = sql.executeQuery();
+            if (resultado.next()) {
+                return resultado.getInt(1) > 0;
+            }
+            return false;
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao verificar existência de fornecedor por CNPJ: " + e.getMessage());
+        } finally {
+            conexao.closeConexao();
+        }
+    }
+
+    public boolean existsByRazaoSocial(String razaoSocial) {
+        Conexao conexao = new Conexao();
+        try {
+            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT COUNT(*) FROM trabalhofinal.fornecedores WHERE razao_social = ?");
+            sql.setString(1, razaoSocial);
+            ResultSet resultado = sql.executeQuery();
+            if (resultado.next()) {
+                return resultado.getInt(1) > 0;
+            }
+            return false;
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao verificar existência de fornecedor por Razão Social: " + e.getMessage());
+        } finally {
+            conexao.closeConexao();
+        }
+    }
 }
