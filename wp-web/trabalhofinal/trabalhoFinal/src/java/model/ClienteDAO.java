@@ -138,7 +138,6 @@ public class ClienteDAO implements Dao<Clientes> {
         }
     }
 
-    //Metodo novo
     public boolean cpfExists(String cpf) {
         Conexao conexao = new Conexao();
         try {

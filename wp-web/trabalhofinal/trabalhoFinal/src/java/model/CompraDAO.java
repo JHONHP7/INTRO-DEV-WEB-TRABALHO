@@ -106,7 +106,6 @@ public class CompraDAO implements Dao<Compras> {
         }
     }
 
-    //Metodos novos 
     public ArrayList<Compras> getAllByFuncionario(int idFuncionario) {
         ArrayList<Compras> listaCompras = new ArrayList<>();
         try {

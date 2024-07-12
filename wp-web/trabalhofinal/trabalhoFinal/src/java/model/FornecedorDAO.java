@@ -134,7 +134,6 @@ public class FornecedorDAO implements Dao<Fornecedores> {
         }
     }
 
-    //Metodos novos
     public boolean existsByCnpj(String cnpj) {
         Conexao conexao = new Conexao();
         try {

@@ -126,7 +126,6 @@ public class ProdutoDAO implements Dao<Produtos> {
         }
     }
 
-    //Metodos novos
     public void updateLiberadoVenda(int id, char liberadoVenda) {
         Conexao conexao = new Conexao();
         try {

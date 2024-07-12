@@ -16,7 +16,6 @@ public class TotalVendasDiarias {
     private double totalQuantidadeVendida;
     private double totalValorVendido;
 
-    // Getters e setters
     public Date getDataVenda() {
         return dataVenda;
     }

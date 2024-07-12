@@ -15,7 +15,6 @@ public class TotalVendasProduto {
     private int totalQuantidadeVendida;
     private float totalValorVendido;
 
-    // Getters e Setters
     public int getIdProduto() {
         return idProduto;
     }

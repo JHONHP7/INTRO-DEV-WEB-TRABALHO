@@ -8,7 +8,6 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <%
-                    // testar se está logado
                     HttpSession sessao = request.getSession(false);
                     if (sessao != null) {
                         Funcionarios funcionarioLogado = (Funcionarios) sessao.getAttribute("funcionario");
