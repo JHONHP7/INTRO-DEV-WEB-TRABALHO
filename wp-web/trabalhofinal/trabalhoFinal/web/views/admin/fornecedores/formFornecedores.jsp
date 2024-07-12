@@ -16,7 +16,7 @@
     <div class="container">
         <jsp:include page="../../comum/menu.jsp" />
         <div class="row mt-5">
-            <div class="col-sm-4 offset-3">
+            <div class="col-12 col-md-6 offset-md-3">
                 <%
                     Fornecedores fornecedor = (Fornecedores) request.getAttribute("fornecedor");
                     String acao = (String) request.getAttribute("acao");
@@ -92,9 +92,9 @@
                         <a href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar" class="btn btn-danger">Retornar</a>
                     </div>
                 </form>
-
             </div>
         </div>
+        <div class="pb-5"></div>
     </div>
     <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
 </body>

@@ -20,7 +20,7 @@
         <div class="container">
             <jsp:include page="../../comum/menu.jsp" />
             <div class="row mt-5">
-                <div class="col-sm-6 offset-3">
+                <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1">
                     <%
                         String acao = (String) request.getAttribute("acao");
                         Funcionarios funcionario = (Funcionarios) request.getAttribute("funcionario");
@@ -61,6 +61,6 @@
                 </div>
             </div>
         </div>
-        <script src="http://localhost:8080/aplicacaoMVC/views/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>
