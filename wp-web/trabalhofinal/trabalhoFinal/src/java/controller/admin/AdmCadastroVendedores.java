@@ -82,7 +82,7 @@ public class AdmCadastroVendedores extends HttpServlet {
                         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
                         funcionario = funcionarioDAO.get(id);
                     } catch (Exception ex) {
-                        System.out.println(ex.getMessage());
+                        
                         throw new RuntimeException("Falha ao buscar funcionário");
                     }
                     break;
@@ -114,7 +114,7 @@ public class AdmCadastroVendedores extends HttpServlet {
                 rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
                 rd.forward(request, response);
             } catch (IOException | ServletException ex) {
-                System.out.println(ex.getMessage());
+                
                 throw new RuntimeException("Falha em operação de funcionário");
             }
         }

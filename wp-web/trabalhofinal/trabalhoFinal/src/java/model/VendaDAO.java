@@ -27,7 +27,7 @@ public class VendaDAO implements Dao<Vendas> {
                 venda.setIdCliente(resultado.getInt("id_cliente"));
                 venda.setIdProduto(resultado.getInt("id_produto"));
                 venda.setIdFuncionario(resultado.getInt("id_funcionario"));
-                System.out.println("A data e: " + resultado.getDate("data_venda"));
+                
             }
             return venda;
 

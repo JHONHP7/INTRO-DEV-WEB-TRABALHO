@@ -89,7 +89,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
                     FornecedorDAO fornecedorDAO = new FornecedorDAO();
                     fornecedor = fornecedorDAO.get(id);
                 } catch (Exception ex) {
-                    System.out.println(ex.getMessage());
+                    
                     throw new RuntimeException("Falha em uma query para cadastro de fornecedor");
                 }
                 break;
@@ -121,7 +121,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
             rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
             rd.forward(request, response);
         } catch (IOException | ServletException ex) {
-            System.out.println(ex.getMessage());
+            
             throw new RuntimeException("Falha em uma query para cadastro de usuario");
         }
     }

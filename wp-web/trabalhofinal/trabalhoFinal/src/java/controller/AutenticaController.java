@@ -36,10 +36,8 @@ public class AutenticaController extends HttpServlet {
         String cpf_func = request.getParameter("cpf");
         String senha_func = request.getParameter("senha");
 
-        System.out.println("CPF: " + cpf_func);
-        System.out.println("Senha: " + senha_func);
         if (cpf_func.isEmpty() || senha_func.isEmpty()) {
-            // dados não foram preenchidos retorna ao formulário
+
             request.setAttribute("msgError", "Usuário e/ou senha incorreto");
             rd = request.getRequestDispatcher("/views/autenticacao/formLogin.jsp");
             rd.forward(request, response);
@@ -51,13 +49,8 @@ public class AutenticaController extends HttpServlet {
             
             try {
                 funcionarioObtido = funcionarioDAO.Logar(funcionario);
-                System.out.println("O cpf de funcionario obtido e: " + funcionarioObtido.getCpf());
-                System.out.println("A senha de funcionario obtido e: " + funcionarioObtido.getSenha());
-                System.out.println("O papel de funcionario obtido e: " + funcionarioObtido.getPapel());
-                System.out.println("O id de funcionario obtido e: " + funcionarioObtido.getId());
 
             } catch (Exception ex) {
-                System.out.println(ex.getMessage());
                 throw new RuntimeException("Falha na query para Logar");
             }
             String papelFuncionario = funcionarioObtido.getPapel();

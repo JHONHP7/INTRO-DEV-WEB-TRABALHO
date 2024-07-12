@@ -28,7 +28,6 @@ public class AdmCadastroCompradores extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String acao = (String) request.getParameter("acao");
-        System.out.println("A acao de comrpadores e: "+ acao);
         Funcionarios funcionario = new Funcionarios();
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         RequestDispatcher rd;
@@ -114,7 +113,7 @@ public class AdmCadastroCompradores extends HttpServlet {
                 rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
                 rd.forward(request, response);
             } catch (IOException | ServletException ex) {
-                System.out.println(ex.getMessage());
+            
                 throw new RuntimeException("Falha em operação de funcionário");
             }
         }

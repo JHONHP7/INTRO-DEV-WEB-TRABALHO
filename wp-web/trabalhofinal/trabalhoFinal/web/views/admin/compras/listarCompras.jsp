@@ -21,53 +21,57 @@
     <body>
         <div class="container">
             <jsp:include page="../../comum/menu.jsp" />
-            <div class="row mt-5">
-                <div class="col-sm-12">
-                    <h1>Lista de Compras</h1>
-                    <a href="/trabalhoFinal/admin/comprador/comprasController?acao=Incluir" class="mb-2 btn btn-primary">Incluir</a>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>QuantidadeCompra</th>
-                                <th>DataCompra</th>
-                                <th>ValorCompra</th>
-                                <th>IdFornecedor</th>
-                                <th>IdProduto</th>
-                                <th>IdFuncionario</th>      
-                                <th>Ações</th>        
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <%
-                                ArrayList<Compras> listaCompras = (ArrayList<Compras>) request.getAttribute("listaCompras");
-                                if (listaCompras != null) {
-                                    for (Compras compra: listaCompras) {
-                            %>
-                            <tr>
-                                <td><%= compra.getId() %></td>
-                                <td><%= compra.getQuantidadeCompra() %></td>
-                                <td><%= compra.getDataCompra() %></td>
-                                <td><%= compra.getValorCompra() %></td>
-                                <td><%= compra.getIdFornecedor() %></td>
-                                <td><%= compra.getIdProduto() %></td>
-                                <td><%= compra.getIdFuncionario() %></td>
-             
-                                <td>
-                                    <a href="/trabalhoFinal/admin/comprador/comprasController?acao=Alterar&id=<%= compra.getId() %>" class="btn btn-warning">Alterar</a>
-                                    <a href="/trabalhoFinal/admin/comprador/comprasController?acao=Excluir&id=<%= compra.getId() %>" class="btn btn-danger">Excluir</a>
-                                </td>
-                            </tr>
-                            <%
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-8 col-md-10 col-sm-12">
+                    <h1 class="mb-3 text-center">Lista de Compras</h1>
+                    <div class="d-flex justify-content-start mb-3">
+                        <a href="/trabalhoFinal/admin/comprador/comprasController?acao=Incluir" class="btn btn-primary">Incluir</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Quantidade</th>
+                                    <th>Data</th>
+                                    <th>Valor</th>
+                                    <th>Fornecedor</th>
+                                    <th>Produto</th>
+                                    <th>Funcionário</th>      
+                                    <th>Ações</th>        
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%
+                                    ArrayList<Compras> listaCompras = (ArrayList<Compras>) request.getAttribute("listaCompras");
+                                    if (listaCompras != null) {
+                                        for (Compras compra : listaCompras) {
+                                %>
+                                <tr>
+                                    <td><%= compra.getId()%></td>
+                                    <td><%= compra.getQuantidadeCompra()%></td>
+                                    <td><%= compra.getDataCompra()%></td>
+                                    <td><%= compra.getValorCompra()%></td>
+                                    <td><%= compra.getIdFornecedor()%></td>
+                                    <td><%= compra.getIdProduto()%></td>
+                                    <td><%= compra.getIdFuncionario()%></td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <a href="/trabalhoFinal/admin/comprador/comprasController?acao=Alterar&id=<%= compra.getId()%>" class="btn btn-warning btn-sm me-2">Alterar</a>
+                                            <a href="/trabalhoFinal/admin/comprador/comprasController?acao=Excluir&id=<%= compra.getId()%>" class="btn btn-danger btn-sm">Excluir</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <%
+                                        }
                                     }
-                                }
-                            %>
-                        </tbody>
-                    </table>
+                                %>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
         <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>
-

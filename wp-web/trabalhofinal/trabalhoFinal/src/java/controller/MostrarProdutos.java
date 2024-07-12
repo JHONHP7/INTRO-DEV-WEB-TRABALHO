@@ -34,7 +34,6 @@ public class MostrarProdutos extends HttpServlet {
             rd.forward(request, response);
 
         } catch (RuntimeException ex) {
-            System.out.println(ex.getMessage());
             throw new ServletException("Falha ao obter lista de produtos", ex);
         }
     }
