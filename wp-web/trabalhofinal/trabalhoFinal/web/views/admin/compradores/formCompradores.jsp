@@ -48,7 +48,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="cpf" class="form-label">CPF</label>
-                            <input type="text" name="cpf" minlength="11" maxlength="11" placeholder="Apenas números" value="<%= funcionario != null ? funcionario.getCpf() : ""%>" class="form-control" <%= "Excluir".equals(acao) ? "readonly" : ""%>>
+                            <input type="text" name="cpf" minlength="11" maxlength="14" placeholder="Apenas números" value="<%= funcionario != null ? funcionario.getCpf() : ""%>" class="form-control" <%= "Excluir".equals(acao) ? "readonly" : ""%>>
                         </div>
                         <div class="mb-3">
                             <label for="senha" class="form-label">Senha</label>
