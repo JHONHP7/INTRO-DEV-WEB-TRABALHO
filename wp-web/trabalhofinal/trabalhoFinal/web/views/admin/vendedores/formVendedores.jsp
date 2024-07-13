@@ -15,7 +15,7 @@
                 const value = input.value;
 
                 if (value.length < minLength) {
-                    input.setCustomValidity(`A senha deve ter pelo menos8 caracteres.`);
+                    input.setCustomValidity(`A senha deve ter pelo menos 8 caracteres.`);
                 } else if (value.length > maxLength) {
                     input.setCustomValidity(`A senha deve ter no máximo 10 caracteres.`);
                 } else {

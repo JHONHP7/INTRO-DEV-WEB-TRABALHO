@@ -51,7 +51,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="senha" class="form-label">Senha</label>
-                            <input type="password" name="senha" value="<%= funcionario != null ? funcionario.getSenha() : ""%>" class="form-control" <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
+                            <input type="password" name="senha" minlength="8" maxlength="10" value="<%= funcionario != null ? funcionario.getSenha() : ""%>" class="form-control" <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
                         </div>
                         <div>
                             <input type="submit" name="btEnviar" value="<%= acao%>" class="btn btn-primary">

@@ -62,12 +62,11 @@ public class AdmCadastroVendedores extends HttpServlet {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
-        String papel = "1"; // Considerando que o papel do vendedor seja sempre "1"
+        String papel = "1";
         String btEnviar = request.getParameter("btEnviar");
         RequestDispatcher rd;
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 
-        // Verificar se o CPF e a senha são válidos
         boolean cpfValid = true;
         if ("Incluir".equals(btEnviar) || "Alterar".equals(btEnviar)) {
             cpfValid = isCpfValid(cpf);
@@ -77,10 +76,8 @@ public class AdmCadastroVendedores extends HttpServlet {
             senhaValid = isSenhaValid(senha);
         }
 
-        // Verificar se o CPF já existe
         boolean cpfExists = funcionarioDAO.cpfExists(cpf);
 
-        // Validar CPF e senha
         if (!cpfValid) {
             request.setAttribute("msgError", "O CPF deve ter exatamente 14 caracteres no formato XXX.XXX.XXX-XX.");
         } else if (!senhaValid) {
@@ -92,7 +89,6 @@ public class AdmCadastroVendedores extends HttpServlet {
         } else if (cpfExists && "Alterar".equals(btEnviar) && !funcionarioDAO.get(id).getCpf().equals(cpf)) {
             request.setAttribute("msgError", "O CPF já está cadastrado.");
         } else {
-            // Se não houver erros, prossiga com a operação
             Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, papel);
             try {
                 switch (btEnviar) {
@@ -118,7 +114,6 @@ public class AdmCadastroVendedores extends HttpServlet {
             }
         }
 
-        // Redefinir o objeto funcionario no caso de erro e redirecionar para o formulário
         Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, papel);
         request.setAttribute("funcionario", funcionario);
         request.setAttribute("acao", btEnviar);
@@ -126,12 +121,10 @@ public class AdmCadastroVendedores extends HttpServlet {
         rd.forward(request, response);
     }
 
-    // Verifica se o CPF tem exatamente 14 caracteres no formato XXX.XXX.XXX-XX
     private boolean isCpfValid(String cpf) {
         return cpf != null && cpf.length() == 14 && cpf.matches("\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}");
     }
 
-    // Verifica se a senha está entre 8 e 10 caracteres
     private boolean isSenhaValid(String senha) {
         return senha != null && senha.length() >= 8 && senha.length() <= 10;
     }
