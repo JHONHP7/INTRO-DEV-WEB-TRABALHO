@@ -1,9 +1,3 @@
-<%-- 
-    Document   : formAdms
-    Created on : 26 de jun. de 2024, 04:59:14
-    Author     : jhonatan
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entidade.Funcionarios"%>
 
@@ -51,7 +45,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="senha" class="form-label">Senha</label>
-                            <input type="password" name="senha" value="<%= funcionario != null ? funcionario.getSenha() : ""%>" class="form-control" <%= "Excluir".equals(acao) ? "readonly" : ""%>>
+                            <input type="password" name="senha" minlength="8" maxlength="10" value="<%= funcionario != null ? funcionario.getSenha() : ""%>" class="form-control" <%= "Excluir".equals(acao) ? "readonly" : ""%>>
                         </div>
                         <div>
                             <input type="submit" name="btEnviar" value="<%= acao%>" class="btn btn-primary">
