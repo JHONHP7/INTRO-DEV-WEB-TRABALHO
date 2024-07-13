@@ -209,4 +209,20 @@ public class FuncionarioDAO implements Dao<Funcionarios> {
             conexao.closeConexao();
         }
     }
+
+    //Metodo novo
+    public boolean cpfExists(String cpf) {
+        Conexao conexao = new Conexao();
+        try {
+            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT 1 FROM funcionarios WHERE cpf = ?");
+            sql.setString(1, cpf);
+            ResultSet resultado = sql.executeQuery();
+            return resultado.next();
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao verificar CPF: " + e.getMessage());
+        } finally {
+            conexao.closeConexao();
+        }
+    }
+
 }
