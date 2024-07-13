@@ -1,9 +1,3 @@
-<%-- 
-    Document   : formVendedores
-    Created on : 25 de jun. de 2024, 22:40:53
-    Author     : jhonatan
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entidade.Funcionarios"%>
 
@@ -15,6 +9,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Formulário Vendedores</title>
         <link href="http://localhost:8080/aplicacaoMVC/views/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <script>
+            function validatePasswordLength(input) {
+
+                const value = input.value;
+
+                if (value.length < minLength) {
+                    input.setCustomValidity(`A senha deve ter pelo menos8 caracteres.`);
+                } else if (value.length > maxLength) {
+                    input.setCustomValidity(`A senha deve ter no máximo 10 caracteres.`);
+                } else {
+                    input.setCustomValidity('');
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="container">
@@ -31,6 +39,8 @@
                         } else if ("Excluir".equals(acao)) {
                             out.println("<h1>Excluir Vendedor</h1>");
                         }
+
+                        // Exibir mensagens de erro
                         String msgError = (String) request.getAttribute("msgError");
                         if (msgError != null && !msgError.isEmpty()) {
                     %>
@@ -51,7 +61,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="senha" class="form-label">Senha</label>
-                            <input type="password" name="senha" value="<%= funcionario != null ? funcionario.getSenha() : ""%>" class="form-control" <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
+                            <input type="password" name="senha" minlength="8" maxlength="10" placeholder="Digite sua senha" value="<%= funcionario != null ? funcionario.getSenha() : ""%>" class="form-control" <%= "Excluir".equals(acao) ? "readonly" : "required"%> oninput="validatePasswordLength(this)" />
+                            <div id="senhaError" class="text-danger"></div>
                         </div>
                         <div>
                             <input type="submit" name="btEnviar" value="<%= acao%>" class="btn btn-primary">
@@ -64,3 +75,4 @@
         <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>
+

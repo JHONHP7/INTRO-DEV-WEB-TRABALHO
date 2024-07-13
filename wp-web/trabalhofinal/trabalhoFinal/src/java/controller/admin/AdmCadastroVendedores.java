@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package controller.admin;
 
 import javax.servlet.RequestDispatcher;
@@ -15,10 +11,6 @@ import java.util.ArrayList;
 import model.FuncionarioDAO;
 import entidade.Funcionarios;
 
-/**
- *
- * @author jhonatan
- */
 @WebServlet(name = "AdmCadastroVendedores", urlPatterns = {"/admin/administrador/cadastroVendedores"})
 public class AdmCadastroVendedores extends HttpServlet {
 
@@ -27,10 +19,11 @@ public class AdmCadastroVendedores extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-        String acao = (String) request.getParameter("acao");
+        String acao = request.getParameter("acao");
         Funcionarios funcionario = new Funcionarios();
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         RequestDispatcher rd;
+
         switch (acao) {
             case "Listar":
                 ArrayList<Funcionarios> listaVendedores = funcionarioDAO.getAllVendedores();
@@ -72,29 +65,35 @@ public class AdmCadastroVendedores extends HttpServlet {
         String papel = "1"; // Considerando que o papel do vendedor seja sempre "1"
         String btEnviar = request.getParameter("btEnviar");
         RequestDispatcher rd;
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 
-        if (nome.isEmpty() || cpf.isEmpty() || senha.isEmpty()) {
-            Funcionarios funcionario = new Funcionarios();
-            switch (btEnviar) {
-                case "Alterar":
-                case "Excluir":
-                    try {
-                        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-                        funcionario = funcionarioDAO.get(id);
-                    } catch (Exception ex) {
-                        
-                        throw new RuntimeException("Falha ao buscar funcionário");
-                    }
-                    break;
-            }
-            request.setAttribute("funcionario", funcionario);
-            request.setAttribute("acao", btEnviar);
-            request.setAttribute("msgError", "É necessário preencher todos os campos");
-            rd = request.getRequestDispatcher("/views/admin/vendedores/listaVendedores.jsp");
-            rd.forward(request, response);
+        // Verificar se o CPF e a senha são válidos
+        boolean cpfValid = true;
+        if ("Incluir".equals(btEnviar) || "Alterar".equals(btEnviar)) {
+            cpfValid = isCpfValid(cpf);
+        }
+        boolean senhaValid = true;
+        if ("Incluir".equals(btEnviar) || "Alterar".equals(btEnviar)) {
+            senhaValid = isSenhaValid(senha);
+        }
+
+        // Verificar se o CPF já existe
+        boolean cpfExists = funcionarioDAO.cpfExists(cpf);
+
+        // Validar CPF e senha
+        if (!cpfValid) {
+            request.setAttribute("msgError", "O CPF deve ter exatamente 14 caracteres no formato XXX.XXX.XXX-XX.");
+        } else if (!senhaValid) {
+            request.setAttribute("msgError", "A senha deve ter entre 8 e 10 caracteres.");
+        } else if (nome.isEmpty() || cpf.isEmpty() || senha.isEmpty()) {
+            request.setAttribute("msgError", "É necessário preencher todos os campos.");
+        } else if (cpfExists && "Incluir".equals(btEnviar)) {
+            request.setAttribute("msgError", "O CPF já está cadastrado.");
+        } else if (cpfExists && "Alterar".equals(btEnviar) && !funcionarioDAO.get(id).getCpf().equals(cpf)) {
+            request.setAttribute("msgError", "O CPF já está cadastrado.");
         } else {
+            // Se não houver erros, prossiga com a operação
             Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, papel);
-            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
             try {
                 switch (btEnviar) {
                     case "Incluir":
@@ -113,10 +112,27 @@ public class AdmCadastroVendedores extends HttpServlet {
                 request.setAttribute("link", "/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Listar");
                 rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
                 rd.forward(request, response);
+                return;
             } catch (IOException | ServletException ex) {
-                
-                throw new RuntimeException("Falha em operação de funcionário");
+                throw new RuntimeException("Falha em operação de funcionário", ex);
             }
         }
+
+        // Redefinir o objeto funcionario no caso de erro e redirecionar para o formulário
+        Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, papel);
+        request.setAttribute("funcionario", funcionario);
+        request.setAttribute("acao", btEnviar);
+        rd = request.getRequestDispatcher("/views/admin/vendedores/formVendedores.jsp");
+        rd.forward(request, response);
+    }
+
+    // Verifica se o CPF tem exatamente 14 caracteres no formato XXX.XXX.XXX-XX
+    private boolean isCpfValid(String cpf) {
+        return cpf != null && cpf.length() == 14 && cpf.matches("\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}");
+    }
+
+    // Verifica se a senha está entre 8 e 10 caracteres
+    private boolean isSenhaValid(String senha) {
+        return senha != null && senha.length() >= 8 && senha.length() <= 10;
     }
 }
