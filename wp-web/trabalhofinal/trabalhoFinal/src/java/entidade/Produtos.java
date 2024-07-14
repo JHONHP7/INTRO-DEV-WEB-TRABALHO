@@ -19,6 +19,20 @@ public class Produtos {
     private char liberadoVenda;
     private int idCategoria;
 
+    public Produtos(int id, String nomeProduto, String descricao, double precoCompra, double precoVenda, int quantidadeDisponivel, char liberadoVenda, int idCategoria) {
+        this.id = id;
+        this.nomeProduto = nomeProduto;
+        this.descricao = descricao;
+        this.precoCompra = precoCompra;
+        this.precoVenda = precoVenda;
+        this.quantidadeDisponivel = quantidadeDisponivel;
+        this.liberadoVenda = liberadoVenda;
+        this.idCategoria = idCategoria;
+    }
+
+    public Produtos() {
+    }
+
     /**
      * @return the id
      */
@@ -130,5 +144,5 @@ public class Produtos {
     public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
     }
-    
+
 }

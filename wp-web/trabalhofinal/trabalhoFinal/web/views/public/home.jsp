@@ -25,10 +25,11 @@
         <div class="wrapper">
             <div class="container content">
                 <jsp:include page="../comum/menu.jsp" />
-                <div class="mt-5">
-                    <h3>Seja Bem-vindo ao trabalho de Jhonatan e Pedro</h3>
-                    <h4>Aqui vendemos poucas coisas mas com trabalho honesto</h4>
-                </div>
+                <div class="text-center mt-5 mb-4">
+                <h3 class="display-4">Trabalho de Desenvolvimento Web – 2024.1</h3>
+                <h4 class="display-6 text-muted">Desenvolvido por Jhonatan Silva e Pedro Monnerat</h4>
+                <p class="lead mt-4">Esse trabalho é uma aplicação que apoia o controle de compras e vendas de produtos de uma loja física.</p>
+            </div>
             </div>
         </div>
         <jsp:include page="../comum/footer.jsp" />

@@ -62,7 +62,7 @@ public class AdmCadastroCompradores extends HttpServlet {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
-        String papel = "2"; // Papel do comprador
+        String papel = "2"; 
         String btEnviar = request.getParameter("btEnviar");
         RequestDispatcher rd;
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();

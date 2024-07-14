@@ -52,7 +52,6 @@
                             out.println("<h1>Excluir Vendedor</h1>");
                         }
 
-                        // Exibir mensagens de erro
                         String msgError = (String) request.getAttribute("msgError");
                         if (msgError != null && !msgError.isEmpty()) {
                     %>

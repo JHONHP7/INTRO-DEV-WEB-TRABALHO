@@ -34,7 +34,7 @@
         <div class="container">
             <%@include file="../comum/menu.jsp" %>
             <div class="mt-5">
-                <h1>Lista de Produtos</h1>
+                <h1 class="text-center mb-4">Lista de Produtos</h1>
 
                 <div class="row">
                     <%

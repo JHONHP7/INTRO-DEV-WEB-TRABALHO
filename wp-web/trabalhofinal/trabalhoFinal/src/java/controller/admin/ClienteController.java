@@ -72,7 +72,6 @@ public class ClienteController extends HttpServlet {
         RequestDispatcher rd;
         ClienteDAO clienteDAO = new ClienteDAO();
 
-        // Verifica se todos os campos estão preenchidos
         if (nome.isEmpty() || endereco.isEmpty() || bairro.isEmpty() || cidade.isEmpty() || uf.isEmpty() || cep.isEmpty() || telefone.isEmpty() || email.isEmpty()) {
             Clientes cliente = new Clientes(id, nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email);
             request.setAttribute("cliente", cliente);
@@ -81,12 +80,10 @@ public class ClienteController extends HttpServlet {
             rd = request.getRequestDispatcher("/views/admin/clientes/formClientes.jsp");
             rd.forward(request, response);
         } else {
-            // Verifica se o CPF já existe, exceto para a exclusão
             if (!"Excluir".equals(btEnviar)) {
                 boolean cpfAlreadyExists = clienteDAO.cpfExists(cpf);
 
                 if (cpfAlreadyExists && !"Alterar".equals(btEnviar)) {
-                    // Se o CPF já está cadastrado e a ação é "Incluir", mostra erro
                     Clientes cliente = new Clientes(id, nome, endereco, bairro, cidade, uf, cep, telefone, email);
                     request.setAttribute("cliente", cliente);
                     request.setAttribute("acao", "Incluir");
@@ -94,7 +91,6 @@ public class ClienteController extends HttpServlet {
                     rd = request.getRequestDispatcher("/views/admin/clientes/formClientes.jsp");
                     rd.forward(request, response);
                 } else if (cpfAlreadyExists && "Alterar".equals(btEnviar) && !clienteDAO.get(id).getCpf().equals(cpf)) {
-                    // Se o CPF já está cadastrado e a ação é "Alterar", mas o CPF fornecido é diferente do CPF atual, mostra erro
                     Clientes cliente = new Clientes(id, nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email);
                     request.setAttribute("cliente", cliente);
                     request.setAttribute("acao", "Alterar");
@@ -102,11 +98,9 @@ public class ClienteController extends HttpServlet {
                     rd = request.getRequestDispatcher("/views/admin/clientes/formClientes.jsp");
                     rd.forward(request, response);
                 } else {
-                    // Se CPF não existe ou a ação é "Alterar" com CPF atual, prossegue
                     processarAcao(clienteDAO, btEnviar, id, nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email, request, response);
                 }
             } else {
-                // Ação é "Excluir", apenas exclui o cliente
                 processarAcao(clienteDAO, btEnviar, id, nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email, request, response);
             }
         }
