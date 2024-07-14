@@ -11,10 +11,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 @WebServlet(name = "ProdutosController", urlPatterns = {"/admin/comprador/produtosController"})
 public class ProdutosController extends HttpServlet {
+
+    private static final NumberFormat CURRENCY_FORMAT = new DecimalFormat("0.00");
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,7 +42,7 @@ public class ProdutosController extends HttpServlet {
                 int id = Integer.parseInt(request.getParameter("id"));
                 Produtos produto = produtoDAO.get(id);
                 if (produto != null) {
-                    request.setAttribute("produto", produto);
+                    request.setAttribute("produto", formatProduto(produto));
                     request.setAttribute("acao", acao);
                     rd = request.getRequestDispatcher("/views/admin/produtos/formProdutos.jsp");
                     rd.forward(request, response);
@@ -48,7 +52,8 @@ public class ProdutosController extends HttpServlet {
                 break;
 
             case "Incluir":
-                request.setAttribute("produto", new Produtos());
+                Produtos produtoIncluir = new Produtos();
+                request.setAttribute("produto", formatProduto(produtoIncluir));
                 request.setAttribute("acao", acao);
                 rd = request.getRequestDispatcher("/views/admin/produtos/formProdutos.jsp");
                 rd.forward(request, response);
@@ -192,6 +197,19 @@ public class ProdutosController extends HttpServlet {
         produto.setQuantidadeDisponivel(quantidadeDisponivel);
         produto.setLiberadoVenda(liberadoVenda);
         produto.setIdCategoria(idCategoria);
+        return produto;
+    }
+
+    private Produtos formatProduto(Produtos produto) {
+        if (produto == null) {
+            produto = new Produtos();
+        }
+        produto.setNomeProduto(produto.getNomeProduto() != null ? produto.getNomeProduto() : "");
+        produto.setDescricao(produto.getDescricao() != null ? produto.getDescricao() : "");
+        produto.setPrecoCompra(produto.getPrecoCompra() >= 0 ? produto.getPrecoCompra() : 0.0);
+        produto.setPrecoVenda(produto.getPrecoVenda() >= 0 ? produto.getPrecoVenda() : 0.0);
+        produto.setQuantidadeDisponivel(produto.getQuantidadeDisponivel() >= 0 ? produto.getQuantidadeDisponivel() : 0);
+        produto.setIdCategoria(produto.getIdCategoria() >= 0 ? produto.getIdCategoria() : 0);
         return produto;
     }
 }

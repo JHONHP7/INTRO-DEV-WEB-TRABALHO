@@ -5,6 +5,7 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entidade.Produtos"%>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -65,44 +66,61 @@
                     <% }%>
 
                     <form action="/trabalhoFinal/admin/comprador/produtosController" method="POST" accept-charset="UTF-8">
-                        <input type="hidden" name="id" value="<%= produto != null ? produto.getId() : ""%>" class="form-control">
+                        <input type="hidden" name="id" value="<%= produto.getId()%>" class="form-control">
 
                         <div class="mb-3">
                             <label for="nomeProduto" class="form-label">Nome do Produto</label>
-                            <input type="text" name="nomeProduto" <%= acao.equals("Excluir") ? "readonly" : ""%> value="<%= produto != null ? produto.getNomeProduto() : ""%>" class="form-control" required>
+                            <input type="text" name="nomeProduto" placeholder="Digite o nome do produto" 
+                                   <%= acao.equals("Excluir") ? "readonly" : "required"%> 
+                                   value="<%= produto.getNomeProduto()%>" 
+                                   class="form-control">
                         </div>
 
                         <div class="mb-3">
                             <label for="descricao" class="form-label">Descrição</label>
-                            <textarea name="descricao" <%= acao.equals("Excluir") ? "readonly" : ""%> class="form-control" required><%= produto != null ? produto.getDescricao() : ""%></textarea>
+                            <textarea name="descricao" placeholder="Digite a descrição do produto"
+                                      <%= acao.equals("Excluir") ? "readonly" : "required"%> 
+                                      class="form-control"><%= produto.getDescricao()%></textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="precoCompra" class="form-label">Preço de Compra</label>
-                            <input type="number" step="0.01" name="precoCompra" <%= acao.equals("Excluir") ? "readonly" : ""%> value="<%= produto != null ? produto.getPrecoCompra() : ""%>" class="form-control" required>
+                            <input type="number" step="0.01" name="precoCompra" placeholder="Digite o preço de compra"
+                                   <%= acao.equals("Excluir") ? "readonly" : "required"%> 
+                                   value="<%= produto.getPrecoCompra()%>" 
+                                   class="form-control">
                         </div>
 
                         <div class="mb-3">
                             <label for="precoVenda" class="form-label">Preço de Venda</label>
-                            <input type="number" step="0.01" name="precoVenda" <%= acao.equals("Excluir") ? "readonly" : ""%> value="<%= produto != null ? produto.getPrecoVenda() : ""%>" class="form-control" required>
+                            <input type="number" step="0.01" name="precoVenda" placeholder="Digite o preço de venda"
+                                   <%= acao.equals("Excluir") ? "readonly" : "required"%> 
+                                   value="<%= produto.getPrecoVenda()%>" 
+                                   class="form-control">
                         </div>
 
                         <div class="mb-3">
                             <label for="quantidadeDisponivel" class="form-label">Quantidade Disponível</label>
-                            <input type="number" name="quantidadeDisponivel" <%= acao.equals("Excluir") ? "readonly" : ""%> value="<%= produto != null ? produto.getQuantidadeDisponivel() : ""%>" class="form-control" required>
+                            <input type="number" name="quantidadeDisponivel" placeholder="Digite a quantidade disponível"
+                                   <%= acao.equals("Excluir") ? "readonly" : "required"%> 
+                                   value="<%= produto.getQuantidadeDisponivel()%>" 
+                                   class="form-control">
                         </div>
 
                         <div class="mb-3">
                             <label for="liberadoVenda" class="form-label">Liberado para Venda</label>
-                            <select name="liberadoVenda" <%= acao.equals("Excluir") ? "disabled" : ""%> class="form-select" required>
-                                <option value="S" <%= produto != null && produto.getLiberadoVenda() == 'S' ? "selected" : ""%>>Sim</option>
-                                <option value="N" <%= produto != null && produto.getLiberadoVenda() == 'N' ? "selected" : ""%>>Não</option>
+                            <select name="liberadoVenda" <%= acao.equals("Excluir") ? "disabled" : "required"%> class="form-select">
+                                <option value="S" <%= produto.getLiberadoVenda() == 'S' ? "selected" : ""%>>Sim</option>
+                                <option value="N" <%= produto.getLiberadoVenda() == 'N' ? "selected" : ""%>>Não</option>
                             </select>
                         </div>
 
                         <div class="mb-3">
                             <label for="idCategoria" class="form-label">Categoria</label>
-                            <input type="number" name="idCategoria" <%= acao.equals("Excluir") ? "readonly" : ""%> value="<%= produto != null ? produto.getIdCategoria() : ""%>" class="form-control" required>
+                            <input type="number" name="idCategoria" placeholder="Digite o ID da categoria"
+                                   <%= acao.equals("Excluir") ? "readonly" : "required"%> 
+                                   value="<%= produto.getIdCategoria()%>" 
+                                   class="form-control">
                         </div>
 
                         <div class="text-center">
@@ -110,6 +128,7 @@
                             <a href="/trabalhoFinal/admin/comprador/produtosController?acao=Listar" class="btn btn-danger">Retornar</a>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

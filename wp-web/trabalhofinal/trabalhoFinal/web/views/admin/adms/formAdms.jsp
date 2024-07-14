@@ -9,12 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
             <%
-                // Obtém a variável 'acao' do request
                 String acao = (String) request.getAttribute("acao");
                 if (acao == null) {
-                    acao = "Incluir"; // Valor padrão se 'acao' não estiver definido
+                    acao = "Incluir";
                 }
-                // Define o título da página com base na ação
+
                 String titulo;
                 switch (acao) {
                     case "Excluir":

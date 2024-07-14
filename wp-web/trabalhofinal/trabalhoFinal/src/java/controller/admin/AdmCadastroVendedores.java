@@ -89,7 +89,7 @@ public class AdmCadastroVendedores extends HttpServlet {
         } else if (cpfExists && "Alterar".equals(btEnviar) && !funcionarioDAO.get(id).getCpf().equals(cpf)) {
             request.setAttribute("msgError", "O CPF já está cadastrado.");
         } else {
-            Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, "1"); // "1" é o papel padrão
+            Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, "1"); 
             try {
                 switch (btEnviar) {
                     case "Incluir":
@@ -114,7 +114,7 @@ public class AdmCadastroVendedores extends HttpServlet {
             }
         }
 
-        // Se houver erro, retorna ao formulário com os dados preenchidos
+        
         request.setAttribute("funcionario", new Funcionarios(id, nome, cpf, senha, "1"));
         request.setAttribute("acao", btEnviar);
         rd = request.getRequestDispatcher("/views/admin/vendedores/formVendedores.jsp");
