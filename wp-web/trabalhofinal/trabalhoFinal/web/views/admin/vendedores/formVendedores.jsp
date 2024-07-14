@@ -1,11 +1,6 @@
-<%-- 
-    Document   : formVendedores
-    Created on : 26 de jun. de 2024, 04:23:42
-    Author     : jhonatan
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entidade.Funcionarios"%>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -67,7 +62,7 @@
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
                             <input type="text" name="nome" placeholder="Digite o nome do vendedor" 
-                                   value="<%= funcionario != null && "Alterar".equals(acao) ? funcionario.getNome() : ""%>" 
+                                   value="<%= funcionario != null && (acao.equals("Alterar") || acao.equals("Excluir")) ? funcionario.getNome() : ""%>" 
                                    class="form-control" 
                                    <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
                         </div>
@@ -76,7 +71,7 @@
                             <label for="cpf" class="form-label">CPF</label>
                             <input type="text" name="cpf" placeholder="123.456.789-00" 
                                    minlength="14" maxlength="14" 
-                                   value="<%= funcionario != null && "Alterar".equals(acao) ? funcionario.getCpf() : ""%>" 
+                                   value="<%= funcionario != null && (acao.equals("Alterar") || acao.equals("Excluir")) ? funcionario.getCpf() : ""%>" 
                                    class="form-control" 
                                    <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
                         </div>
@@ -85,7 +80,7 @@
                             <label for="senha" class="form-label">Senha</label>
                             <input type="password" name="senha" placeholder="Digite a senha" 
                                    minlength="8" maxlength="10" 
-                                   value="<%= funcionario != null && "Alterar".equals(acao) ? funcionario.getSenha() : ""%>" 
+                                   value="<%= funcionario != null && (acao.equals("Alterar") || acao.equals("Excluir")) ? funcionario.getSenha() : ""%>" 
                                    class="form-control" 
                                    <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
                         </div>

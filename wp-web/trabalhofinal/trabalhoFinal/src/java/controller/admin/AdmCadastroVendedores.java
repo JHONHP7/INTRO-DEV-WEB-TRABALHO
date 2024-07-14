@@ -61,7 +61,7 @@ public class AdmCadastroVendedores extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-        int id = Integer.parseInt(request.getParameter("id"));
+        int id = request.getParameter("id") != null && !request.getParameter("id").isEmpty() ? Integer.parseInt(request.getParameter("id")) : 0;
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
@@ -89,7 +89,7 @@ public class AdmCadastroVendedores extends HttpServlet {
         } else if (cpfExists && "Alterar".equals(btEnviar) && !funcionarioDAO.get(id).getCpf().equals(cpf)) {
             request.setAttribute("msgError", "O CPF já está cadastrado.");
         } else {
-            Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, "1"); 
+            Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, "1"); // Assuming "1" is the code for "vendedor"
             try {
                 switch (btEnviar) {
                     case "Incluir":
@@ -114,8 +114,9 @@ public class AdmCadastroVendedores extends HttpServlet {
             }
         }
 
-        
-        request.setAttribute("funcionario", new Funcionarios(id, nome, cpf, senha, "1"));
+        // Recarregar o objeto Funcionario e encaminhar para a mesma página se houver erro
+        Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, "1"); // Assuming "1" is the code for "vendedor"
+        request.setAttribute("funcionario", funcionario);
         request.setAttribute("acao", btEnviar);
         rd = request.getRequestDispatcher("/views/admin/vendedores/formVendedores.jsp");
         rd.forward(request, response);
