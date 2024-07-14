@@ -23,12 +23,17 @@ public class filtroRestrito implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
+        String requestURI = httpRequest.getRequestURI();
+        if (requestURI.equals(httpRequest.getContextPath() + "/MostrarProdutos")) {
+            chain.doFilter(request, response);
+            return;
+        }
+
         Funcionarios funcionario = (Funcionarios) httpRequest.getSession().getAttribute("funcionario");
 
         if (funcionario != null) {
             String papelFuncionario = funcionario.getPapel();
 
-            String requestURI = httpRequest.getRequestURI();
             if (requestURI.equals(httpRequest.getContextPath() + "/admin/logOut")) {
                 chain.doFilter(request, response);
             } else if (requestURI.startsWith(httpRequest.getContextPath() + "/admin/administrador") && papelFuncionario.equals("0")) {
@@ -47,7 +52,7 @@ public class filtroRestrito implements Filter {
                 httpRequest.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
             }
         } else {
-            ((HttpServletResponse) response).sendRedirect("http://localhost:8080/trabalhoFinal/home");
+            ((HttpServletResponse) response).sendRedirect(httpRequest.getContextPath() + "/home");
         }
     }
 
@@ -58,5 +63,4 @@ public class filtroRestrito implements Filter {
     @Override
     public void destroy() {
     }
-
 }
