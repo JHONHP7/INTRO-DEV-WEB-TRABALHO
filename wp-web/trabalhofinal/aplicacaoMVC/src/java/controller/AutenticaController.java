@@ -33,11 +33,9 @@ public class AutenticaController extends HttpServlet {
             throws ServletException, IOException {
 
         RequestDispatcher rd;
-        // pegando os parâmetros do request
         String cpf_user = request.getParameter("cpf");
         String senha_user = request.getParameter("senha");
         if (cpf_user.isEmpty() || senha_user.isEmpty()) {
-            // dados não foram preenchidos retorna ao formulário
             request.setAttribute("msgError", "Usuário e/ou senha incorreto");
             rd = request.getRequestDispatcher("/views/autenticacao/formLogin.jsp");
             rd.forward(request, response);
@@ -49,7 +47,7 @@ public class AutenticaController extends HttpServlet {
             try {
                 usuarioObtido = usuarioDAO.Logar(usuario);
             } catch (Exception ex) {
-                
+
                 throw new RuntimeException("Falha na query para Logar");
             }
 
