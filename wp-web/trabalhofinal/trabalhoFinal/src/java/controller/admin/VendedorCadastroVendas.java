@@ -151,23 +151,24 @@ public class VendedorCadastroVendas extends HttpServlet {
                             request.setAttribute("errorMessage", "Cliente não encontrado para atualização.");
                         } else if (vendaAlterar.getQuantidadeVenda() < 1) {
                             request.setAttribute("errorMessage", "A quantidade da venda deve ser maior que zero.");
+                        } else if (produtoNovo.getLiberadoVenda() != 'S') {
+                            request.setAttribute("errorMessage", "Produto não está liberado para venda.");
+                        } else if (produtoNovo.getQuantidadeDisponivel() < vendaAlterar.getQuantidadeVenda()) {
+                            request.setAttribute("errorMessage", "Quantidade disponível do produto é insuficiente.");
                         } else {
-                           
+
                             int quantidadeOriginal = vendaOriginal.getQuantidadeVenda();
                             int quantidadeNova = vendaAlterar.getQuantidadeVenda();
                             int diferenca = quantidadeNova - quantidadeOriginal;
 
                             if (produtoOriginal != null && produtoOriginal.getId() == produtoNovo.getId()) {
-
                                 produtoOriginal.setQuantidadeDisponivel(produtoOriginal.getQuantidadeDisponivel() + quantidadeOriginal - quantidadeNova);
                                 produtoDAO.update(produtoOriginal);
                             } else {
-
                                 if (produtoOriginal != null) {
                                     produtoOriginal.setQuantidadeDisponivel(produtoOriginal.getQuantidadeDisponivel() + quantidadeOriginal);
                                     produtoDAO.update(produtoOriginal);
                                 }
-
                                 produtoNovo.setQuantidadeDisponivel(produtoNovo.getQuantidadeDisponivel() - quantidadeNova);
                                 produtoDAO.update(produtoNovo);
                             }

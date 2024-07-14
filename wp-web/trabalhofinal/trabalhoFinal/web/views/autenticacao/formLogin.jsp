@@ -44,7 +44,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="senha" class="form-label">Senha</label>
-                            <input type="password" name="senha" minlength="3" maxlength="10" value="" class="form-control">
+                            <input type="password" placeholder="Digite sua senha" name="senha" minlength="3" maxlength="10" value="" class="form-control">
                         </div>
                         <div class="row">
                             <div class="col-12">
