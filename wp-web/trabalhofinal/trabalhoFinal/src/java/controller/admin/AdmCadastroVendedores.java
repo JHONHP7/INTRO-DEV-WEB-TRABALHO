@@ -1,15 +1,15 @@
 package controller.admin;
 
+import entidade.Funcionarios;
+import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.ArrayList;
 import model.FuncionarioDAO;
-import entidade.Funcionarios;
 
 @WebServlet(name = "AdmCadastroVendedores", urlPatterns = {"/admin/administrador/cadastroVendedores"})
 public class AdmCadastroVendedores extends HttpServlet {
@@ -20,7 +20,6 @@ public class AdmCadastroVendedores extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String acao = request.getParameter("acao");
-        Funcionarios funcionario = new Funcionarios();
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         RequestDispatcher rd;
 
@@ -35,7 +34,7 @@ public class AdmCadastroVendedores extends HttpServlet {
             case "Alterar":
             case "Excluir":
                 int id = Integer.parseInt(request.getParameter("id"));
-                funcionario = funcionarioDAO.get(id);
+                Funcionarios funcionario = funcionarioDAO.get(id);
                 request.setAttribute("funcionario", funcionario);
                 request.setAttribute("msgError", "");
                 request.setAttribute("acao", acao);
@@ -44,11 +43,15 @@ public class AdmCadastroVendedores extends HttpServlet {
                 break;
 
             case "Incluir":
-                request.setAttribute("funcionario", funcionario);
+                request.setAttribute("funcionario", new Funcionarios());
                 request.setAttribute("msgError", "");
                 request.setAttribute("acao", acao);
                 rd = request.getRequestDispatcher("/views/admin/vendedores/formVendedores.jsp");
                 rd.forward(request, response);
+                break;
+
+            default:
+                response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 break;
         }
     }
@@ -62,17 +65,14 @@ public class AdmCadastroVendedores extends HttpServlet {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
-        String papel = "1";
         String btEnviar = request.getParameter("btEnviar");
         RequestDispatcher rd;
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 
         boolean cpfValid = true;
-        if ("Incluir".equals(btEnviar) || "Alterar".equals(btEnviar)) {
-            cpfValid = isCpfValid(cpf);
-        }
         boolean senhaValid = true;
         if ("Incluir".equals(btEnviar) || "Alterar".equals(btEnviar)) {
+            cpfValid = isCpfValid(cpf);
             senhaValid = isSenhaValid(senha);
         }
 
@@ -80,7 +80,7 @@ public class AdmCadastroVendedores extends HttpServlet {
 
         if (!cpfValid) {
             request.setAttribute("msgError", "O CPF deve ter exatamente 14 caracteres no formato XXX.XXX.XXX-XX.");
-        } else if (!senhaValid) {
+        } else if (!senhaValid && ("Incluir".equals(btEnviar) || "Alterar".equals(btEnviar))) {
             request.setAttribute("msgError", "A senha deve ter entre 8 e 10 caracteres.");
         } else if (nome.isEmpty() || cpf.isEmpty() || senha.isEmpty()) {
             request.setAttribute("msgError", "É necessário preencher todos os campos.");
@@ -89,7 +89,7 @@ public class AdmCadastroVendedores extends HttpServlet {
         } else if (cpfExists && "Alterar".equals(btEnviar) && !funcionarioDAO.get(id).getCpf().equals(cpf)) {
             request.setAttribute("msgError", "O CPF já está cadastrado.");
         } else {
-            Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, papel);
+            Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, "1"); // "1" é o papel padrão
             try {
                 switch (btEnviar) {
                     case "Incluir":
@@ -110,12 +110,12 @@ public class AdmCadastroVendedores extends HttpServlet {
                 rd.forward(request, response);
                 return;
             } catch (IOException | ServletException ex) {
-                throw new RuntimeException("Falha em operação de funcionário", ex);
+                throw new RuntimeException("Falha em operação de vendedor", ex);
             }
         }
 
-        Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, papel);
-        request.setAttribute("funcionario", funcionario);
+        // Se houver erro, retorna ao formulário com os dados preenchidos
+        request.setAttribute("funcionario", new Funcionarios(id, nome, cpf, senha, "1"));
         request.setAttribute("acao", btEnviar);
         rd = request.getRequestDispatcher("/views/admin/vendedores/formVendedores.jsp");
         rd.forward(request, response);

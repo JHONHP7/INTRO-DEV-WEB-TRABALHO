@@ -36,16 +36,22 @@
                     <%
                         String acao = (String) request.getAttribute("acao");
                         Funcionarios funcionario = (Funcionarios) request.getAttribute("funcionario");
-                        if ("Incluir".equals(acao)) {
-                            out.println("<h1>Incluir Comprador</h1>");
-                        } else if ("Alterar".equals(acao)) {
-                            out.println("<h1>Alterar Comprador</h1>");
-                        } else if ("Excluir".equals(acao)) {
-                            out.println("<h1>Excluir Comprador</h1>");
+                        String titulo = "";
+                        switch (acao) {
+                            case "Incluir":
+                                titulo = "Incluir Comprador";
+                                break;
+                            case "Alterar":
+                                titulo = "Alterar Comprador";
+                                break;
+                            case "Excluir":
+                                titulo = "Excluir Comprador";
+                                break;
                         }
                         String msgError = (String) request.getAttribute("msgError");
-                        if (msgError != null && !msgError.isEmpty()) {
                     %>
+                    <h1 class="text-center"><%= titulo%></h1>
+                    <% if (msgError != null && !msgError.isEmpty()) {%>
                     <div class="alert alert-danger" role="alert">
                         <%= msgError%>
                     </div>
@@ -55,15 +61,21 @@
                         <input type="hidden" name="id" value="<%= funcionario != null ? funcionario.getId() : ""%>" class="form-control">
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" name="nome" placeholder="Digite seu nome" value="<%= funcionario != null ? funcionario.getNome() : ""%>" class="form-control" <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
+                            <input type="text" name="nome" placeholder="Digite seu nome" 
+                                   value="<%= funcionario != null && funcionario.getNome() != null && !"null".equals(funcionario.getNome()) ? funcionario.getNome() : ""%>" 
+                                   class="form-control" <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
                         </div>
                         <div class="mb-3">
                             <label for="cpf" class="form-label">CPF</label>
-                            <input type="text" name="cpf" minlength="14" maxlength="14" placeholder="123.456.789-00" value="<%= funcionario != null ? funcionario.getCpf() : ""%>" class="form-control" <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
+                            <input type="text" name="cpf" minlength="14" maxlength="14" placeholder="123.456.789-00" 
+                                   value="<%= funcionario != null && funcionario.getCpf() != null && !"null".equals(funcionario.getCpf()) ? funcionario.getCpf() : ""%>" 
+                                   class="form-control" <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
                         </div>
                         <div class="mb-3">
                             <label for="senha" class="form-label">Senha</label>
-                            <input type="password" name="senha" minlength="8" maxlength="10" value="<%= funcionario != null ? funcionario.getSenha() : ""%>" class="form-control" <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
+                            <input type="password" name="senha" minlength="8" maxlength="10" placeholder="Digite sua senha" 
+                                   value="<%= funcionario != null && funcionario.getSenha() != null && !"null".equals(funcionario.getSenha()) ? funcionario.getSenha() : ""%>" 
+                                   class="form-control" <%= "Excluir".equals(acao) ? "readonly" : "required"%>>
                         </div>
                         <div>
                             <input type="submit" name="btEnviar" value="<%= acao%>" class="btn btn-primary">

@@ -64,7 +64,8 @@
 
                         <div class="mb-3">
                             <label for="nome_categoria" class="form-label">Nome da Categoria</label>
-                            <input type="text" name="nome_categoria" <%= acao.equals("Excluir") ? "readonly" : ""%> value="<%= categoria != null ? categoria.getNomeCategoria() : ""%>" class="form-control">
+                            <input type="text" placeholder="Digite o nome da categoria" name="nome_categoria" <%= acao.equals("Excluir") ? "readonly" : "required"%> 
+                                   value="<%= categoria != null && categoria.getNomeCategoria() != null && !"null".equals(categoria.getNomeCategoria()) ? categoria.getNomeCategoria() : ""%>" class="form-control">
                         </div>
 
                         <div class="mb-3 text-center">
@@ -79,4 +80,3 @@
         <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>
-
