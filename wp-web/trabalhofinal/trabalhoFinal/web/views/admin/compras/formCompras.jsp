@@ -71,7 +71,7 @@
 
                         <div class="mb-3">
                             <label for="quantidadeCompra" class="form-label">Quantidade</label>
-                            <input type="number" name="quantidadeCompra" value="<%= compra != null ? compra.getQuantidadeCompra() : ""%>" class="form-control" required>
+                            <input type="number" name="quantidadeCompra" placeholder="Quantidade de unidades" value="<%= compra != null ? compra.getQuantidadeCompra() : ""%>" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
@@ -81,12 +81,12 @@
 
                         <div class="mb-3">
                             <label for="idFornecedor" class="form-label">ID do Fornecedor</label>
-                            <input type="number" name="idFornecedor" value="<%= compra != null ? compra.getIdFornecedor() : ""%>" class="form-control" required>
+                            <input type="number" name="idFornecedor" placeholder="ID do Fornecedor" value="<%= compra != null ? compra.getIdFornecedor() : ""%>" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="idProduto" class="form-label">ID do Produto</label>
-                            <input type="number" name="idProduto" value="<%= compra != null ? compra.getIdProduto() : ""%>" class="form-control" required>
+                            <input type="number" name="idProduto"  placeholder="ID do Produto" value="<%= compra != null ? compra.getIdProduto() : ""%>" class="form-control" required>
                         </div>
 
                         <div class="mb-3 text-center">

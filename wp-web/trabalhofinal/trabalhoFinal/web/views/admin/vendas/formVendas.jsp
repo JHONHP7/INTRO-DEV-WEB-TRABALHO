@@ -73,22 +73,22 @@
 
                         <div class="mb-3">
                             <label for="quantidadeVenda" class="form-label">Quantidade</label>
-                            <input type="number" name="quantidadeVenda" value="<%= venda != null ? venda.getQuantidadeVenda() : ""%>" class="form-control" required>
+                            <input type="number" name="quantidadeVenda" placeholder="Quantidade de unidades" value="<%= venda != null ? venda.getQuantidadeVenda() : ""%>" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="dataVenda" class="form-label">Data da Venda</label>
-                            <input type="date" name="dataVenda" value="<%= formattedDate%>" class="form-control" required>
+                            <input type="date" name="dataVenda"  value="<%= formattedDate%>" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="idCliente" class="form-label">ID do Cliente</label>
-                            <input type="number" name="idCliente" value="<%= venda != null ? venda.getIdCliente() : ""%>" class="form-control" required>
+                            <input type="number" name="idCliente" placeholder="ID do Cliente" value="<%= venda != null ? venda.getIdCliente() : ""%>" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="idProduto" class="form-label">ID do Produto</label>
-                            <input type="number" name="idProduto" value="<%= venda != null ? venda.getIdProduto() : ""%>" class="form-control" required>
+                            <input type="number" name="idProduto" placeholder="ID do Produto" value="<%= venda != null ? venda.getIdProduto() : ""%>" class="form-control" required>
                         </div>
 
                         <div class="mb-3 text-center">
