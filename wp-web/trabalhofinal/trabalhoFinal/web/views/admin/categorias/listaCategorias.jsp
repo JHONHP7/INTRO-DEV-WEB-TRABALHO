@@ -16,6 +16,18 @@
         <link rel="shortcut icon" href="#">
         <title>Lista de Categorias</title>
         <link href="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <style>
+            html, body {
+                height: 100%;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+            .container {
+                flex: 1;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -56,6 +68,7 @@
                 </div>
             </div>
         </div>
+        <jsp:include page="/views/comum/footer.jsp" />                   
         <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>

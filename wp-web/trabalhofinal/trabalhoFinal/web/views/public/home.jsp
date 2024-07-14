@@ -7,17 +7,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="#">
         <title>Login</title>
-         <link href="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.min.css"  rel="stylesheet">
+        <link href="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <style>
+            html, body {
+                height: 100%;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+            .container {
+                flex: 1;
+            }
+        </style>
     </head>
     <body>
-        <div class="container">
-            <jsp:include page="../comum/menu.jsp" />
-            <div class="mt-5">
-                <h3>Seja Bem-vindo a Loja de Jhonatan e Pedro</h3>
-                <h4>Aqui vendemos poucas coisas mas com trabalho honesto</h4>
+        <div class="wrapper">
+            <div class="container content">
+                <jsp:include page="../comum/menu.jsp" />
+                <div class="mt-5">
+                    <h3>Seja Bem-vindo ao trabalho de Jhonatan e Pedro</h3>
+                    <h4>Aqui vendemos poucas coisas mas com trabalho honesto</h4>
+                </div>
             </div>
         </div>
-       <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
+        <jsp:include page="../comum/footer.jsp" />
+        <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>
-
