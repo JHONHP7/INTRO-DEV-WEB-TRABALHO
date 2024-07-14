@@ -104,25 +104,27 @@ public class ProdutosController extends HttpServlet {
                 idCategoria = Integer.parseInt(idCategoriaParam);
             }
 
-            if (precoCompra < 1.0) {
-                request.setAttribute("errorMessage", "O preço de compra deve ser maior ou igual a 1.");
-                request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=" + btEnviar + "&id=" + id);
-                request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
-                return;
-            }
+            if ("Incluir".equals(btEnviar) || "Alterar".equals(btEnviar)) {
+                if (precoCompra < 1.0) {
+                    request.setAttribute("errorMessage", "O preço de compra deve ser maior ou igual a 1.");
+                    request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=" + btEnviar + "&id=" + id);
+                    request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
+                    return;
+                }
 
-            if (precoVenda < 1.0) {
-                request.setAttribute("errorMessage", "O preço de venda deve ser maior ou igual a 1.");
-                request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=" + btEnviar + "&id=" + id);
-                request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
-                return;
-            }
+                if (precoVenda < 1.0) {
+                    request.setAttribute("errorMessage", "O preço de venda deve ser maior ou igual a 1.");
+                    request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=" + btEnviar + "&id=" + id);
+                    request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
+                    return;
+                }
 
-            if (quantidadeDisponivel < 1) {
-                request.setAttribute("errorMessage", "A quantidade disponível deve ser maior ou igual a 1.");
-                request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=" + btEnviar + "&id=" + id);
-                request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
-                return;
+                if (quantidadeDisponivel < 1) {
+                    request.setAttribute("errorMessage", "A quantidade disponível deve ser maior ou igual a 1.");
+                    request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=" + btEnviar + "&id=" + id);
+                    request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
+                    return;
+                }
             }
 
             ProdutoDAO produtoDAO = new ProdutoDAO();
