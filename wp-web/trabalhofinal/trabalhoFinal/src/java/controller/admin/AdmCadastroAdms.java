@@ -58,11 +58,10 @@ public class AdmCadastroAdms extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-        int id = Integer.parseInt(request.getParameter("id"));
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
-        String papel = "0";
+        int id = request.getParameter("id") != null && !request.getParameter("id").isEmpty() ? Integer.parseInt(request.getParameter("id")) : 0;
         String btEnviar = request.getParameter("btEnviar");
         RequestDispatcher rd;
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
@@ -87,7 +86,7 @@ public class AdmCadastroAdms extends HttpServlet {
         } else if (cpfExists && "Alterar".equals(btEnviar) && !funcionarioDAO.get(id).getCpf().equals(cpf)) {
             request.setAttribute("msgError", "O CPF já está cadastrado.");
         } else {
-            Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, papel);
+            Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, "0");
             try {
                 switch (btEnviar) {
                     case "Incluir":
@@ -112,7 +111,7 @@ public class AdmCadastroAdms extends HttpServlet {
             }
         }
 
-        Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, papel);
+        Funcionarios funcionario = new Funcionarios(id, nome, cpf, senha, "0");
         request.setAttribute("funcionario", funcionario);
         request.setAttribute("acao", btEnviar);
         rd = request.getRequestDispatcher("/views/admin/adms/formAdms.jsp");
