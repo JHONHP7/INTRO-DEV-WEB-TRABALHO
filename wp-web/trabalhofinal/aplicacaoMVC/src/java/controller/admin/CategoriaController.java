@@ -19,7 +19,6 @@ public class CategoriaController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // get parametro ação indicando o que fazer
         String acao = (String) request.getParameter("acao");
         Categoria categoria = new Categoria();
         CategoriaDAO categoriaDAO = new CategoriaDAO();
@@ -36,7 +35,6 @@ public class CategoriaController extends HttpServlet {
             case "Alterar":
             case "Excluir":
 
-                // get parametro ação indicando sobre qual categoria será a ação
                 int id = Integer.parseInt(request.getParameter("id"));
                 categoria = categoriaDAO.get(id);
 
@@ -74,14 +72,14 @@ public class CategoriaController extends HttpServlet {
                 case "Alterar":
                 case "Excluir":
                     try {
-                    CategoriaDAO categoriaDAO = new CategoriaDAO();
-                    categoria = categoriaDAO.get(id);
+                        CategoriaDAO categoriaDAO = new CategoriaDAO();
+                        categoria = categoriaDAO.get(id);
 
-                } catch (Exception ex) {
-                    
-                    throw new RuntimeException("Falha em uma query para cadastro de usuario");
-                }
-                break;
+                    } catch (Exception ex) {
+
+                        throw new RuntimeException("Falha em uma query para cadastro de usuario");
+                    }
+                    break;
             }
 
             request.setAttribute("categoria", categoria);
@@ -93,9 +91,9 @@ public class CategoriaController extends HttpServlet {
             rd.forward(request, response);
 
         } else {
-            
-             Categoria categoria = new Categoria(id,descricao);
-             CategoriaDAO categoriaDAO = new CategoriaDAO();
+
+            Categoria categoria = new Categoria(id, descricao);
+            CategoriaDAO categoriaDAO = new CategoriaDAO();
 
             try {
                 switch (btEnviar) {
@@ -118,7 +116,7 @@ public class CategoriaController extends HttpServlet {
                 rd.forward(request, response);
 
             } catch (IOException | ServletException ex) {
-                
+
                 throw new RuntimeException("Falha em uma query para cadastro de usuario");
             }
         }

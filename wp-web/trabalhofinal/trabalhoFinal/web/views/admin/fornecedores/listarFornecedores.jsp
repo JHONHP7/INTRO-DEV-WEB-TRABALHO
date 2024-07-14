@@ -16,7 +16,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="#">
         <title>Listar Fornecedores</title>
-        <link href="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.min.css"  rel="stylesheet">
+        <link href="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <style>
+            html, body {
+                height: 100%;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+            .container {
+                flex: 1;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -60,8 +72,11 @@
                                     <td><%= fornecedor.getTelefone()%></td>
                                     <td><%= fornecedor.getEmail()%></td>
                                     <td>
-                                        <a href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Alterar&id=<%= fornecedor.getId()%>" class="btn btn-warning">Alterar</a>
-                                        <a href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Excluir&id=<%= fornecedor.getId()%>" class="btn btn-danger">Excluir</a>
+                                        <div class="btn-group" role="group">
+                                            <a href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Alterar&id=<%= fornecedor.getId()%>" class="btn btn-warning me-2">Alterar</a>
+                                            <a href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Excluir&id=<%= fornecedor.getId()%>" class="btn btn-danger">Excluir</a>
+                                        </div>
+
                                     </td>
                                 </tr>
                                 <%
@@ -75,6 +90,8 @@
             </div>
             <div class="pb-5"></div>
         </div>
+        <jsp:include page="/views/comum/footer.jsp" />
         <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>
+

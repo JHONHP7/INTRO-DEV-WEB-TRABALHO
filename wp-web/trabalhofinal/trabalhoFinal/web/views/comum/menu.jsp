@@ -12,33 +12,32 @@
                     if (sessao != null) {
                         Funcionarios funcionarioLogado = (Funcionarios) sessao.getAttribute("funcionario");
                         if (funcionarioLogado != null) { %>
-<!--                        <a class="nav-link" href="/trabalhoFinal/admin/dashboard">Dashboard</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/CategoriaController?acao=Listar">Categorias</a>-->
-                            <a class="nav-link" href="/trabalhoFinal/admin/logOut">Logout</a>
+
+                <a class="nav-link" href="/trabalhoFinal/admin/logOut">Logout</a>
                 <%
                     String papel = funcionarioLogado.getPapel();
                     if ("1".equals(papel)) { %>
-                            <a class="nav-link" href="/trabalhoFinal/admin/vendedor/listaClientes?acao=Listar">Cadastro de Clientes</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/vendedor/vendedorCadastroVendas?acao=Listar">Cadastro de Vendas</a>
-                            
-                    <% } else if ("0".equals(papel)) { %>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Listar">Cadastro de Vendedores</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroCompradores?acao=Listar">Cadastro de Compradores</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroAdms?acao=Listar">Cadastro de Administradores</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/relatorios?acao=ListarReceita">Relatório</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/administrador/estoque?acao=ListarReceita">Estoque</a>
-                            
-                    <% } else if ("2".equals(papel)) { %>
-                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar">Cadastro de Fornecedores</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/comprasController?acao=Listar">Cadastro de Compras</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/categoriaController?acao=Listar">Cadastro de categorias</a>
-                            <a class="nav-link" href="/trabalhoFinal/admin/comprador/produtosController?acao=Listar">Colocar produtos para venda</a>
-                            
-                    <% } %>
-                    <% } else { %>
-                            <a class="nav-link" href="/trabalhoFinal/MostrarProdutos">Produtos</a>
-                            <a class="nav-link" href="/trabalhoFinal/AutenticaController?acao=Login">Login</a>
-                    <% }
+                <a class="nav-link" href="/trabalhoFinal/admin/vendedor/listaClientes?acao=Listar">Cadastro de Clientes</a>
+                <a class="nav-link" href="/trabalhoFinal/admin/vendedor/vendedorCadastroVendas?acao=Listar">Cadastro de Vendas</a>
+
+                <% } else if ("0".equals(papel)) { %>
+                <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroVendedores?acao=Listar">Cadastro de Vendedores</a>
+                <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroCompradores?acao=Listar">Cadastro de Compradores</a>
+                <a class="nav-link" href="/trabalhoFinal/admin/administrador/cadastroAdms?acao=Listar">Cadastro de Administradores</a>
+                <a class="nav-link" href="/trabalhoFinal/admin/administrador/relatorios?acao=ListarReceita">Relatório de vendas</a>
+                <a class="nav-link" href="/trabalhoFinal/admin/administrador/estoque?acao=ListarReceita">Estoque</a>
+
+                <% } else if ("2".equals(papel)) { %>
+                <a class="nav-link" href="/trabalhoFinal/admin/comprador/listaFornecedores?acao=Listar">Cadastro de Fornecedores</a>
+                <a class="nav-link" href="/trabalhoFinal/admin/comprador/comprasController?acao=Listar">Cadastro de Compras</a>
+                <a class="nav-link" href="/trabalhoFinal/admin/comprador/categoriaController?acao=Listar">Cadastro de categorias</a>
+                <a class="nav-link" href="/trabalhoFinal/admin/comprador/produtosController?acao=Listar">Colocar produtos para venda</a>
+
+                <% } %>
+                <% } else { %>
+                <a class="nav-link" href="/trabalhoFinal/MostrarProdutos">Produtos</a>
+                <a class="nav-link" href="/trabalhoFinal/AutenticaController?acao=Login">Login</a>
+                <% }
                 } else { %>
                 <a class="nav-link" href="/trabalhoFinal/MostrarProdutos">Produtos</a>
                 <a class="nav-link" href="/trabalhoFinal/AutenticaController?acao=Login">Login</a>

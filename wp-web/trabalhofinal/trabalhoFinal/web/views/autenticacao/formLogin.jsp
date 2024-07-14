@@ -7,14 +7,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="#">
         <title>Login</title>
-        <link href="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.min.css"  rel="stylesheet">
+        <link href="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <style>
+            html, body {
+                height: 100%;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+            .container {
+                flex: 1;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
             <jsp:include page="../comum/menu.jsp" />
             <div class="row mt-5">
                 <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1">
-
                     <h3>Login</h3>
 
                     <%
@@ -22,9 +33,9 @@
                         if ((msgError != null) && (!msgError.isEmpty())) {
                     %>
                     <div class="alert alert-danger" role="alert">
-                        <%= msgError%>
+                        <%= msgError %>
                     </div>
-                    <% }%>
+                    <% } %>
 
                     <form action="/trabalhoFinal/AutenticaController?acao=login" method="POST">
                         <div class="mb-3">
@@ -44,6 +55,9 @@
                 </div>
             </div>
         </div>
+        
+        <jsp:include page="../comum/footer.jsp" />
+
         <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>

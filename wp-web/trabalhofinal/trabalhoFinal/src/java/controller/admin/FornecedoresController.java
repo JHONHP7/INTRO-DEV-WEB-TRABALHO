@@ -98,6 +98,11 @@ public class FornecedoresController extends HttpServlet {
             request.setAttribute("msgError", "É necessário preencher todos os campos");
             rd = request.getRequestDispatcher("/views/admin/fornecedores/formFornecedores.jsp");
             rd.forward(request, response);
+        } else if (uf.length() != 2) {
+            request.setAttribute("errorMessage", "O campo UF deve ter exatamente 2 letras");
+            request.setAttribute("link", "/trabalhoFinal/admin/comprador/listaFornecedores?acao=Incluir");
+            rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
+            rd.forward(request, response);
         } else {
             Fornecedores fornecedor = new Fornecedores(id, razaoSocial, cnpj, endereco, bairro, cidade, uf, cep, telefone, email);
             try {

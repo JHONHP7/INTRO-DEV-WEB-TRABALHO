@@ -104,41 +104,63 @@ public class ProdutosController extends HttpServlet {
                 idCategoria = Integer.parseInt(idCategoriaParam);
             }
 
-            if ("Incluir".equals(btEnviar)) {
-                CategoriaDAO categoriaDAO = new CategoriaDAO();
-                Categorias categoria = categoriaDAO.get(idCategoria);
-                if (categoria == null || categoria.getId() == 0) {
-                    request.setAttribute("errorMessage", "Categoria de produtos não existe");
-                    request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Incluir");
-                    RequestDispatcher rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
-                    rd.forward(request, response);
-                    return;
-                }
+            if (precoCompra < 1.0) {
+                request.setAttribute("errorMessage", "O preço de compra deve ser maior ou igual a 1.");
+                request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=" + btEnviar + "&id=" + id);
+                request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
+                return;
+            }
+
+            if (precoVenda < 1.0) {
+                request.setAttribute("errorMessage", "O preço de venda deve ser maior ou igual a 1.");
+                request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=" + btEnviar + "&id=" + id);
+                request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
+                return;
+            }
+
+            if (quantidadeDisponivel < 1) {
+                request.setAttribute("errorMessage", "A quantidade disponível deve ser maior ou igual a 1.");
+                request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=" + btEnviar + "&id=" + id);
+                request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
+                return;
             }
 
             ProdutoDAO produtoDAO = new ProdutoDAO();
             Produtos produto = criarProduto(id, nomeProduto, descricao, precoCompra, precoVenda, quantidadeDisponivel, liberadoVenda, idCategoria);
 
             if ("Incluir".equals(btEnviar)) {
+                CategoriaDAO categoriaDAO = new CategoriaDAO();
+                Categorias categoria = categoriaDAO.get(idCategoria);
+                if (categoria == null || categoria.getId() == 0) {
+                    request.setAttribute("errorMessage", "Categoria de produtos não existe");
+                    request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Incluir");
+                    request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
+                    return;
+                }
                 produtoDAO.insert(produto);
                 request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Listar");
                 request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
+
             } else if ("Alterar".equals(btEnviar)) {
                 produtoDAO.update(produto);
                 request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Listar");
                 request.setAttribute("msgOperacaoRealizada", "Alteração realizada com sucesso");
+
             } else if ("Excluir".equals(btEnviar)) {
                 produtoDAO.delete(id);
                 request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Listar");
                 request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
+
             } else if ("Colocar para Venda".equals(btEnviar)) {
                 produtoDAO.updateLiberadoVenda(id, 'S');
                 request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Listar");
                 request.setAttribute("msgOperacaoRealizada", "Produto colocado para venda com sucesso");
+
             } else if ("Retirar da Venda".equals(btEnviar)) {
                 produtoDAO.updateLiberadoVenda(id, 'N');
                 request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Listar");
                 request.setAttribute("msgOperacaoRealizada", "Produto retirado da venda com sucesso");
+
             } else {
                 throw new IllegalArgumentException("Ação não reconhecida");
             }
@@ -147,14 +169,14 @@ public class ProdutosController extends HttpServlet {
 
         } catch (NumberFormatException e) {
             request.setAttribute("errorMessage", "Formato numérico inválido: " + e.getMessage());
-            request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Incluir");
-            RequestDispatcher rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
-            rd.forward(request, response);
+            request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=" + btEnviar + "&id=" + request.getParameter("id"));
+            request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
+
         } catch (Exception e) {
-            request.setAttribute("errorMessage", "Ocorreu um erro ao processar a operação: " + e.getMessage());
-            request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=Incluir");
-            RequestDispatcher rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
-            rd.forward(request, response);
+            String errorMessage = "Ocorreu um erro ao processar a operação: <br> O item não pode ser excluído pois está ligado a alguma venda<br>" + e.getMessage();
+            request.setAttribute("errorMessage", errorMessage);
+            request.setAttribute("link", "/trabalhoFinal/admin/comprador/produtosController?acao=" + btEnviar + "&id=" + request.getParameter("id"));
+            request.getRequestDispatcher("/views/comum/showMessage.jsp").forward(request, response);
         }
     }
 

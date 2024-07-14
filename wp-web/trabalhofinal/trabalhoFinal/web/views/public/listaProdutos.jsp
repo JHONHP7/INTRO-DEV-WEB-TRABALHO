@@ -16,12 +16,25 @@
         <link rel="shortcut icon" href="#">
         <title>Lista de Produtos</title>
         <link href="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <style>
+            html, body {
+                height: 100%;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+            .container {
+                flex: 1;
+            }
+        </style>
+
     </head>
     <body>
         <div class="container">
             <%@include file="../comum/menu.jsp" %>
             <div class="mt-5">
-                <h1>Lista de Produtos</h1>
+                <h1 class="text-center mb-4">Lista de Produtos</h1>
 
                 <div class="row">
                     <%
@@ -49,6 +62,7 @@
                 </div>
             </div>
         </div>
+        <jsp:include page="../comum/footer.jsp" />
         <script src="http://localhost:8080/trabalhoFinal/views/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>
